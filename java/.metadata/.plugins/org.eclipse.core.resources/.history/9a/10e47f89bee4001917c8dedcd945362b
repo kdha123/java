@@ -1,0 +1,28 @@
+// package : 클래스가 위치하는 위치 정보를 정의한다.
+package ch02valiable;
+
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
+// public : 공공의 - 외부(다른위치:package)에서 접근가능 
+public class ValiableClass {
+	// static : 주소가 고정인 - 참조형 변수(중간에 생성해서 저장해서 쓰는 경우)로 사용하지 않는다.
+	//			Class이름.main()을 사용한다. ValiableClass.main()
+	// void : 없다. - method 앞에 붙여서 사용
+	// main() : ()이 있으면 처리문을 선언(앞에 리턴타입을 놓는다.)해 놓은 method, 프로젝트의 시작부분을 선언
+	// String : 문자열 = 문자배열 = 여러개의 문자(char) : 참조형 변수
+	// [] :  배열 => String[] : String(문자열)이 여러개
+	// args : 변수
+	// {} : 0개 이상 여러개의 선언
+	public static void main(String[] args) {
+		
+		byte b = 128; // 1byte
+		short s = 123; // 2byte
+		int i = 123; // 4byte - 기본
+		long l = 123; // 8byte
+		
+		System.out.println(b);
+		System.out.println(s);
+		System.out.println(i);
+		System.out.println(l);
+	}
+}

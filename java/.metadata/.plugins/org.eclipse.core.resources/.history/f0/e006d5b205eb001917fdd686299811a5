@@ -1,0 +1,35 @@
+/*
+ * 정수를 입력 받아서 합격 여부를 출력하는 프로그램 
+ * 2019.10.10
+ * 김동현
+ */
+package ch04condition;
+
+import java.util.Scanner;
+
+public class FlowEx3if {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		// 점수를 입력 받는다.
+		// 콘솔창이 자동으로 열리게 하려면 출력을 해야만한다.
+		// 60점 이상이면  "합격" 그렇지 않으면 "불합격"을 출력한다. 점수도 함께 출력한다."
+		int x;
+		String str;
+				
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("점수를 입력해주세요: -->");
+		str = scanner.nextLine();		
+		x = Integer.parseInt(str);
+		x = Integer.parseInt(scanner.nextLine());
+				
+		if(x>=60)
+			System.out.println(x+"점으로 합격입니다.");
+		else
+			System.out.println(x+"점으로 불합격입니다.");
+		//scanner 닫기
+		scanner.close();
+	}
+
+}

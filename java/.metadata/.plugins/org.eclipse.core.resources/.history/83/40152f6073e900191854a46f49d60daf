@@ -1,0 +1,16 @@
+package ch03operator;
+
+public class OperatorEx17Round {
+
+	public static void main(String[] args) {
+		
+		System.out.println("반올림 처리 =============");
+		double pi = 3.141592;
+		// 소수점 4째자리에서 반올림해서 소수점 3째자리까지만 처리해보자.
+		// 3.141592 * 1000 -> 3141.592 + 0.5 = 3142.092
+		//=> int :3142 -> 3142/1000.0 => 3.142
+		double shortPi = (int)(pi * 1000 + 0.5)/1000.0;
+		System.out.println(shortPi);
+	}
+
+}

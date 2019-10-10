@@ -1,0 +1,13 @@
+package ch02valiable;
+
+public class InputArgs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("Args Datas ============");
+		for(String a : args)
+			System.out.println(a);
+	}
+
+}

@@ -1,0 +1,34 @@
+package ch03operator;
+
+public class OperatorEx5Arith {
+
+	public static void main(String[] args) {
+		
+		int a = 10;
+		int b = 4;
+		int resi;
+		short ress;
+		short sa = 10;
+		short sb = 4;
+		long la = 10;
+		double da = 10;
+		
+		System.out.println(a + " + " + b + " = "+ a + b);
+		System.out.println(a + " + " + b + " = "+ (a+b));
+		System.out.printf( "%d + %d = %d%n ",a,b,a+b);
+		
+		resi = a + b;
+		System.out.println(resi);
+		
+		ress = (short) (a + b);
+		// short + short -> int : 하드웨어적으로 구조가 정해져있어서
+		ress = (short) (sa + sb);
+		// 큰 크기의 데이터에 맞춰서 연산이 된다.
+		// long + int -> long -> long
+		resi = (int) (la + a);
+		System.out.println(da);
+		System.out.println(da + b);
+//		a = da + b;
+	}
+
+}

@@ -1,0 +1,7 @@
+package snippet;
+
+public class Snippet {
+	| : 앞에 것이 true이더라고 뒤에 것을 확인
+	
+}
+

@@ -1,0 +1,19 @@
+package ch03operator;
+
+public class OperatorEx5Arith {
+
+	public static void main(String[] args) {
+		
+		int a = 10;
+		int b = 4;
+		int resi;
+		
+		System.out.println(a + " + " + b + " = "+ a + b);
+		System.out.println(a + " + " + b + " = "+ (a+b));
+		System.out.printf( "%d + %d = %d%n ",a,b,a+b);
+		
+		resi = a + b;
+		System.out.println(resi);
+	}
+
+}

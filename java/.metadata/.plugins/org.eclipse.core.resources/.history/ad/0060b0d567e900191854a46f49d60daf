@@ -1,0 +1,21 @@
+// 클래스의 위치 파일이 있는 폴더 확인해서 작성
+package ch03operator;
+
+// 클래스 선언 - 파일명을 확인해서 작성
+public class OperatorEx1SingleOp{
+	// 자동적으로 인식해서 실행이되는 메서드 main() 작성
+	public static void main(String[] args) {
+		// i 변수 선언 후에 초기값 셋팅
+		int i = 5;
+		System.out.println("i = " + i);
+		// i 변수에 1증가 시키자.
+		i = i + 1;
+		System.out.println("i = " + i);
+		i += 1;
+		System.out.println("i = " + i);
+		++i;
+		System.out.println("i = " + i);
+		i++;
+		System.out.println("i = " + i);
+	}
+}
