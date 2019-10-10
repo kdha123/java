@@ -1,0 +1,93 @@
+﻿머신러닝 SW응용개발자
+​
+모듈평가 - 39가지 : 서술형 / 체크리스트(과제) / 포트폴리오(소스 + 문서화) / 문제해결시나리오(과제)
+​
+Java. oracle
+웹표준  - HTML5 +CSS+JS+jQuery + BootStrap
+JSP+Servlet
+빅데이터 저장 : MongoDB
+빅데이터 처리 : MongoDB, Hadoop
+​
+1차 프로젝트 : 빅데이터 처리 + JSP
+​
+빅데이터 수집 - 파이썬
+빅데이터 처리 - 파이썬
+빅데이터 분석 - 파이썬
+빅데이터 시각화 - 파이썬
+빅데이터 머신러닝 분석 - 파이썬
+빅데이터 통계분석 - R
+Spring - JAVA
+​
+2차 프로젝트 : 머신러닝 기반 프로젝트
+​
+개발환경 만들기
+​
+1. 컴파일러(언어) - JAVA8(JDK1.8)
+1) http://oracle.com에서 다운로드
+2) 기본으로 설치 진행 -> JDK, 소스, JRE
+3) Java 실행  : 명령프롬프트 실행
+4) 환경설정
+- JAVA_HOME
+- path
+5) java소스 개발
+6) 컴파일(파일) : javac 파일명.java
+7) 실행(class) :  java 파일명
+​
+https://docs.oracle.com/javase/8/docs/api/index.html
+​
+​
+​
+​
+2. 개발툴(코드편집기) - 이클립스(EE)/IntelliJ, STS
+eclipse.org
+- 한글 설정 : eclipse.ini
+  >> -Dfile.encoding=utf-8
+​
+[패키지 만드는 법]
+1. 패키지(폴더) 만드는 것은 관리를 편하기 하기 위해서(큰 범위->작은 범위)
+- 회사의 도메인 많이 사용(중복이 되지 않게 하기 위해서)
+  webjjang.co.kr -> kr.co.webjjang.board.dao.BoardDAO
+  한국.회사.웹짱.게시판.DB관련
+2. 모두 소문자로 사용한다.
+​
+[클래스 만드는 법]
+1. "class 클래스 이름"으로 시작해야한다.
+2. 파일이름과 안에 대표 클래스의 이름이 같아야 한다.
+3. 맨앞에 글자는 대문자로 한다. 의미가 중간에 변경이 되면 다시 단어의 앞자를 대문자로 한다. (낙타표기법)
+​
+1. 이클립스 실행
+2. Project 생성 -> new > java Project
+3. src안에 class 생성 -> new > class
+4. 맨처음 실행되는 메서드 작성
+- public static void main(String[] args){~~~}
+5. 이클립스 단축키 / 자동완성기능 (Ctrl+space)
+​
+[프로젝트를 이동시키는 방법]
+1. 원본자체를 복사(압축해서 복사해가는 것도 포함)
+2. jar파일 만들어서 사용
+3. 소스관리서버사용(형상화관리) -SVN, Git
+​
+​
+​
+​
+3. 톰캣 서버(Web Application Service) - JAVA기반
+​
+4. Oracle 11g, 12c : DB server
+1) https://www.oracle.com/database/technologies/oracle-database-software-downloads.html -> developer -> databases-> oracle database-> Oracle Database 12c Release 2 -> Microsoft Windows x64 (64-bit)
+​
+2) DB구현
+2-1) 사용자 생성, 권한
+- 카페 : 데이터베이스 141번 글 참조
+2-2)DDL(Data Definition Language) :  테이블 생성(5장)
+2-3) 제약조건(7장)
+2-4) 인덱스(8장), view(9장)
+2-5) 시퀸스(11장)
+​
+3)  SQL응용
+3-1) select (1장)
+3-2) 단일행 함수(2장) / 복수행함수(3장 그룹함수)
+3-3)  JOIN(4장)
+3-4) DML(Data management Language) - insert, update, delete(6장)
+3-5) 서브쿼리(10장)
+3-6) PL/SQL - oracle 처리문작성(15장)
+5. SQL Developer: DB client - 여러 줄 처리가능​
