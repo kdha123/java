@@ -1,0 +1,102 @@
+﻿Oracle DB 메모​
+​
+일반사용자 >> sqlplus id/pw
+관리자>> sqlplus id/pw as sysdba
+​
+[DB 사용자 만들기]
+​
+1. 관리자 권한으로 접속하기.(sys, system)
+명령프롬프트 >>sqlplus sys/Dhfkzmf123 as sysdba
+​
+2. 공통 사용자 만들기 - 아무일도 못하는 아이디만 생성함
+CREATE USER java00 IDENTIFIED BY java00; -- 11g의 경우
+-- 12c에서는 공통 사용자 선언하기 위해서 사용자 ID를  java00 -> c##java00
+​
+3. 사용자의 권한 부여
+-- 11g
+GRANT CONNECT, RESOURCE TO java00;
+-- 12c
+GRANT CONNECT, RESOURCE TO c##java00;
+​
+4. sqlplus는 한줄 단위 클라이언트 프로그램을 대신에 sql developer 관리 툴 사용
+1) sql developer download :  oracle.com
+​
+**다른 DBMS의 경우
+​
+1. 사용자만들기 
+2. DB 생성
+3. 사용자 - DB 연결
+​
+**오라클 DBMS 시스템 운영
+1. 사용자 만들기 - 사용자와 DB가 하나로 작성되어진다.
+​
+**제약조건이름
+table_col_type
+board_no_pk
+​
+**참조키-> 원래키가 삭제가 된다면 : on delete
+ - cascade : 원래키가 삭제된다면 같이 지우자
+ - set null : 자신의 데이터를 지우지 말고 null로 바꾸자
+​
+create user c##java00 identified by java00;
+grant resource, connect, unlimited tablespace to c##java00;
+create table 테이블명(
+컬럼 타입(크기) 기본값 제약조건
+...);
+​
+**제약조건 - 데이터를 아무거나 넣을 수 있으나 검사를 하도록 정의
+pk - primary key
+fk - foreign key : references 테이블 이름(컬럼)
+nn - not null
+uk - unique
+ck - check(조건)
+​
+​
+**시퀸스 : 초기값부터 계속 숫자가 증가가 되는 객체
+create sequence 테이블명_seq; (테이블과는 상관없다.)
+​
+**인덱스 index - 검색을 빠르게하기 위해서 검색 테이블 따로 만든다.
+1. index의 조건 : 검색을 많이 하는 데이터로 만든다.
+2. index의 좋지 않은 예 
+2-1) 전체 데이터에 가까운 데이터를 index로 만들어야 하는 경우
+2-2) 데이터의 수정이 자주 되는 경우 -> 수정이 일어나면 index를 새로만든다.
+4. create index 인덱스이름 on 테이블명(컬럼이름) where 검색​
+​
+** view : 가상 테이블 : 원래 테이블은 따로 있으나 1차적으로 처리하는 데이터만 가져와서 테이블 형식으로 제공하는 것. (view 테이블이름으로 select 문장을 저장해 놨다가 처리하도록 한다.)
+1. 데이터보호 :  처리하고자 하는 데이터만 대상으로 할 수 있다.(보안상 좋다.)
+2. 복잡한 query 문장을 단순화 시킬 수 있다.
+3. 쿼리문장 select 문을 작성해서 저장해 놓고 가져다가 사용
+4. create view 뷰이름 as select ~~~
+​
+*** 시스템의 시간 보기
+select sysdate from dual
+​
+​
+**DB구현
+1. drop
+2. create
+ 2-1. alter table-> 제약조건 지정
+3. insert
+4. commit
+​
+[SQL 응용]​
+​
+SQL(structured Query Language) - select
+DML(Data Manipulation Language)- insert, update, delete
+DDL(Data Definition Language) - create
+DCL(Data Control Language) - grant, revoke
+TCL(Transaction Control Language) - commit, rollback
+​
+[평가문제]
+DB(Oracle 12c 기준)
+1. 오라클에서 사용할 사용자를 생성하는 명령문을 작성하시오.
+​
+CREATE USER c##java00 IDENTIFIED BY java00;
+id:c##java00, pw:java00
+​
+2. 생성된 사용자에게 DB 접근 권한과 자원을 관리하는 권한 롤을 부여하세요.
+​
+GRANT CONNECT, RESOURCE TO c##java00;
+​
+3. DBMS(DataBase Management System)의 정의 : 데이터를 효율적으로 관리하는 시스템
+종류 : Oracle, MySQL, MS SQL
