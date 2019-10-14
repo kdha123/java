@@ -16,7 +16,7 @@ CREATE USER java00 IDENTIFIED BY java00; -- 11g의 경우
 -- 11g
 GRANT CONNECT, RESOURCE TO java00;
 -- 12c
-GRANT CONNECT, RESOURCE TO c##java00;
+GRANT CONNECT, RESOURCE, create view, unlimited tablespace TO c##java00;
 ​
 4. sqlplus는 한줄 단위 클라이언트 프로그램을 대신에 sql developer 관리 툴 사용
 1) sql developer download :  oracle.com
@@ -96,7 +96,33 @@ id:c##java00, pw:java00
 ​
 2. 생성된 사용자에게 DB 접근 권한과 자원을 관리하는 권한 롤을 부여하세요.
 ​
-GRANT CONNECT, RESOURCE TO c##java00;
+GRANT CONNECT, RESOURCE, CREATE VIEW, UNLIMITED TABLESPACE TO c##java00;
 ​
 3. DBMS(DataBase Management System)의 정의 : 데이터를 효율적으로 관리하는 시스템
 종류 : Oracle, MySQL, MS SQL
+
+4. 테이블 제거와 생성
+ drop table cascade constraints;
+ex)
+ create table message(
+ no number primary key,
+ content varchar2(2000) not null,
+ sender varchar2(20) not null references member(id),
+ sendDate date not null default sysdate,
+ accepter varchar2(20) not null references member(id),
+ acceptDate date default null
+ );
+ 
+ 5.시퀸스 제거와 생성
+ drop sequence message_seq;
+ create sequence message_seq;
+ 
+ 6.데이터 확인과 추가
+select * from member;
+
+insert into member (id,pw,name,gender,birth,tel,email,grade) 
+values('admin','1111','관리자','남자','1995-12-18','010-2954-8296','012rlaehdgus@naver.com',9);
+insert into member (id,pw,name,gender,birth,tel,email,grade) 
+values('test','1111','홍길동','남자','1995-12-18','010-1111-1111','test@naver.com',1);
+commit;
+
