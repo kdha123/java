@@ -133,6 +133,8 @@ switch(key){
 case 값: --> label
   break; --> switch, for, while을 빠져나온다.
   }
+  
+* 반목문 - for, while, do{}while
 ​
 객체 - Class를 개발한다.
 객체를 생성한다. -> 메인메로리에 올린다.
