@@ -11,6 +11,9 @@
     ex) 123.456 -> 1.23456 * 10 ** 2 , 0.000123456 -> 1.23456 * 10 ** -4
    * char(문자) - 2byte : 숫자로 저장한다.(마이너스가 없다.) ex) A-65
   * 음수 표현 : 부호+절대값, 1의 보수(1<->0), 2의보수(1의보수+1)
+  
+  *wrapper class -> 기본변수 타입의 맨 앞자리 대문자
+   - Byte / Integer
 ​
 - 참조형 (길이 가변) : 주소
   * null : 주소값이 없다.
@@ -76,10 +79,14 @@ args[0] = "10";
 args[1] = "12";
 ​
 **연산자
+int + long -> (long) int + long -> long
+byte + short -> int
+float + float -> double
+
 ++a : 선 증가 후 처리    
 a++ : 선 처리 후 증가
 ​
-/ : 나누기 -> int / int -> int(소수점이 날아감)
+/ : 나누기 -> int / int -> int(소수점이 날아감) - 자바의 특징
 % : 나머지 - 배수 처리
 ​
 ex) a = a + 1; 
@@ -119,6 +126,13 @@ a|b:0 1 1 1
 result = (score>=60)> "합격":"불합격";
 if(score>=60) result = "합격";
 else result = "불합격";
+if(조건) true면 실행; else if(조건);
+ - 연속데이터 비교(>,<) 반드시 if
+ - 비연속 데이터(==) : switch
+switch(key){
+case 값: --> label
+  break; --> switch, for, while을 빠져나온다.
+  }
 ​
 객체 - Class를 개발한다.
 객체를 생성한다. -> 메인메로리에 올린다.
