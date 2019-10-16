@@ -78,6 +78,12 @@ select sysdate from dual
  2-1. alter table-> 제약조건 지정
 3. insert
 4. commit
+
+**서버의 주소(url)
+localhost : 내 컴퓨터에서 서비스되고 있다.
+127.0.0.1 : 인터넷 상에서 자기 자신
+ip : 인터넷 상에서의 자기 ip (192.168.1.24) - 명령:ipconfig
+네트워크 이름 : 402-oracle : 같은 네트워크에서의 컴퓨터 이름
 ​
 [SQL 응용]​
 ​
