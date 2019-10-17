@@ -149,3 +149,9 @@ score2
 ex)
 new int[10]
 50,60,70,80,90 - 5의 데이터
+
+**상속
+ex) Super - A,B 큰거
+Sub1 extends Super - D,F,(A,B) 작은 거
+Sub2 extends Super - I,J,(A,B)
+큰 거에서 적은 것으로 갈 때는 반드시 캐스팅을 해야한다.
