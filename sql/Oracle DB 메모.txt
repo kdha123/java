@@ -96,4 +96,14 @@ TCL(Transaction Control Language) - commit, rollback
 DBMS(DataBase Management System)의 정의 : 데이터를 효율적으로 관리하는 시스템
 종류 : Oracle, MySQL, MS SQL
 
+단일행 함수 to_char(date, 'yyyy-mm-dd')
+a||b : 문자열 이어 붙이기
+
+여러값 대상->복수행함수
+count(*),sum(),avg() ->null은 제외
+그룹핑 가능
+
+DB 프로그램 -> PL/SQL 함수 만드는 법 -> 저장(저장프로시저)
+이벤트(insert, update, delete) + 함수 : 트리거
+시간 + 함수 : 스케쥴러
 
