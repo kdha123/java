@@ -198,3 +198,7 @@ ex) Super - A,B 큰거
 Sub1 extends Super - D,F,(A,B) 작은 거
 Sub2 extends Super - I,J,(A,B)
 큰 거에서 적은 것으로 갈 때는 반드시 캐스팅을 해야한다.
+
+**로그인
+if(로그인 조건)
+조건에 관여하는 변수의 값으로 조건을 물어본다.
