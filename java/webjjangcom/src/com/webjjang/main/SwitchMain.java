@@ -1,4 +1,7 @@
 /*
+ * 처음 시작하는  main 부분 : PL이 작성해서 넣어둔다.
+ * 각각의 모듈 컨트롤러에서 사용할 메서드를 정의해놓은 인터페이스를 만든다.
+ * 각각의 모듈 컨트롤러를 작성할 때에 반드시 인터페이스를 상속받아서 만들어야한다고 강제한다.
  * 메뉴구성도
  * [main]
  * 1. 공지사항
@@ -8,6 +11,7 @@
  * 5. 메세지
  * 6. 회원관리
  * 0. 종료
+ * 
  */
 package com.webjjang.main;
 
@@ -38,8 +42,7 @@ public class SwitchMain {
 			case "1":
 				System.out.println("공시사항처리");
 				// 객체 생성 - main memory에 올린다. : new
-				NoticeController noticeController
-				= new NoticeController();
+				NoticeController noticeController = new NoticeController();
 				// 생성한 객체의 처리문이 들어 있는 메서드를 호출해서 처리하도록 시킨다.
 				noticeController.execute();
 				// switch 문을 빠져 나간다.

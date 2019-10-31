@@ -91,7 +91,8 @@ public class memberDTO {
 		this.grade = grade;
 	}
 	// 개발자의 데이터 확인용
-	@Override
+	// 어노테이션 - Over ride <-> Over load
+	@Override 
 	public String toString() {
 		return "memberDTO [id=" + id + ", pw=" + pw + ", name=" + name + ", gender=" + gender + ", birth=" + birth
 				+ ", tel=" + tel + ", email=" + email + ", regDate=" + regDate + ", conDate=" + conDate + ", status="
