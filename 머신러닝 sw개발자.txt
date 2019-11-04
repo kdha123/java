@@ -73,6 +73,14 @@ eclipse.org
 ​
 ​
 3. 톰캣 서버(Web Application Service) - JAVA기반
+1) 이클립스에서 개발환경 : JAVA EE
+2) tomcat.aphache.org -> tomcat 9 다운로드
+3) 환경설정 : CATALINA_HOME
+4) dynamic web project 생성
+5) webjjangcom/src를 생성한 프로젝트의 src에 복사
+6) WEB-INF/lib 사용라이브러리복사
+7) 서버 생성하고 jsp파일 만들어서 실행
+
 ​
 4. Oracle 11g, 12c : DB server
 1) https://www.oracle.com/database/technologies/oracle-database-software-downloads.html -> developer -> databases-> oracle database-> Oracle Database 12c Release 2 -> Microsoft Windows x64 (64-bit)
