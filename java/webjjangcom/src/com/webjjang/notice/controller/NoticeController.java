@@ -1,12 +1,12 @@
-/*
- * °øÁö»çÇ×
+ï»¿/*
+ * ê³µì§€ì‚¬í•­
  * [notice]
- * 1. ¸®½ºÆ®
- * 2. º¸±â
- * 3. µî·Ï
- * 4. ¼öÁ¤
- * 5. »èÁ¦
- * 0. ÀÌÀü¸Ş´º
+ * 1. ë¦¬ìŠ¤íŠ¸
+ * 2. ë³´ê¸°
+ * 3. ë“±ë¡
+ * 4. ìˆ˜ì •
+ * 5. ì‚­ì œ
+ * 0. ì´ì „ë©”ë‰´
  */
 package com.webjjang.notice.controller;
 
@@ -17,45 +17,45 @@ public class NoticeController {
 	// Main.scanner.nextLine();
 	public static Scanner scanner = new Scanner(System.in);
 	
-	// public °ø°øÀÇ - main ÆĞÅ°ÁöÀÇ Main Å¬·¡½º¿¡¼­ »ç¿ëÇÑ´Ù.
+	// public ê³µê³µì˜ - main íŒ¨í‚¤ì§€ì˜ Main í´ë˜ìŠ¤ì—ì„œ ì‚¬ìš©í•œë‹¤.
 	public void execute() {
 		
-		// °øÁö»çÇ×À» ¹«ÇÑ ¹İº¹ Ã³¸® - 0À» ÀÔ·ÂÇÏ¸é ÀÌÀü ¸Ş´º·Î °£´Ù.(Main)
+		// ê³µì§€ì‚¬í•­ì„ ë¬´í•œ ë°˜ë³µ ì²˜ë¦¬ - 0ì„ ì…ë ¥í•˜ë©´ ì´ì „ ë©”ë‰´ë¡œ ê°„ë‹¤.(Main)
 		while(true) {
-			// °øÁö»çÇ×¸Ş´º Ãâ·Â
-			System.out.println("1.¸®½ºÆ® 2.º¸±â 3.µî·Ï");
-			System.out.println("4.¼öÁ¤ 5.»èÁ¦ 0.ÀÌÀü¸Ş´º");
+			// ê³µì§€ì‚¬í•­ë©”ë‰´ ì¶œë ¥
+			System.out.println("1.ë¦¬ìŠ¤íŠ¸ 2.ë³´ê¸° 3.ë“±ë¡");
+			System.out.println("4.ìˆ˜ì • 5.ì‚­ì œ 0.ì´ì „ë©”ë‰´");
 			
-			// ¸ŞÀÎ¸Ş´º ¹øÈ£ ¼±ÅÃ
-			System.out.println("¸Ş´ºÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+			// ë©”ì¸ë©”ë‰´ ë²ˆí˜¸ ì„ íƒ
+			System.out.println("ë©”ë‰´ì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 			String menu = scanner.nextLine();
-			// ¸ŞÀÎ ¸Ş´º Ã³¸®
+			// ë©”ì¸ ë©”ë‰´ ì²˜ë¦¬
 			switch (menu) {
 			case "1":
-				System.out.println("°ø½Ã»çÇ× ¸®½ºÆ® Ã³¸®");
-				// switch ¹®À» ºüÁ® ³ª°£´Ù.
-				// break : switch, for, while ¹®À» ºüÁ®³ª°¥¶§ »ç¿ëÇÑ´Ù.
-				// break°¡ ¾ø´Â °æ¿ì´Â case¿¡ ¸Â´Â °ªÀÌ¶ó¼­ case ¾Æ·¡·Î Ã³¸®ÇÏ±â À§ÇØ µé¾î¿À¸é
-				// ±× ¾Æ·¡·Î case¿Í »ó°ü¾øÀÌ Ã³¸®¹®À» Ã³¸®ÇÏ°Ô µÈ´Ù.
+				System.out.println("ê³µì‹œì‚¬í•­ ë¦¬ìŠ¤íŠ¸ ì²˜ë¦¬");
+				// switch ë¬¸ì„ ë¹ ì ¸ ë‚˜ê°„ë‹¤.
+				// break : switch, for, while ë¬¸ì„ ë¹ ì ¸ë‚˜ê°ˆë•Œ ì‚¬ìš©í•œë‹¤.
+				// breakê°€ ì—†ëŠ” ê²½ìš°ëŠ” caseì— ë§ëŠ” ê°’ì´ë¼ì„œ case ì•„ë˜ë¡œ ì²˜ë¦¬í•˜ê¸° ìœ„í•´ ë“¤ì–´ì˜¤ë©´
+				// ê·¸ ì•„ë˜ë¡œ caseì™€ ìƒê´€ì—†ì´ ì²˜ë¦¬ë¬¸ì„ ì²˜ë¦¬í•˜ê²Œ ëœë‹¤.
 				break;
 			case "2":
-				System.out.println("°øÁö»çÇ× º¸±â Ã³¸®");
+				System.out.println("ê³µì§€ì‚¬í•­ ë³´ê¸° ì²˜ë¦¬");
 				break;
 			case "3":
-				System.out.println("°øÁö»çÇ× µî·Ï Ã³¸®");
+				System.out.println("ê³µì§€ì‚¬í•­ ë“±ë¡ ì²˜ë¦¬");
 				break;
 			case "4":
-				System.out.println("°øÁö»çÇ× ¼öÁ¤ Ã³¸®");
+				System.out.println("ê³µì§€ì‚¬í•­ ìˆ˜ì • ì²˜ë¦¬");
 				break;
 			case "5":
-				System.out.println("°øÁö»çÇ× »èÁ¦ Ã³¸®");
+				System.out.println("ê³µì§€ì‚¬í•­ ì‚­ì œ ì²˜ë¦¬");
 				break;
 			case "0":
-				// È£ÃâÇÑ °÷À¸·Î µ¹¾Æ°¡¶ó´Â ¸í·É¾î : return : SwitchMain.main()
+				// í˜¸ì¶œí•œ ê³³ìœ¼ë¡œ ëŒì•„ê°€ë¼ëŠ” ëª…ë ¹ì–´ : return : SwitchMain.main()
 				return;
 
 			default:
-				System.out.println("Àß¸øµÈ ¸Ş´º¸¦ ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. \n ´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+				System.out.println("ì˜ëª»ëœ ë©”ë‰´ë¥¼ ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. \n ë‹¤ì‹œ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 				break;
 			}
 		}

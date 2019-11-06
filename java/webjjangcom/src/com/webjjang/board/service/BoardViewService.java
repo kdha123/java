@@ -1,4 +1,4 @@
-package com.webjjang.board.service;
+ï»¿package com.webjjang.board.service;
 
 
 import com.webjjang.board.dao.BoardDAO;
@@ -6,14 +6,14 @@ import com.webjjang.board.dto.BoardDTO;
 
 public class BoardViewService {
 
-	// µ¥ÀÌÅÍ´Â Controller <-> DAO
-	// ±Û¹øÈ£¸¦ COntroller ¿¡¼­ ¹Ş¾Æ¼­ Ã³¸®ÇÑ´Ù.
+	// ë°ì´í„°ëŠ” Controller <-> DAO
+	// ê¸€ë²ˆí˜¸ë¥¼ COntroller ì—ì„œ ë°›ì•„ì„œ ì²˜ë¦¬í•œë‹¤.
 	public BoardDTO service(int no) throws Exception {
-		// µ¥ÀÌÅÍ Ã³¸®ºÎºĞ¿¡ ÇØ´çµÈ´Ù.
+		// ë°ì´í„° ì²˜ë¦¬ë¶€ë¶„ì— í•´ë‹¹ëœë‹¤.
 		
 		System.out.println("BoardViewService.service()");
 		
-		// µ¥ÀÌÅÍ¸¦ ¿À¶óÅ¬¿¡¼­ °¡Á®¿À±â À§ÇØ¼­ °´Ã¼¸¦ »ı¼ºÇÏ°í È£ÃâÇÑ´Ù.
+		// ë°ì´í„°ë¥¼ ì˜¤ë¼í´ì—ì„œ ê°€ì ¸ì˜¤ê¸° ìœ„í•´ì„œ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  í˜¸ì¶œí•œë‹¤.
 		BoardDAO dao = new BoardDAO();
 		return dao.view(no);
 		// BoardController - BoardViewService - [BoardDAO]

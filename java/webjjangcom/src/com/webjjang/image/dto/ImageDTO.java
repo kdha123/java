@@ -1,4 +1,4 @@
-package com.webjjang.image.dto;
+﻿package com.webjjang.image.dto;
 
 public class ImageDTO {
 	private int no;

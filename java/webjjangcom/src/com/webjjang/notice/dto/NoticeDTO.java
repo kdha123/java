@@ -1,4 +1,4 @@
-package com.webjjang.notice.dto;
+﻿package com.webjjang.notice.dto;
 
 public class NoticeDTO {
 

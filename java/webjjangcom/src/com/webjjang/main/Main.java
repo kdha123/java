@@ -1,13 +1,13 @@
-/*
- * ¸Ş´º±¸¼ºµµ
+ï»¿/*
+ * ë©”ë‰´êµ¬ì„±ë„
  * [main]
- * 1. °øÁö»çÇ×
- * 2. °Ô½ÃÆÇ
- * 3. ÀÌ¹ÌÁö
- * 4. Áú¹®´äº¯
- * 5. ¸Ş¼¼Áö
- * 6. È¸¿ø°ü¸®
- * 0. Á¾·á
+ * 1. ê³µì§€ì‚¬í•­
+ * 2. ê²Œì‹œíŒ
+ * 3. ì´ë¯¸ì§€
+ * 4. ì§ˆë¬¸ë‹µë³€
+ * 5. ë©”ì„¸ì§€
+ * 6. íšŒì›ê´€ë¦¬
+ * 0. ì¢…ë£Œ
  */
 package com.webjjang.main;
 
@@ -21,33 +21,33 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		// ¸ŞÀÎÀ» ¹«ÇÑ ¹İº¹ Ã³¸® - 0À» ÀÔ·ÂÇÏ¸é Á¾·á½ÃÅ²´Ù.
+		// ë©”ì¸ì„ ë¬´í•œ ë°˜ë³µ ì²˜ë¦¬ - 0ì„ ì…ë ¥í•˜ë©´ ì¢…ë£Œì‹œí‚¨ë‹¤.
 		while(true) {
-			// ¸ŞÀÎ¸Ş´º Ãâ·Â
-			System.out.println("1.°øÁö»çÇ× 2.°Ô½ÃÆÇ 3.ÀÌ¹ÌÁö");
-			System.out.println("4.Áú¹®´äº¯ 5.¸Ş¼¼Áö 6.È¸¿ø°ü¸®");
-			System.out.println("0.Á¾·á");
-			// ¸ŞÀÎ¸Ş´º ¹øÈ£ ¼±ÅÃ
-			System.out.println("¸Ş´ºÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+			// ë©”ì¸ë©”ë‰´ ì¶œë ¥
+			System.out.println("1.ê³µì§€ì‚¬í•­ 2.ê²Œì‹œíŒ 3.ì´ë¯¸ì§€");
+			System.out.println("4.ì§ˆë¬¸ë‹µë³€ 5.ë©”ì„¸ì§€ 6.íšŒì›ê´€ë¦¬");
+			System.out.println("0.ì¢…ë£Œ");
+			// ë©”ì¸ë©”ë‰´ ë²ˆí˜¸ ì„ íƒ
+			System.out.println("ë©”ë‰´ì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 			String menu = scanner.nextLine();
-			// ¸ŞÀÎ ¸Ş´º Ã³¸®
+			// ë©”ì¸ ë©”ë‰´ ì²˜ë¦¬
 			if(menu.equals("1"))
-				System.out.println("°ø½Ã»çÇ×Ã³¸®");
+				System.out.println("ê³µì‹œì‚¬í•­ì²˜ë¦¬");
 			else if(menu.equals("2"))
-				System.out.println("°Ô½ÃÆÇÃ³¸®");
+				System.out.println("ê²Œì‹œíŒì²˜ë¦¬");
 			else if(menu.equals("3"))
-				System.out.println("ÀÌ¹ÌÁöÃ³¸®");
+				System.out.println("ì´ë¯¸ì§€ì²˜ë¦¬");
 			else if(menu.equals("4"))
-				System.out.println("Áú¹®´äº¯Ã³¸®");
+				System.out.println("ì§ˆë¬¸ë‹µë³€ì²˜ë¦¬");
 			else if(menu.equals("5"))
-				System.out.println("¸Ş¼¼ÁöÃ³¸®");
+				System.out.println("ë©”ì„¸ì§€ì²˜ë¦¬");
 			else if(menu.equals("6"))
-				System.out.println("È¸¿ø°ü¸®Ã³¸®");
+				System.out.println("íšŒì›ê´€ë¦¬ì²˜ë¦¬");
 			else if(menu.equals("0")) {
-				System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+				System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 				System.exit(0);
 				}
-			else System.out.println("Àß¸øµÈ ¸Ş´º¸¦ ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. \n ´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+			else System.out.println("ì˜ëª»ëœ ë©”ë‰´ë¥¼ ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. \n ë‹¤ì‹œ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 		}
 	}
 

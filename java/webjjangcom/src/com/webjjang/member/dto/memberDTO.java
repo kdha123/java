@@ -1,12 +1,12 @@
-/*
- * È¸¿ø µ¥ÀÌÅÍ ÀúÀåÇÏ´Â °´Ã¼
- * DB ÄÃ·³¿¡ ¸ÂÃç¼­ ÀÛ¼ºÇÑ´Ù. + Ã³¸®µÈ °á°ú
+ï»¿/*
+ * íšŒì› ë°ì´í„° ì €ì¥í•˜ëŠ” ê°ì²´
+ * DB ì»¬ëŸ¼ì— ë§ì¶°ì„œ ì‘ì„±í•œë‹¤. + ì²˜ë¦¬ëœ ê²°ê³¼
  */
 package com.webjjang.member.dto;
 
 public class memberDTO {
 
-	// private - °³ÀÎÀûÀÎ : °°Àº Å¬·¡¼­ ³»¿¡¼­¸¸ »ç¿ëÇÑ´Ù.
+	// private - ê°œì¸ì ì¸ : ê°™ì€ í´ë˜ì„œ ë‚´ì—ì„œë§Œ ì‚¬ìš©í•œë‹¤.
 	private String id;
 	private String pw;
 	private String name;
@@ -19,11 +19,11 @@ public class memberDTO {
 	private String status;
 	private int grade;
 	
-	// µ¥ÀÌÅÍ¸¦ ²¨³»¿Ã ¶§ : getMethod¸¦ ÀÛ¼º
-	// µ¥ÀÌÅÍ¸¦ ³ÖÀ» ¶§ : setMethod¸¦ ÀÛ¼º
-	// º¯°æÀÌ ¾ÈµÇ´Â µ¥ÀÌÅÍµéÀº set¸¦ »«´Ù.
-	// º¸¾ÈÀÌ³ª µ¥ÀÌÅÍ °ü¸®¿¡ ÀÖ¾î¼­ È¿À²ÀûÀÌ´Ù.
-	// ÇÁ·¹ÀÓ¿öÅ© : JSP, Spring -> °­Á¦ÇÏ°íÀÖ´Ù. -> property(get,setÀ» ¸¸µå´Â °Í)
+	// ë°ì´í„°ë¥¼ êº¼ë‚´ì˜¬ ë•Œ : getMethodë¥¼ ì‘ì„±
+	// ë°ì´í„°ë¥¼ ë„£ì„ ë•Œ : setMethodë¥¼ ì‘ì„±
+	// ë³€ê²½ì´ ì•ˆë˜ëŠ” ë°ì´í„°ë“¤ì€ setë¥¼ ëº€ë‹¤.
+	// ë³´ì•ˆì´ë‚˜ ë°ì´í„° ê´€ë¦¬ì— ìˆì–´ì„œ íš¨ìœ¨ì ì´ë‹¤.
+	// í”„ë ˆì„ì›Œí¬ : JSP, Spring -> ê°•ì œí•˜ê³ ìˆë‹¤. -> property(get,setì„ ë§Œë“œëŠ” ê²ƒ)
 	public String getId() {
 		return id;
 	}
@@ -90,8 +90,8 @@ public class memberDTO {
 	public void setGrade(int grade) {
 		this.grade = grade;
 	}
-	// °³¹ßÀÚÀÇ µ¥ÀÌÅÍ È®ÀÎ¿ë
-	// ¾î³ëÅ×ÀÌ¼Ç - Over ride <-> Over load
+	// ê°œë°œìì˜ ë°ì´í„° í™•ì¸ìš©
+	// ì–´ë…¸í…Œì´ì…˜ - Over ride <-> Over load
 	@Override 
 	public String toString() {
 		return "memberDTO [id=" + id + ", pw=" + pw + ", name=" + name + ", gender=" + gender + ", birth=" + birth

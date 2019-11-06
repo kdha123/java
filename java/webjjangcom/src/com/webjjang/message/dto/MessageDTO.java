@@ -1,4 +1,4 @@
-package com.webjjang.message.dto;
+﻿package com.webjjang.message.dto;
 
 public class MessageDTO {
 	

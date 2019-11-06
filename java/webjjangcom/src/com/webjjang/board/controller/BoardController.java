@@ -1,100 +1,173 @@
-/*
- * °Ô½ÃÆÇ¸Ş´º 
+ï»¿/*
+ * ê²Œì‹œíŒë©”ë‰´ 
  * [board]
- * 1. ¸®½ºÆ®
- * 2. º¸±â
- * 3. µî·Ï
- * 4. ¼öÁ¤
- * 5. »èÁ¦
- * 0. ÀÌÀü¸Ş´º
+ * 1. ë¦¬ìŠ¤íŠ¸
+ * 2. ë³´ê¸°
+ * 3. ë“±ë¡
+ * 4. ìˆ˜ì •
+ * 5. ì‚­ì œ
+ * 0. ì´ì „ë©”ë‰´
  */
 package com.webjjang.board.controller;
 
 import java.util.List;
-import java.util.Scanner;
 
 import com.webjjang.board.dto.BoardDTO;
+import com.webjjang.board.service.BoardDeleteService;
 import com.webjjang.board.service.BoardListService;
+import com.webjjang.board.service.BoardUpdateService;
 import com.webjjang.board.service.BoardViewService;
+import com.webjjang.board.service.BoardWriteService;
 import com.webjjang.main.Controller;
+import com.webjjang.util.io.Input;
+import com.webjjang.util.io.OutPut;
 import com.webjjang.view.BoardView;
 
 public class BoardController implements Controller{
 
 	// Main.scanner.nextLine();
-	public static Scanner scanner = new Scanner(System.in);
+//	public static Scanner scanner = new Scanner(System.in);
 	
 	@Override
-	// public °ø°øÀÇ - main ÆĞÅ°ÁöÀÇ Main Å¬·¡½º¿¡¼­ »ç¿ëÇÑ´Ù.
+	// public ê³µê³µì˜ - main íŒ¨í‚¤ì§€ì˜ Main í´ë˜ìŠ¤ì—ì„œ ì‚¬ìš©í•œë‹¤.
 	public void execute() {
 		
-		System.out.println("---------------");
-		System.out.println("---- ÀÏ¹İ °Ô½ÃÆÇ ----");
-		System.out.println("---------------");
-		// °Ô½ÃÆÇÀ» ¹«ÇÑ ¹İº¹ Ã³¸® - 0À» ÀÔ·ÂÇÏ¸é ÀÌÀü ¸Ş´º·Î °£´Ù.(Main)
+		OutPut.title("ì¼ë°˜ê²Œì‹œíŒ");
+		// ê²Œì‹œíŒì„ ë¬´í•œ ë°˜ë³µ ì²˜ë¦¬ - 0ì„ ì…ë ¥í•˜ë©´ ì´ì „ ë©”ë‰´ë¡œ ê°„ë‹¤.(Main)
 		while(true) {
 			try {
-			// °Ô½ÃÆÇ¸Ş´º Ãâ·Â
-			System.out.println();
-			System.out.println("1.¸®½ºÆ® 2.º¸±â 3.µî·Ï");
-			System.out.println("4.¼öÁ¤ 5.»èÁ¦ 0.ÀÌÀü¸Ş´º");
-			// ¸ŞÀÎ¸Ş´º ¹øÈ£ ¼±ÅÃ
-			System.out.println("¸Ş´ºÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
-			String menu = scanner.nextLine();
-			// ¸ŞÀÎ ¸Ş´º Ã³¸®
+			// ê²Œì‹œíŒë©”ë‰´ ì¶œë ¥
+			OutPut.menu("1.ë¦¬ìŠ¤íŠ¸  2.ë³´ê¸°  3.ë“±ë¡",
+					"4.ìˆ˜ì •  5.ì‚­ì œ  0.ì´ì „ë©”ë‰´");
+			// ë©”ì¸ë©”ë‰´ ë²ˆí˜¸ ì„ íƒ
+//			System.out.println("ë©”ë‰´ì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+			String menu = Input.getStringWithMessage("ë©”ë‰´ì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+			// ë©”ì¸ ë©”ë‰´ ì²˜ë¦¬
 			switch (menu) {
 			case "1":
-				System.out.println("°Ô½ÃÆÇ ¸®½ºÆ® Ã³¸®");
-				// °´Ã¼ »ı¼º : BoardController -> BoardListService 
+				System.out.println("ê²Œì‹œíŒ ë¦¬ìŠ¤íŠ¸ ì²˜ë¦¬");
+				// ê°ì²´ ìƒì„± : BoardController -> BoardListService 
 				//                         -> BoardDAO
 				BoardListService boardListService = new BoardListService();
-				// µ¥ÀÌÅÍ °¡Á®¿À±â -> ¸Ş¼­µå È£Ãâ
+				// ë°ì´í„° ê°€ì ¸ì˜¤ê¸° -> ë©”ì„œë“œ í˜¸ì¶œ
 				List<BoardDTO> list = boardListService.service();
-				// °¡Á®¿Â µ¥ÀÌÅÍ¸¦ Ãâ·Â(°´Ã¼¸¦ »ı¼º ->¸Ş¼­µå È£Ãâ)
+				// ê°€ì ¸ì˜¨ ë°ì´í„°ë¥¼ ì¶œë ¥(ê°ì²´ë¥¼ ìƒì„± ->ë©”ì„œë“œ í˜¸ì¶œ)
 				BoardView boardView = new BoardView();
 				boardView.list(list);
-				// try catch¸¦ ¿À·ù¸¦ ÇÑ¹ø¿¡ ´Ù ÀâÀ» ¼ö ÀÖ°Ô µÈ´Ù.
+				// try catchë¥¼ ì˜¤ë¥˜ë¥¼ í•œë²ˆì— ë‹¤ ì¡ì„ ìˆ˜ ìˆê²Œ ëœë‹¤.
 				break;
 			case "2":
-				System.out.println("°Ô½ÃÆÇ º¸±â Ã³¸®");
-				// list¸¦ ¸ÕÀú ½ÇÇàÇÏ½Ã°í ÀÖ´Â ±Û¹øÈ£¸¦ ¼±ÅÃÇÑ´Ù.
-				System.out.println("º¸¿©ÁÙ ±Û¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-				int no = Integer.parseInt(scanner.nextLine());
-				BoardViewService boardViewService = new BoardViewService();
-				// µ¥ÀÌÅÍ °¡Á®¿À±â
-				BoardDTO dto = boardViewService.service(no);
-				// »ı¼ºÇÏ°í È£Ãâ
-				//µ¥ÀÌÅÍ Ãâ·Â(»ı¼º->È£Ãâ)
-				BoardView boardView2 = new BoardView();
-				boardView2.view(dto);
+				System.out.println("ê²Œì‹œíŒ ë³´ê¸° ì²˜ë¦¬");
+				// listë¥¼ ë¨¼ì € ì‹¤í–‰í•˜ì‹œê³  ìˆëŠ” ê¸€ë²ˆí˜¸ë¥¼ ì„ íƒí•œë‹¤.
+				getDTO("ë³´ì—¬ì¤„ ê¸€ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 				break;
 			case "3":
-				System.out.println("°Ô½ÃÆÇ µî·Ï Ã³¸®");
+				System.out.println("ê²Œì‹œíŒ ë“±ë¡ ì²˜ë¦¬");
+				// ì‚¬ìš©ìì—ê²Œ ë°ì´í„°ë¥¼ ë°›ëŠ”ë‹¤. -> dto ê°ì²´ë¡œ ë§Œë“ ë‹¤.
+				// ì œëª©, ë‚´ìš©, ì‘ì„±ì
+//				BoardDTO inDto = inputDTO();
+				// controller -> service -> dao
+				BoardWriteService boardWriteService
+				= new BoardWriteService();
+				boardWriteService.service(inputDTO());
 				break;
 			case "4":
-				System.out.println("°Ô½ÃÆÇ ¼öÁ¤ Ã³¸®");
+				System.out.println("ê²Œì‹œíŒ ìˆ˜ì • ì²˜ë¦¬");
+				// ìˆ˜ì •í•  ê¸€ë²ˆí˜¸ë¥¼ ë°›ëŠ”ë‹¤ -> ê¸€ì„ ê°€ì ¸ì˜¨ë‹¤. (viewService)í‘œì‹œ
+				BoardDTO boardDTO = getDTO("ìˆ˜ì •í•  ê¸€ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+				// -> ê°€ì ¸ì˜¨ dtoì˜ ë°ì´í„°ë¥¼ í•­ëª©ë³„ë¡œ ìˆ˜ì •í•œë‹¤.
+				changeData(boardDTO);
+				System.out.println(boardDTO);
+				// -> DBì— ìˆ˜ì •ì²˜ë¦¬ë¥¼ í•œë‹¤.(service->dao)
+				BoardUpdateService boardUpdateService = new BoardUpdateService();
+				boardUpdateService.service(boardDTO);
 				break;
+				
+				
 			case "5":
-				System.out.println("°Ô½ÃÆÇ »èÁ¦ Ã³¸®");
+				System.out.println("ê²Œì‹œíŒ ì‚­ì œ ì²˜ë¦¬");
+				// ì‚­ì œí•  ê¸€ë²ˆí˜¸ ë°›ê¸°
+				
+				// ê¸€ë²ˆí˜¸ì— ë§ëŠ” DBì— ë°ì´í„°ë¥¼ ì‚­ì œ - delete
+				new BoardDeleteService().service(Input.getIntWithMessageOfSmart("ì‚­ì œí•  ê¸€ë²ˆí˜¸ ì…ë ¥"));
 				break;
 			case "0":
-				System.out.println("ÀÌÀü¸Ş´º.");
+				System.out.println("ì´ì „ë©”ë‰´.");
 				return;
 
 			default:
-				System.out.println("Àß¸øµÈ ¸Ş´º¸¦ ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. \n ´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+				System.out.println("ì˜ëª»ëœ ë©”ë‰´ë¥¼ ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. \n ë‹¤ì‹œ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 				break;
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-			// °³¹ßÀÚ¸¦ À§ÇÑ ÄÚµå
+			// ê°œë°œìë¥¼ ìœ„í•œ ì½”ë“œ
 			e.printStackTrace();
-			//»ç¿ëÀÚ¸¦ À§ÇÑ ÄÚµå
-			System.out.println("°Ô½ÃÆÇÀ» Ã³¸®ÇÏ´Â Áß ¿À·ù°¡ ¹ß»ıµÇ¾ú½À´Ï´Ù.");
-			System.out.println("Àá½Ã ÈÄ¿¡ ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.");
-			System.out.println("°è¼Ó ÁøÇàÀÌ ¾ÈµÇ¸é Àü»ê´ã´çÀÚ ¿¡°Ô ¿¬¶ôÇØ ÁÖ¼¼¿ä.");
+			//ì‚¬ìš©ìë¥¼ ìœ„í•œ ì½”ë“œ
+			System.out.println(e.getMessage());
+			System.out.println("ê²Œì‹œíŒì„ ì²˜ë¦¬í•˜ëŠ” ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒë˜ì—ˆìŠµë‹ˆë‹¤.");
+			System.out.println("ì ì‹œ í›„ì— ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.");
+			System.out.println("ê³„ì† ì§„í–‰ì´ ì•ˆë˜ë©´ ì „ì‚°ë‹´ë‹¹ì ì—ê²Œ ì—°ë½í•´ ì£¼ì„¸ìš”.");
 		}
 	}
 	}
 
+	//ê²Œì‹œíŒì˜ ë‚´ìš©ì„ ì…ë ¥ë°›ëŠ” ë©”ì„œë“œ -> dtoìƒì„± -> ì œëª©, ë‚´ìš© , ì‘ì„±ìì…ë ¥í•˜ê³  ë¦¬í„´í•œë‹¤.
+	public BoardDTO inputDTO() {
+		BoardDTO dto = new BoardDTO();
+		dto.setTitle(Input.getStringWithMessage("ì œëª©"));
+		dto.setContent(Input.getStringWithMessage("ë‚´ìš©"));
+		dto.setWriter(Input.getStringWithMessage("ì‘ì„±ì"));
+		return dto;
+	}
+	
+	// DBì—ì„œ DTO ê°€ì ¸ì˜¤ëŠ” í”„ë¡œê·¸ë¨ ì‘ì„±
+	public BoardDTO getDTO(String msg) throws Exception {
+		// ê¸€ ë²ˆí˜¸ë¥¼ ë°›ëŠ”ë‹¤.
+		int no = Input.getIntWithMessageOfSmart(msg);
+		BoardViewService boardViewService = new BoardViewService();
+		// ë°ì´í„° ê°€ì ¸ì˜¤ê¸°
+		BoardDTO dto = boardViewService.service(no);
+		// ìƒì„±í•˜ê³  í˜¸ì¶œ
+		//ë°ì´í„° ì¶œë ¥(ìƒì„±->í˜¸ì¶œ)
+		BoardView boardView = new BoardView();
+		boardView.view(dto);
+		// viewì—ì„œëŠ” ë²„ë¦°ë‹¤. updateì—ì„œëŠ” ìˆ˜ì •í•  ë•Œ ì‚¬ìš©í•œë‹¤.
+		return dto;
+	}
+	
+	// ê°€ì ¸ì˜¨ ë°ì´í„°ë¥¼ ìˆ˜ì •í•˜ëŠ” ë©”ì„œë“œ
+	public void changeData(BoardDTO dto) {
+		//ì…ë ¥ë°ì´í„°ê°€ 0ì´ ë ë•Œê¹Œì§€ ë¬´í•œ ë°˜ë³µ
+		while(true) {			
+			//ë³€ê²½í•  ë°ì´í„°ë¥¼ ì„ íƒ
+			System.out.println("ë³€ê²½ ë‚´ìš©ì„ íƒ -------------");
+			System.out.println("1. ì œëª©, 2. ë‚´ìš©, 3. ì‘ì„±ì, 0. ìˆ˜ì •ì™„ë£Œ");
+			String menu = Input.getStringWithMessage("ìˆ˜ì •í•­ëª©ì„ íƒ");
+			
+			// ìˆ˜ì •í•  ë°ì´í„° ì…ë ¥ë°›ëŠ”ë‹¤.
+			switch (menu) {
+			case "1":
+				dto.setTitle(Input.getStringWithMessage("ì œëª©"));
+				break;
+			case "2":
+				dto.setContent(Input.getStringWithMessage("ë‚´ìš©"));
+				break;
+			case "3":
+				dto.setWriter(Input.getStringWithMessage("ì‘ì„±ì"));
+				break;
+			case "0":
+				return;
+
+			default:
+				System.out.println("ì˜ëª»ëœ í•­ëª©ì„ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤.");
+				break;
+			}
+			
+			// ë°ì´í„°ê°€ ìˆ˜ì •ì´ ë˜ì—ˆìœ¼ë©´ ì¶œë ¥í•´ì„œ í™•ì¸í•  ìˆ˜ ìˆë„ë¡ ì œê³µí•œë‹¤.
+			new BoardView().view(dto); 
+			
+		}
+		
+	}
 }

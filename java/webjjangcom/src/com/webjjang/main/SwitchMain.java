@@ -1,82 +1,130 @@
-/*
- * √≥¿Ω Ω√¿€«œ¥¬  main ∫Œ∫– : PL¿Ã ¿€º∫«ÿº≠ ≥÷æÓµ–¥Ÿ.
- * ∞¢∞¢¿« ∏µ‚ ƒ¡∆Æ∑—∑Øø°º≠ ªÁøÎ«“ ∏ﬁº≠µÂ∏¶ ¡§¿««ÿ≥ı¿∫ ¿Œ≈Õ∆‰¿ÃΩ∫∏¶ ∏∏µÁ¥Ÿ.
- * ∞¢∞¢¿« ∏µ‚ ƒ¡∆Æ∑—∑Ø∏¶ ¿€º∫«“ ∂ßø° π›µÂΩ√ ¿Œ≈Õ∆‰¿ÃΩ∫∏¶ ªÛº”πﬁæ∆º≠ ∏∏µÈæÓæﬂ«—¥Ÿ∞Ì ∞≠¡¶«—¥Ÿ.
- * ∏ﬁ¥∫±∏º∫µµ
+Ôªø/*
+ * Ï≤òÏùå ÏãúÏûëÌïòÎäî  main Î∂ÄÎ∂Ñ : PLÏù¥ ÏûëÏÑ±Ìï¥ÏÑú ÎÑ£Ïñ¥ÎëîÎã§.
+ * Í∞ÅÍ∞ÅÏùò Î™®Îìà Ïª®Ìä∏Î°§Îü¨ÏóêÏÑú ÏÇ¨Ïö©Ìï† Î©îÏÑúÎìúÎ•º Ï†ïÏùòÌï¥ÎÜìÏùÄ Ïù∏ÌÑ∞ÌéòÏù¥Ïä§Î•º ÎßåÎì†Îã§.
+ * Í∞ÅÍ∞ÅÏùò Î™®Îìà Ïª®Ìä∏Î°§Îü¨Î•º ÏûëÏÑ±Ìï† ÎïåÏóê Î∞òÎìúÏãú Ïù∏ÌÑ∞ÌéòÏù¥Ïä§Î•º ÏÉÅÏÜçÎ∞õÏïÑÏÑú ÎßåÎì§Ïñ¥ÏïºÌïúÎã§Í≥† Í∞ïÏ†úÌïúÎã§.
+ * Î©îÎâ¥Íµ¨ÏÑ±ÎèÑ
  * [main]
- * 1. ∞¯¡ˆªÁ«◊
- * 2. ∞‘Ω√∆«
- * 3. ¿ÃπÃ¡ˆ
- * 4. ¡˙πÆ¥‰∫Ø
- * 5. ∏ﬁºº¡ˆ
- * 6. »∏ø¯∞¸∏Æ
- * 0. ¡æ∑·
+ * 1. Í≥µÏßÄÏÇ¨Ìï≠
+ * 2. Í≤åÏãúÌåê
+ * 3. Ïù¥ÎØ∏ÏßÄ
+ * 4. ÏßàÎ¨∏ÎãµÎ≥Ä
+ * 5. Î©îÏÑ∏ÏßÄ
+ * 6. ÌöåÏõêÍ¥ÄÎ¶¨
+ * 0. Ï¢ÖÎ£å
  * 
  */
 package com.webjjang.main;
 
-import java.util.Scanner;
 
 import com.webjjang.board.controller.BoardController;
+import com.webjjang.member.dto.LoginDTO;
+import com.webjjang.member.service.LoginService;
 import com.webjjang.notice.controller.NoticeController;
+import com.webjjang.qna.controller.QnaController;
+import com.webjjang.util.io.Input;
+import com.webjjang.util.io.OutPut;
 
 public class SwitchMain {
 
 	// Main.scanner.nextLine();
-	public static Scanner scanner = new Scanner(System.in);
+//	public static Scanner scanner = new Scanner(System.in);
+	
+	// Î°úÍ∑∏Ïù∏ Ï†ïÎ≥¥Î•º Ï†ÄÏû•ÌïòÎäî Í∞ùÏ≤¥ -> Ï¥àÍ∏∞Í∞íÏùÄ Î°úÍ∑∏Ïù∏ ÏïàÎêú ÏÉÅÌÉú(null)
+	public static LoginDTO login = null;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		// ∏ﬁ¿Œ¿ª π´«— π›∫π √≥∏Æ - 0¿ª ¿‘∑¬«œ∏È ¡æ∑·Ω√≈≤¥Ÿ.
+		// ÌôòÏòÅÎ©îÏãúÏßÄ Ï∂úÎ†•
+		System.out.println("ÌôòÏòÅÌï©ÎãàÎã§~~");
+		System.out.println();
+		// Î©îÏù∏ÏùÑ Î¨¥Ìïú Î∞òÎ≥µ Ï≤òÎ¶¨ - 0ÏùÑ ÏûÖÎ†•ÌïòÎ©¥ Ï¢ÖÎ£åÏãúÌÇ®Îã§.
 		while(true) {
-			// ∏ﬁ¿Œ∏ﬁ¥∫ √‚∑¬
-			System.out.println("1.∞¯¡ˆªÁ«◊ 2.∞‘Ω√∆« 3.¿ÃπÃ¡ˆ");
-			System.out.println("4.¡˙πÆ¥‰∫Ø 5.∏ﬁºº¡ˆ 6.»∏ø¯∞¸∏Æ");
-			System.out.println("0.¡æ∑·");
-			// ∏ﬁ¿Œ∏ﬁ¥∫ π¯»£ º±≈√
-			System.out.println("∏ﬁ¥∫¿« π¯»£∏¶ ¿‘∑¬«œººø‰");
-			String menu = scanner.nextLine();
-			// ∏ﬁ¿Œ ∏ﬁ¥∫ √≥∏Æ
+			// Î©îÏù∏ Ï†úÎ™©Ï∂úÎ†•
+			OutPut.title("Webbjjang Î©îÏù∏");
+			
+			//Î°úÍ∑∏Ïù∏ Ï†ïÎ≥¥ Ï∂úÎ†•
+			OutPut.loginInfo();
+			
+			// Î©îÏù∏Î©îÎâ¥ Ï∂úÎ†•
+			
+			OutPut.menu("1.Í≥µÏßÄÏÇ¨Ìï≠ 2.Í≤åÏãúÌåê 3.Ïù¥ÎØ∏ÏßÄ",
+					"4.ÏßàÎ¨∏ÎãµÎ≥Ä 5.Î©îÏÑ∏ÏßÄ 6.ÌöåÏõêÍ¥ÄÎ¶¨", 
+					"7."+((login == null)?"Î°úÍ∑∏Ïù∏":"Î°úÍ∑∏ÏïÑÏõÉ")+ "    0.Ï¢ÖÎ£å");
+			
+			// Î©îÏù∏Î©îÎâ¥ Î≤àÌò∏ ÏÑ†ÌÉù
+//			System.out.println("Î©îÎâ¥Ïùò Î≤àÌò∏Î•º ÏûÖÎ†•ÌïòÏÑ∏Ïöî");
+//			String menu = scanner.nextLine();
+			String menu = Input.getStringWithMessage("Î©îÎâ¥Ïùò Î≤àÌò∏Î•º ÏûÖÎ†•ÌïòÏÑ∏Ïöî.");
+//			// Î©îÏù∏ Î©îÎâ¥ Ï≤òÎ¶¨
 			switch (menu) {
 			case "1":
-				System.out.println("∞¯Ω√ªÁ«◊√≥∏Æ");
-				// ∞¥√º ª˝º∫ - main memoryø° ø√∏∞¥Ÿ. : new
+				System.out.println("Í≥µÏãúÏÇ¨Ìï≠Ï≤òÎ¶¨");
+				// Í∞ùÏ≤¥ ÏÉùÏÑ± - main memoryÏóê Ïò¨Î¶∞Îã§. : new
 				NoticeController noticeController = new NoticeController();
-				// ª˝º∫«— ∞¥√º¿« √≥∏ÆπÆ¿Ã µÈæÓ ¿÷¥¬ ∏ﬁº≠µÂ∏¶ »£√‚«ÿº≠ √≥∏Æ«œµµ∑œ Ω√≈≤¥Ÿ.
+				// ÏÉùÏÑ±Ìïú Í∞ùÏ≤¥Ïùò Ï≤òÎ¶¨Î¨∏Ïù¥ Îì§Ïñ¥ ÏûàÎäî Î©îÏÑúÎìúÎ•º Ìò∏Ï∂úÌï¥ÏÑú Ï≤òÎ¶¨ÌïòÎèÑÎ°ù ÏãúÌÇ®Îã§.
 				noticeController.execute();
-				// switch πÆ¿ª ∫¸¡Æ ≥™∞£¥Ÿ.
-				// break : switch, for, while πÆ¿ª ∫¸¡Æ≥™∞•∂ß ªÁøÎ«—¥Ÿ.
-				// break∞° æ¯¥¬ ∞ÊøÏ¥¬ caseø° ∏¬¥¬ ∞™¿Ã∂Ûº≠ case æ∆∑°∑Œ √≥∏Æ«œ±‚ ¿ß«ÿ µÈæÓø¿∏È
-				// ±◊ æ∆∑°∑Œ caseøÕ ªÛ∞¸æ¯¿Ã √≥∏ÆπÆ¿ª √≥∏Æ«œ∞‘ µ»¥Ÿ.
+				// switch Î¨∏ÏùÑ Îπ†Ï†∏ ÎÇòÍ∞ÑÎã§.
+				// break : switch, for, while Î¨∏ÏùÑ Îπ†Ï†∏ÎÇòÍ∞àÎïå ÏÇ¨Ïö©ÌïúÎã§.
+				// breakÍ∞Ä ÏóÜÎäî Í≤ΩÏö∞Îäî caseÏóê ÎßûÎäî Í∞íÏù¥ÎùºÏÑú case ÏïÑÎûòÎ°ú Ï≤òÎ¶¨ÌïòÍ∏∞ ÏúÑÌï¥ Îì§Ïñ¥Ïò§Î©¥
+				// Í∑∏ ÏïÑÎûòÎ°ú caseÏôÄ ÏÉÅÍ¥ÄÏóÜÏù¥ Ï≤òÎ¶¨Î¨∏ÏùÑ Ï≤òÎ¶¨ÌïòÍ≤å ÎêúÎã§.
 				break;
 			case "2":
-				System.out.println("∞‘Ω√∆«√≥∏Æ");
+				System.out.println("Í≤åÏãúÌåêÏ≤òÎ¶¨");
 				BoardController BoardController = new BoardController();
 				BoardController.execute();
 				break;
 			case "3":
-				System.out.println("¿ÃπÃ¡ˆ√≥∏Æ");
+				System.out.println("Ïù¥ÎØ∏ÏßÄÏ≤òÎ¶¨");
 				break;
 			case "4":
-				System.out.println("¡˙πÆ¥‰∫Ø√≥∏Æ");
+				System.out.println("ÏßàÎ¨∏ÎãµÎ≥ÄÏ≤òÎ¶¨");
+				QnaController qnaController = new QnaController();
+				qnaController.execute();
 				break;
 			case "5":
-				System.out.println("∏ﬁºº¡ˆ√≥∏Æ");
+				System.out.println("Î©îÏÑ∏ÏßÄÏ≤òÎ¶¨");
 				break;
 			case "6":
-				System.out.println("»∏ø¯∞¸∏Æ√≥∏Æ");
+				System.out.println("ÌöåÏõêÍ¥ÄÎ¶¨Ï≤òÎ¶¨");
+				break;
+			case "7":
+				System.out.println("Î°úÍ∑∏Ïù∏/Î°úÍ∑∏ÏïÑÏõÉ Ï≤òÎ¶¨");
+				if(login != null) {
+					// Î°úÍ∑∏Ïù∏ÏÉÅÌÉú -> Î°úÍ∑∏ÏïÑÏõÉ Ï≤òÎ¶¨ -> login = null;
+					login = null;
+					System.out.println("***[Î°úÍ∑∏ÏïÑÏõÉÏ≤òÎ¶¨Í∞Ä ÎêòÏÖ®ÏäµÎãàÎã§.]***");
+				} else {					
+						login();
+					}
 				break;
 			case "0":
-				System.out.println("¡æ∑·√≥∏Æ");
-				// Ω√Ω∫≈€ ¡æ∑· - 0:¡§ªÛ¡æ∑· - ¡æ∑·∏Ì∑…¿∏∑Œ ¡æ∑·∞° ¿Ã∑Ô¡≥¥Ÿ.
+				System.out.println("Ï¢ÖÎ£åÏ≤òÎ¶¨");
+				// ÏãúÏä§ÌÖú Ï¢ÖÎ£å - 0:Ï†ïÏÉÅÏ¢ÖÎ£å - Ï¢ÖÎ£åÎ™ÖÎ†πÏúºÎ°ú Ï¢ÖÎ£åÍ∞Ä Ïù¥Î§ÑÏ°åÎã§.
 				System.exit(0);
 
 			default:
-				System.out.println("¿ﬂ∏¯µ» ∏ﬁ¥∫∏¶ ¿‘∑¬«œºÃΩ¿¥œ¥Ÿ. \n ¥ŸΩ√ ¿‘∑¬«ÿ ¡÷ººø‰.");
+				System.out.println("ÏûòÎ™ªÎêú Î©îÎâ¥Î•º ÏûÖÎ†•ÌïòÏÖ®ÏäµÎãàÎã§. \n Îã§Ïãú ÏûÖÎ†•Ìï¥ Ï£ºÏÑ∏Ïöî.");
 				break;
-			}
+			}// end of switch
+		}// end of while(true)
+	}// end of Main()
+	
+	//Î°úÍ∑∏Ïù∏ Ï≤òÎ¶¨ÌïòÎäî Î©îÏÑúÎìú
+	public static void login() {
+		// Î°úÍ∑∏ÏïÑÏõÉ ÏÉÅÌÉú -> Î°úÍ∑∏Ïù∏ Ï≤òÎ¶¨ -> id, pw Î∞õÏïÑÏÑú DBÏóêÏÑú Í∞ÄÏ†∏Ïò® Îç∞Ïù¥ÌÑ∞ ÎÑ£Í∏∞
+		LoginDTO dto = new LoginDTO();
+		dto.setId(Input.getStringWithMessage("ID : "));
+		dto.setPw(Input.getStringWithMessage("PW : "));
+		// controller - service - DAO
+		LoginService loginservice = new LoginService();
+		try {
+			login = loginservice.service(dto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
-}
+}// end of switchMain class

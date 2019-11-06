@@ -1,4 +1,4 @@
-package com.webjjang.board.service;
+ï»¿package com.webjjang.board.service;
 
 import java.util.List;
 
@@ -8,11 +8,11 @@ import com.webjjang.board.dto.BoardDTO;
 public class BoardListService {
 
 	public List<BoardDTO> service() throws Exception {
-		// µ¥ÀÌÅÍ Ã³¸®ºÎºĞ¿¡ ÇØ´çµÈ´Ù.
+		// ë°ì´í„° ì²˜ë¦¬ë¶€ë¶„ì— í•´ë‹¹ëœë‹¤.
 		
 		System.out.println("BoardListService.service()");
 		
-		// µ¥ÀÌÅÍ¸¦ ¿À¶óÅ¬¿¡¼­ °¡Á®¿À±â À§ÇØ¼­ °´Ã¼¸¦ »ı¼ºÇÏ°í È£ÃâÇÑ´Ù.
+		// ë°ì´í„°ë¥¼ ì˜¤ë¼í´ì—ì„œ ê°€ì ¸ì˜¤ê¸° ìœ„í•´ì„œ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  í˜¸ì¶œí•œë‹¤.
 		BoardDAO dao = new BoardDAO();
 		return dao.list();
 		// BoardController - BoardListService - [BoardDAO]

@@ -1,4 +1,4 @@
-package com.webjjang.view;
+ï»¿package com.webjjang.view;
 
 import java.util.List;
 
@@ -6,14 +6,14 @@ import com.webjjang.board.dto.BoardDTO;
 
 public class BoardView {
 	
-	// list È­¸é¿¡ Ãâ·Â
+	// list í™”ë©´ì— ì¶œë ¥
 	public void list(List<BoardDTO> list) {
-		// title Ãâ·Â
+		// title ì¶œë ¥
 		System.out.println("***************");
-		System.out.println("*** °Ô½ÃÆÇ¸®½ºÆ®  ***");
+		System.out.println("*** ê²Œì‹œíŒë¦¬ìŠ¤íŠ¸  ***");
 		System.out.println("****************");
-		System.out.println("| ¹øÈ£  |   Á¦¸ñ     |  ÀÛ¼ºÀÚ   |   ÀÛ¼ºÀÏ     |  Á¶È¸¼ö   |");
-		// list¿¡ ¿©·¯°³ÀÇ µ¥ÀÌÅÍ°¡ µé¾îÀÖÀ¸¹Ç·Î °¢°¢ÀÇ µ¥ÀÌÅÍ¿¡ ´ëÇØ¼­ Ãâ·ÂÀ» ÇÑ´Ù. -> forEach
+		System.out.println("| ë²ˆí˜¸  |   ì œëª©     |  ì‘ì„±ì   |   ì‘ì„±ì¼     |  ì¡°íšŒìˆ˜   |");
+		// listì— ì—¬ëŸ¬ê°œì˜ ë°ì´í„°ê°€ ë“¤ì–´ìˆìœ¼ë¯€ë¡œ ê°ê°ì˜ ë°ì´í„°ì— ëŒ€í•´ì„œ ì¶œë ¥ì„ í•œë‹¤. -> forEach
 		for(BoardDTO dto : list) {
 			System.out.printf("| %d  |   %s   |   %s   |   %s    |  %d  | %n",
 					dto.getNo(),dto.getTitle(),dto.getWriter(),dto.getWriteDate(),dto.getHit());
@@ -21,17 +21,17 @@ public class BoardView {
 		System.out.println();
 	}
 
-	//view È­¸é¿¡ Ãâ·Â
+	//view í™”ë©´ì— ì¶œë ¥
 	public void view(BoardDTO dto) {
 		System.out.println("***************");
-		System.out.println("*** °Ô½ÃÆÇ±Ûº¸±â  ***");
+		System.out.println("*** ê²Œì‹œíŒê¸€ë³´ê¸°  ***");
 		System.out.println("****************");
-		System.out.println("±Û¹øÈ£ : "+ dto.getNo());
-		System.out.println("Á¦¸ñ : "+ dto.getTitle());
-		System.out.println("³»¿ë : "+ dto.getContent());
-		System.out.println("ÀÛ¼ºÀÚ : "+ dto.getWriter());
-		System.out.println("ÀÛ¼ºÀÏ : "+ dto.getWriteDate());
-		System.out.println("Á¶È¸¼ö : "+ dto.getHit());
+		System.out.println("ê¸€ë²ˆí˜¸ : "+ dto.getNo());
+		System.out.println("ì œëª© : "+ dto.getTitle());
+		System.out.println("ë‚´ìš© : "+ dto.getContent());
+		System.out.println("ì‘ì„±ì : "+ dto.getWriter());
+		System.out.println("ì‘ì„±ì¼ : "+ dto.getWriteDate());
+		System.out.println("ì¡°íšŒìˆ˜ : "+ dto.getHit());
 	
 }
 	

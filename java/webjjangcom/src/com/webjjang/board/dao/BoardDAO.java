@@ -1,4 +1,4 @@
-package com.webjjang.board.dao;
+ï»¿package com.webjjang.board.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,66 +8,63 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.webjjang.board.dto.BoardDTO;
+import com.webjjang.util.db.DBUtil;
 
 public class BoardDAO {
 	
-	// °´Ã¼¿¡¼­ »ç¿ëÇÒ DB Á¤º¸ -> list(), view().. ´Ù¸¥ ¸Ş¼­µå¿¡¼­ ´Ù ÇÊ¿ä·Î ÇÏ±â ¶§¹®¿¡
-	// Àü¿ªº¯¼ö·Î ¼±¾ğÇÑ´Ù.
+	// ê°ì²´ì—ì„œ ì‚¬ìš©í•  DB ì •ë³´ -> list(), view().. ë‹¤ë¥¸ ë©”ì„œë“œì—ì„œ ë‹¤ í•„ìš”ë¡œ í•˜ê¸° ë•Œë¬¸ì—
+	// ì „ì—­ë³€ìˆ˜ë¡œ ì„ ì–¸í•œë‹¤.
 	String url = "jdbc:oracle:thin:@402-oracle:1521:orcl";
 	String id = "c##java04";
 	String pw = "java04";
 	
-	// ¿À¶óÅ¬ µå¶óÀÌ¹ö
+	// ì˜¤ë¼í´ ë“œë¼ì´ë²„
 	String driver = "oracle.jdbc.driver.OracleDriver";
 	
 	// service.BoardService -> dao.BoardDAO
-	// 1. °Ô½ÃÆÇ ¸®½ºÆ® µ¥ÀÌÅÍ °¡Á®¿À±â
-	// µ¥ÀÌÅÍ °¡Á®¿À±â°¡ ½ÇÆĞÇÏ¸é Ãâ·ÂÇÏ·¯ °¥ ¼ö°¡ ¾ø´Ù. ±×·±°æ¿ì¿¡´Â ¿¹¿ÜÃ³¸®¸¦ ¹İµå½Ã ÇØ¾ßÇÏ¹Ç·Î
-	// ¿©±â¼­´Â ¿¹¿ÜÃ³¸®ÇÏÁö ¾Ê°í throw ½ÃÅ°´Â °ÍÀ¸·Î ÇÒ ¼ö ÀÖ´Ù.
+	// 1. ê²Œì‹œíŒ ë¦¬ìŠ¤íŠ¸ ë°ì´í„° ê°€ì ¸ì˜¤ê¸°
+	// ë°ì´í„° ê°€ì ¸ì˜¤ê¸°ê°€ ì‹¤íŒ¨í•˜ë©´ ì¶œë ¥í•˜ëŸ¬ ê°ˆ ìˆ˜ê°€ ì—†ë‹¤. ê·¸ëŸ°ê²½ìš°ì—ëŠ” ì˜ˆì™¸ì²˜ë¦¬ë¥¼ ë°˜ë“œì‹œ í•´ì•¼í•˜ë¯€ë¡œ
+	// ì—¬ê¸°ì„œëŠ” ì˜ˆì™¸ì²˜ë¦¬í•˜ì§€ ì•Šê³  throw ì‹œí‚¤ëŠ” ê²ƒìœ¼ë¡œ í•  ìˆ˜ ìˆë‹¤.
 	
 	public List<BoardDTO> list() throws Exception {
 		
 		System.out.println("BoardDAO.list()");
 		
-		// °¡Á®¿Â °á°ú°¡ ÀúÀåµÇ¾î Áö´Â º¯¼ö -> ¸®ÅÏÇØ¾ßÇÏ¹Ç·Î ¸®ÅÏÅ¸ÀÔ°ú °°¾Æ¾ßÇÑ´Ù.
+		// ê°€ì ¸ì˜¨ ê²°ê³¼ê°€ ì €ì¥ë˜ì–´ ì§€ëŠ” ë³€ìˆ˜ -> ë¦¬í„´í•´ì•¼í•˜ë¯€ë¡œ ë¦¬í„´íƒ€ì…ê³¼ ê°™ì•„ì•¼í•œë‹¤.
 		List<BoardDTO> list = null;
 		
-		// µ¥ÀÌÅÍ °¡Á®¿À´Â Ã³¸®¹®
-		// 1. µå¶óÀÌ¹ö È®ÀÎ
-		Class.forName(driver);
-		// 2. ¿¬°á °´Ã¼
-		Connection con = DriverManager.getConnection(url,id,pw);
-		// 3. ½ÇÇàÇÑ Äõ¸®¹® ÀÛ¼º
+		// ë°ì´í„° ê°€ì ¸ì˜¤ëŠ” ì²˜ë¦¬ë¬¸
+		// 1. ë“œë¼ì´ë²„ í™•ì¸ // 2. ì—°ê²° ê°ì²´
+		Connection con = DBUtil.getConnection();
+		// 3. ì‹¤í–‰í•œ ì¿¼ë¦¬ë¬¸ ì‘ì„±
 		String sql = " select no, title, writer, to_char(writeDate, 'yyyy-mm-dd') writeDate, hit "
 				+ "from board order by no desc ";
 		System.out.println("BoardDAO.list().sql : "+ sql);
-		// 4. ½ÇÇà°´Ã¼ °¡Á®¿À±â / µ¥ÀÌÅÍ ¼ÂÆÃ
+		// 4. ì‹¤í–‰ê°ì²´ ê°€ì ¸ì˜¤ê¸° / ë°ì´í„° ì…‹íŒ…
 		PreparedStatement pstmt = con.prepareStatement(sql);
-		// 5. ½ÇÇà
+		// 5. ì‹¤í–‰
 		ResultSet rs = pstmt.executeQuery();
-		// 6. Ç¥½Ã / ÀúÀå
+		// 6. í‘œì‹œ / ì €ì¥
 		if(rs!=null) {
-			// rs.next() : ´ÙÀ½ µ¥ÀÌÅÍ·Î ³Ñ¾î°¡¸é¼­ µ¥ÀÌÅÍ°¡ ÀÖÀ¸¸é true, ¾øÀ¸¸é false¸¦ ¸®ÅÏÇÑ´Ù.
+			// rs.next() : ë‹¤ìŒ ë°ì´í„°ë¡œ ë„˜ì–´ê°€ë©´ì„œ ë°ì´í„°ê°€ ìˆìœ¼ë©´ true, ì—†ìœ¼ë©´ falseë¥¼ ë¦¬í„´í•œë‹¤.
 			while(rs.next()) {
-				// ÃÖÁ¾ÀûÀ¸·Î ÀúÀåÇÒ list°¡ nullÀÌ¸é »ı¼ºÇØ¼­ »ç¿ë°¡´ÉÇÏµµ·Ï ÇØÁØ´Ù.
-				// ArrayList´Â listÀÇ ÀÏÁ¾À¸·Î ¹è¿­À» »ç¿ëÇÑ´Ù.
+				// ìµœì¢…ì ìœ¼ë¡œ ì €ì¥í•  listê°€ nullì´ë©´ ìƒì„±í•´ì„œ ì‚¬ìš©ê°€ëŠ¥í•˜ë„ë¡ í•´ì¤€ë‹¤.
+				// ArrayListëŠ” listì˜ ì¼ì¢…ìœ¼ë¡œ ë°°ì—´ì„ ì‚¬ìš©í•œë‹¤.
 				if(list == null) list = new ArrayList<BoardDTO>();
-				// °Ô½ÃÆÇ ÇÏ³ªÀÇ µ¥ÀÌÅÍ¸¦ ´ã´Â °³Ã¼ »ı¼º -> BoardDTO
+				// ê²Œì‹œíŒ í•˜ë‚˜ì˜ ë°ì´í„°ë¥¼ ë‹´ëŠ” ê°œì²´ ìƒì„± -> BoardDTO
 				BoardDTO dto = new BoardDTO();
-				//µ¥ÀÌÅÍ¸¦ ´ã´Â´Ù. rs¿¡¼­ ²¨³»¼­ dto¿¡ ´ã´Â´Ù.
+				//ë°ì´í„°ë¥¼ ë‹´ëŠ”ë‹¤. rsì—ì„œ êº¼ë‚´ì„œ dtoì— ë‹´ëŠ”ë‹¤.
 				dto.setNo(rs.getInt("no"));
 				dto.setTitle(rs.getString("title"));
 				dto.setWriter(rs.getString("writer"));
 				dto.setWriteDate(rs.getString("writeDate"));
 				dto.setHit(rs.getInt("hit"));
-				// ¸®½ºÆ® µ¥ÀÌÅÍ°¡ ¿©·¯°³ ÀÌ¹Ç·Î µ¥ÀÌÅÍ¸¦ ´ãÀº DTO¸¦ list¿¡ Ãß°¡½ÃÅ²´Ù.
+				// ë¦¬ìŠ¤íŠ¸ ë°ì´í„°ê°€ ì—¬ëŸ¬ê°œ ì´ë¯€ë¡œ ë°ì´í„°ë¥¼ ë‹´ì€ DTOë¥¼ listì— ì¶”ê°€ì‹œí‚¨ë‹¤.
 				list.add(dto);
 			} // end of while(rs.next)
 		}// end of if(rs==null)
-		// 7. ´İ±â
-		con.close();
-		pstmt.close();
-		rs.close();
+		// 7. ë‹«ê¸°
+		DBUtil.close(con, pstmt, rs);
 		
 		System.out.println("BoardDAO.list().list : "+ list);
 		
@@ -78,48 +75,48 @@ public class BoardDAO {
 	// service.BoardService -> dao.BoardDAO
 	
 	
-	// 2. °Ô½ÃÆÇ ±Ûº¸±â µ¥ÀÌÅÍ °¡Á®¿À±â - ÇÑ°³ µ¥ÀÌÅÍ - ±Û¹øÈ£¿¡ µû¶ó¼­ °áÁ¤(Àü´Ş ¹Ş´Â´Ù.)
-	// µ¥ÀÌÅÍ °¡Á®¿À±â°¡ ½ÇÆĞÇÏ¸é Ãâ·ÂÇÏ·¯ °¥ ¼ö°¡ ¾ø´Ù. ±×·±°æ¿ì¿¡´Â ¿¹¿ÜÃ³¸®¸¦ ¹İµå½Ã ÇØ¾ßÇÏ¹Ç·Î
-	// ¿©±â¼­´Â ¿¹¿ÜÃ³¸®ÇÏÁö ¾Ê°í throw ½ÃÅ°´Â °ÍÀ¸·Î ÇÒ ¼ö ÀÖ´Ù.
-	// BoardController : ½ÇÇà³»¿ë °áÁ¤ - µ¥ÀÌÅÍ ¼öÁı / µ¥ÀÌÅÍ Ç¥½Ã
+	// 2. ê²Œì‹œíŒ ê¸€ë³´ê¸° ë°ì´í„° ê°€ì ¸ì˜¤ê¸° - í•œê°œ ë°ì´í„° - ê¸€ë²ˆí˜¸ì— ë”°ë¼ì„œ ê²°ì •(ì „ë‹¬ ë°›ëŠ”ë‹¤.)
+	// ë°ì´í„° ê°€ì ¸ì˜¤ê¸°ê°€ ì‹¤íŒ¨í•˜ë©´ ì¶œë ¥í•˜ëŸ¬ ê°ˆ ìˆ˜ê°€ ì—†ë‹¤. ê·¸ëŸ°ê²½ìš°ì—ëŠ” ì˜ˆì™¸ì²˜ë¦¬ë¥¼ ë°˜ë“œì‹œ í•´ì•¼í•˜ë¯€ë¡œ
+	// ì—¬ê¸°ì„œëŠ” ì˜ˆì™¸ì²˜ë¦¬í•˜ì§€ ì•Šê³  throw ì‹œí‚¤ëŠ” ê²ƒìœ¼ë¡œ í•  ìˆ˜ ìˆë‹¤.
+	// BoardController : ì‹¤í–‰ë‚´ìš© ê²°ì • - ë°ì´í„° ìˆ˜ì§‘ / ë°ì´í„° í‘œì‹œ
 	// BoardController -> Service -> DAO
 	public BoardDTO view(int no) throws Exception {
 		
 		System.out.println("BoardDAO.view().no : " + no);
 		
-		// °¡Á®¿Â °á°ú°¡ ÀúÀåµÇ¾î Áö´Â º¯¼ö -> ¸®ÅÏÇØ¾ßÇÏ¹Ç·Î ¸®ÅÏÅ¸ÀÔ°ú °°¾Æ¾ßÇÑ´Ù.
+		// ê°€ì ¸ì˜¨ ê²°ê³¼ê°€ ì €ì¥ë˜ì–´ ì§€ëŠ” ë³€ìˆ˜ -> ë¦¬í„´í•´ì•¼í•˜ë¯€ë¡œ ë¦¬í„´íƒ€ì…ê³¼ ê°™ì•„ì•¼í•œë‹¤.
 		BoardDTO dto = null;
 		
-		// µ¥ÀÌÅÍ °¡Á®¿À´Â Ã³¸®¹®
-		// 1. µå¶óÀÌ¹ö È®ÀÎ
+		// ë°ì´í„° ê°€ì ¸ì˜¤ëŠ” ì²˜ë¦¬ë¬¸
+		// 1. ë“œë¼ì´ë²„ í™•ì¸
 		Class.forName(driver);
-		// 2. ¿¬°á °´Ã¼
+		// 2. ì—°ê²° ê°ì²´
 		Connection con = DriverManager.getConnection(url,id,pw);
-		// 3. ½ÇÇàÇÑ Äõ¸®¹® ÀÛ¼º
-		// Äõ¸® ¹® Áß¿¡¼­ ?´Â °ªÀ» ´ëÃ¼ ½ÃÅ°´Â ´ëÃ¼ ¹®ÀÚ¿¡ ÇØ´çÀÌµÈ´Ù.
+		// 3. ì‹¤í–‰í•œ ì¿¼ë¦¬ë¬¸ ì‘ì„±
+		// ì¿¼ë¦¬ ë¬¸ ì¤‘ì—ì„œ ?ëŠ” ê°’ì„ ëŒ€ì²´ ì‹œí‚¤ëŠ” ëŒ€ì²´ ë¬¸ìì— í•´ë‹¹ì´ëœë‹¤.
 		String sql = " select no, title, content, writer, to_char(writeDate, 'yyyy-mm-dd') writeDate, hit "
 				+ "from board where no = ? ";
 		System.out.println("BoardDAO.view().sql : "+ sql);
-		// 4. ½ÇÇà°´Ã¼ °¡Á®¿À±â / µ¥ÀÌÅÍ ¼ÂÆÃ
+		// 4. ì‹¤í–‰ê°ì²´ ê°€ì ¸ì˜¤ê¸° / ë°ì´í„° ì…‹íŒ…
 		PreparedStatement pstmt = con.prepareStatement(sql);
-		// pstmt.setInt(?ÀÇ À§Ä¡, ?¸¦ ´ëÃ¼ÇØ¾ßÇÒ °ª)
+		// pstmt.setInt(?ì˜ ìœ„ì¹˜, ?ë¥¼ ëŒ€ì²´í•´ì•¼í•  ê°’)
 		pstmt.setInt(1, no);
-		// 5. ½ÇÇà
+		// 5. ì‹¤í–‰
 		ResultSet rs = pstmt.executeQuery();
-		// 6. Ç¥½Ã / ÀúÀå
+		// 6. í‘œì‹œ / ì €ì¥
 		if(rs!=null && rs.next()) {
-		// °Ô½ÃÆÇ ÇÏ³ªÀÇ µ¥ÀÌÅÍ¸¦ ´ã´Â °³Ã¼ »ı¼º -> BoardDTO
+		// ê²Œì‹œíŒ í•˜ë‚˜ì˜ ë°ì´í„°ë¥¼ ë‹´ëŠ” ê°œì²´ ìƒì„± -> BoardDTO
 			dto = new BoardDTO();
-			//µ¥ÀÌÅÍ¸¦ ´ã´Â´Ù. rs¿¡¼­ ²¨³»¼­ dto¿¡ ´ã´Â´Ù.
+			//ë°ì´í„°ë¥¼ ë‹´ëŠ”ë‹¤. rsì—ì„œ êº¼ë‚´ì„œ dtoì— ë‹´ëŠ”ë‹¤.
 			dto.setNo(rs.getInt("no"));
 			dto.setTitle(rs.getString("title"));
 			dto.setContent(rs.getString("content"));
 			dto.setWriter(rs.getString("writer"));
 			dto.setWriteDate(rs.getString("writeDate"));
 			dto.setHit(rs.getInt("hit"));
-			// ¸®½ºÆ® µ¥ÀÌÅÍ°¡ ¿©·¯°³ ÀÌ¹Ç·Î µ¥ÀÌÅÍ¸¦ ´ãÀº DTO¸¦ list¿¡ Ãß°¡½ÃÅ²´Ù.
+			// ë¦¬ìŠ¤íŠ¸ ë°ì´í„°ê°€ ì—¬ëŸ¬ê°œ ì´ë¯€ë¡œ ë°ì´í„°ë¥¼ ë‹´ì€ DTOë¥¼ listì— ì¶”ê°€ì‹œí‚¨ë‹¤.
 		} // end of if(rs !=null && rs.next())
-	// 7. ´İ±â
+	// 7. ë‹«ê¸°
 		con.close();
 		pstmt.close();
 		rs.close();
@@ -128,5 +125,121 @@ public class BoardDAO {
 		
 		
 		return dto;
-	}// end of list
+	}// end of view()
+	
+	
+	// 3. ê²Œì‹œíŒ ê¸€ì“°ê¸° ë°ì´í„° ê°€ì ¸ì˜¤ê¸° - í•œê°œ ë°ì´í„°  ì „ë‹¬ë°›ì•„ì„œ DBì— ì €ì¥
+	// ì—¬ê¸°ì„œëŠ” ì˜ˆì™¸ì²˜ë¦¬í•˜ì§€ ì•Šê³  throw ì‹œí‚¤ëŠ” ê²ƒìœ¼ë¡œ í•  ìˆ˜ ìˆë‹¤.
+	// BoardController : ì‹¤í–‰ë‚´ìš© ê²°ì • - ë°ì´í„° ìˆ˜ì§‘ / ë°ì´í„° í‘œì‹œ
+	// BoardController -> Service -> DAO
+	
+	public void write(BoardDTO dto) throws Exception {
+		
+		System.out.println("BoardDAO.write().dto : " + dto);
+		
+		// ë°ì´í„° ì €ì¥í•˜ëŠ” ì²˜ë¦¬ë¬¸
+		// 1. ë“œë¼ì´ë²„ í™•ì¸
+		Class.forName(driver);
+		// 2. ì—°ê²° ê°ì²´
+		Connection con = DriverManager.getConnection(url,id,pw);
+		// 3. ì‹¤í–‰í•œ ì¿¼ë¦¬ë¬¸ ì‘ì„±
+		// ì¿¼ë¦¬ ë¬¸ ì¤‘ì—ì„œ ?ëŠ” ê°’ì„ ëŒ€ì²´ ì‹œí‚¤ëŠ” ëŒ€ì²´ ë¬¸ìì— í•´ë‹¹ì´ëœë‹¤.
+		String sql = " insert into board(no, title, content, writer) "
+				+ "values(board_seq.nextval, ?, ?, ?) ";
+		System.out.println("BoardDAO.write().sql : "+ sql);
+		// 4. ì‹¤í–‰ê°ì²´ ê°€ì ¸ì˜¤ê¸° / ë°ì´í„° ì…‹íŒ…
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		// pstmt.setInt(?ì˜ ìœ„ì¹˜, ?ë¥¼ ëŒ€ì²´í•´ì•¼í•  ê°’)
+		pstmt.setString(1, dto.getTitle());
+		pstmt.setString(2, dto.getContent());
+		pstmt.setString(3, dto.getWriter());
+		// 5. ì‹¤í–‰
+		// select -> executeQuery()
+		// insert, update, delete -> executeUpdate()
+		pstmt.executeUpdate();
+		// 6. í‘œì‹œ / ì €ì¥
+		System.out.println("ê¸€ì“°ê¸° ì„±ê³µ");
+		// 7. ë‹«ê¸°
+		con.close();
+		pstmt.close();
+			
+	}// end of write()
+	
+	
+	// 4. ê²Œì‹œíŒ ê¸€ìˆ˜ì • ë°ì´í„° ê°€ì ¸ì˜¤ê¸° - í•œê°œ ë°ì´í„°  ì „ë‹¬ë°›ì•„ì„œ DBì— ìˆ˜ì •
+	// ì—¬ê¸°ì„œëŠ” ì˜ˆì™¸ì²˜ë¦¬í•˜ì§€ ì•Šê³  throw ì‹œí‚¤ëŠ” ê²ƒìœ¼ë¡œ í•  ìˆ˜ ìˆë‹¤.
+	// BoardController : ì‹¤í–‰ë‚´ìš© ê²°ì • - ë°ì´í„° ìˆ˜ì§‘ / ë°ì´í„° í‘œì‹œ
+	// BoardController -> Service -> DAO
+	
+	public void update(BoardDTO dto) throws Exception {
+		
+		// í™•ì¸í•´ì•¼í•  ë°ì´í„° - ë²ˆí˜¸, ì œëª©, ë‚´ìš©, ì‘ì„±ì
+		System.out.println("BoardDAO.update().dto : " + dto);
+		
+		// ë°ì´í„° ì €ì¥í•˜ëŠ” ì²˜ë¦¬ë¬¸
+		// 1. ë“œë¼ì´ë²„ í™•ì¸
+		Class.forName(driver);
+		// 2. ì—°ê²° ê°ì²´
+		Connection con = DriverManager.getConnection(url,id,pw);
+		// 3. ì‹¤í–‰í•œ ì¿¼ë¦¬ë¬¸ ì‘ì„±
+		// ì¿¼ë¦¬ ë¬¸ ì¤‘ì—ì„œ ?ëŠ” ê°’ì„ ëŒ€ì²´ ì‹œí‚¤ëŠ” ëŒ€ì²´ ë¬¸ìì— í•´ë‹¹ì´ëœë‹¤.
+		String sql = " update board set title = ?, content = ?, writer = ? where no = ? ";
+		System.out.println("BoardDAO.update().sql : "+ sql);
+		// 4. ì‹¤í–‰ê°ì²´ ê°€ì ¸ì˜¤ê¸° / ë°ì´í„° ì…‹íŒ…
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		// pstmt.setInt(?ì˜ ìœ„ì¹˜, ?ë¥¼ ëŒ€ì²´í•´ì•¼í•  ê°’)
+		pstmt.setString(1, dto.getTitle());
+		pstmt.setString(2, dto.getContent());
+		pstmt.setString(3, dto.getWriter());
+		pstmt.setInt(4, dto.getNo());
+		// 5. ì‹¤í–‰
+		// select -> executeQuery()
+		// insert, update, delete -> executeUpdate()
+		pstmt.executeUpdate();
+		// 6. í‘œì‹œ / ì €ì¥
+		System.out.println("ê¸€ìˆ˜ì • ì„±ê³µ");
+		// 7. ë‹«ê¸°
+		con.close();
+		pstmt.close();
+		
+	}// end of update()
+	
+	
+	
+	//5. ê²Œì‹œíŒ ê¸€ì‚­ì œ ë°ì´í„° ê°€ì ¸ì˜¤ê¸° - ê¸€ë²ˆí˜¸ë¥¼ ì „ë‹¬ ë°›ì•„ì„œ DBì— ì‚­ì œì²˜ë¦¬ 
+		// ì—¬ê¸°ì„œëŠ” ì˜ˆì™¸ì²˜ë¦¬í•˜ì§€ ì•Šê³  throw ì‹œí‚¤ëŠ” ê²ƒìœ¼ë¡œ í•  ìˆ˜ ìˆë‹¤.
+		// BoardController : ì‹¤í–‰ë‚´ìš© ê²°ì • - ë°ì´í„° ìˆ˜ì§‘ / ë°ì´í„° í‘œì‹œ
+		// BoardController -> Service -> DAO
+	public void delete(int no) throws Exception {
+		
+		// í™•ì¸í•´ì•¼í•  ë°ì´í„° - ë²ˆí˜¸
+		System.out.println("BoardDAO.delete().no : " + no);
+		
+		// ë°ì´í„° ì €ì¥í•˜ëŠ” ì²˜ë¦¬ë¬¸
+		// 1. ë“œë¼ì´ë²„ í™•ì¸
+		Class.forName(driver);
+		// 2. ì—°ê²° ê°ì²´
+		Connection con = DriverManager.getConnection(url,id,pw);
+		// 3. ì‹¤í–‰í•œ ì¿¼ë¦¬ë¬¸ ì‘ì„±
+		// ì¿¼ë¦¬ ë¬¸ ì¤‘ì—ì„œ ?ëŠ” ê°’ì„ ëŒ€ì²´ ì‹œí‚¤ëŠ” ëŒ€ì²´ ë¬¸ìì— í•´ë‹¹ì´ëœë‹¤.
+		String sql = " delete from board where no = ? ";
+		System.out.println("BoardDAO.update().sql : "+ sql);
+		// 4. ì‹¤í–‰ê°ì²´ ê°€ì ¸ì˜¤ê¸° / ë°ì´í„° ì…‹íŒ…
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		// pstmt.setInt(?ì˜ ìœ„ì¹˜, ?ë¥¼ ëŒ€ì²´í•´ì•¼í•  ê°’)
+		pstmt.setInt(1, no);
+		// 5. ì‹¤í–‰
+		// select -> executeQuery()
+		// insert, update, delete -> executeUpdate()
+		pstmt.executeUpdate();
+		// 6. í‘œì‹œ / ì €ì¥
+		System.out.println("ê¸€ì‚­ì œ ì„±ê³µ");
+		// 7. ë‹«ê¸°
+		con.close();
+		pstmt.close();
+		
+	}// end of update()
+
+
+		
 }

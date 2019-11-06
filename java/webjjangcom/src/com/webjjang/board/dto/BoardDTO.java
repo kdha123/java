@@ -1,4 +1,4 @@
-package com.webjjang.board.dto;
+﻿package com.webjjang.board.dto;
 
 public class BoardDTO {
 
