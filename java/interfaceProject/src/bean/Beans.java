@@ -1,9 +1,18 @@
+/*
+ * 자바가 실행되면 사용할 모든 객체를 생성해서 저장하고 있는 객체
+ * static{}에서 모든 객체를 생성
+ * Map<String, Service> serviceMap : 생성된 객체를 저장하는 변수
+ * 호출해서 사용하려는 곳에서 해당되는 service를 받아가는 메서드 : getService()
+ * 저장되어있는 객체들은 service()를 이용해서 실행할 수 있는 형태로 만들어준다.
+ * --> interface로 만들어서 상속하게 한다.
+ */
 package bean;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import main.Service;
+import service.DeleteService;
 import service.ListService;
 import service.UpdateService;
 import service.ViewService;
@@ -21,6 +30,7 @@ public class Beans {
 		serviceMap.put("view", new ViewService());
 		serviceMap.put("write", new WriteService());
 		serviceMap.put("update", new UpdateService());
+		serviceMap.put("delete", new DeleteService());
 	}
 	
 	// 키값을 주면 service를 가져오는 메서드
