@@ -218,3 +218,9 @@ http://www.naver.com:80/index.html
 3. HTML <form action="url"></form> : 많은 데이터를 url로 넘겨서 처리하고자 할때 -> input, select, textarea
 4. JS<tag onclick = "location=url">클릭</tag> location = "url";
 5. response.sendRedirect("url"); -> 서버에서 클라이언트의 브라우저 href의 내용을 바꾸도록 요청
+
+** Servlet : 서버쪽에서 동작되는 자바 프로그램
+- Servlet을 상속 받았다. - 특별한 메소드에 프로그램을 작성
+<특별한 메서드>
+
+-> 프로그램의 간소화 => HTML화 시킨 코드 사용 : JSP
