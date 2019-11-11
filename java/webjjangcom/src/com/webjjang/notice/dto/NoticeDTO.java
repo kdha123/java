@@ -4,6 +4,17 @@ public class NoticeDTO {
 
 	private int no;
 	private String title, content, startDate, endDate, writeDate, updateDate;
+	
+	
+	public NoticeDTO() {}
+	//공지 등록 시 사용되는 생성자.
+	public NoticeDTO(String title, String content, String startDate, String endDate) {
+		this.title = title;
+		this.content = content;
+		this.startDate = startDate;
+		this.endDate = endDate;
+	}
+	
 	public int getNo() {
 		return no;
 	}
