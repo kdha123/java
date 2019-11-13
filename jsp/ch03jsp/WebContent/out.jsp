@@ -25,6 +25,7 @@ for(int i = 1; i<=10; i++){
 <%
 // 스크립트릿작성 - 자바부분입니다.
 for(int i = 1; i<=10; i++){
+	request.setAttribute("i", i);
 %>
 <!-- 서버저장 객체 사용해서 출력 -> 서버저장 객체에 저장을 해놓아야한다. -->
 <!-- :application, session, request,page--> 
