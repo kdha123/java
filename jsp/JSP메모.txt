@@ -31,3 +31,4 @@ url?key=value&key=value
 5. response.sendRedirect("url"); -> 서버에서 클라이언트의 브라저 href의 내용을 바꾸도록 요청 ->자동이동
 => java
 
+속도차이 때문에 사용되는 메모리 buffer
