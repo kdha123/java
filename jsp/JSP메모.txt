@@ -32,3 +32,5 @@ url?key=value&key=value
 => java
 
 속도차이 때문에 사용되는 메모리 buffer
+
+로그인처리는 session으로 해서 한 후에 sitemesh를 해야함
