@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>table</title>
+<style type="text/css">
+table{border: 1px double #5CEEE6;}
+tr{border: 1px solid gray;}
+th, td{border: 1px dotted skyblue;}
+</style>
+</head>
+<body>
+	<h1>table</h1>
+	<table>
+		<!--테이블 제목부분 -->
+		<thead>
+			<!-- table row : 한줄 -->
+			<tr>
+				<!--항목이름 -->
+				<!--실제적인 데이터 입력; 칸(cell=column) 
+				: th - table header, td - table data -->
+				<th>FirstName</th>
+				<th>LastName</th>
+				<th>Age</th>
+			</tr>
+		</thead>
+		<!-- 데이터가 표시되는 부분  : header나 footer로 구분하기 애매할 때 tbody 사용-->
+		<tbody>
+			<!-- table row : 한줄 -->
+			<tr>
+				<!-- table data : 칸 - cell, column -->
+				<td>질</td>
+				<td>스미스</td>
+				<td>50</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h1>과정 내용</h1>
+	<!-- 번호/ 과목/ 강사:이영환 - 자바, 오라클, 웹표준/김경선 - 파이썬, R -->
+	<table>
+	<!-- 구조를 그대로 가지고 있다.-> 모바일 기기 -줄바꿈을 안하고 형태를 그대로 유지 -->
+		<!-- table 이름표 -->
+		<caption>[표1] 과목담당</caption>
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>과목</th>
+				<th>강사</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>자바</td>
+				<!-- rowspan="3" :3줄은 합친다. -->
+				<td rowspan="3">이영환</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>오라클</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>웹표준</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

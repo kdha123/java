@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>List</title>
+<!-- 그냥 치면 태그 #을 붙이면 아이디 -->
+<style type="text/css">
+ul {
+	list-style-type: square;
+}
+
+#iconList {
+	list-style-image: url("image/icon.png");
+}
+
+#nonIconList {
+	list-style: none;
+}
+
+#nonIconList li {
+	float: left;
+	padding: 15px;
+	border: 1px solid #ddd;
+}
+
+#nonIconList li:hover {
+	color: red;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+	<h1>List</h1>
+	<h2>순서가 없는 리스트(unorder list)</h2>
+	<!-- type: disk-꽉찬 동그라미, circle - 속이 빈 동그라미, square - 속이 꽉차있는 사각형,
+	none : 표싷지 않는다. -->
+	<ul>
+		<li>커피</li>
+		<li>차</li>
+		<li>우유</li>
+
+	</ul>
+	<h2>순서가 없는 리스트(unorder list) - 아이콘 표시</h2>
+	<!-- type: disk-꽉찬 동그라미, circle - 속이 빈 동그라미, square - 속이 꽉차있는 사각형,
+	none : 표싷지 않는다. -->
+	<ul id="iconList">
+		<li>커피</li>
+		<li>차</li>
+		<li>우유</li>
+
+	</ul>
+	<h2>순서가 없는 리스트(unorder list) - 아이콘 표시 제거</h2>
+	<!-- type: disk-꽉찬 동그라미, circle - 속이 빈 동그라미, square - 속이 꽉차있는 사각형,
+	none : 표싷지 않는다. -->
+	<ul id="nonIconList">
+		<li>커피</li>
+		<li>차</li>
+		<li>우유</li>
+
+	</ul>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- HTML->CSS : css의 속성을 html객체의 style속성에 넣어준다. -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>div</title>
+<style type="text/css">
+/*
+css의 주석입니다.
+기본 선택자(selector)
+ - div : tag, #div : id="div", .div : class ="div"
+ 	id : id에 해당되는 객체를 찾는데 한번 찾아지면 더이상 그 아래로 찾지않는다.=>object한개
+ 	class : class에 해당되는 객체를 찾는데 찾으면 그 아래로 같은 class가 있는지 계속 찾는다.여러개를 찾을 수 있다.=>object여러개 : object[]
+
+*/
+#divOne {
+	border: 1px dotted #aaa;
+	background: #c2f0f0
+}
+/* object1 > object2 : object1바로 아래에 있는 object2를 찾아라.*/
+#body > .divClass {
+	/*div특성상 block이기 때문에 한줄을 다 차지한다 -> 어울려지게 만드려면 float속성을 지정해서 사용한다.*/
+	float: left;
+	width: 100px;
+	height: 80px;
+	border: 1px double #aaa;
+	background: #00ffbf
+}
+#footer{
+	/*clear:both - float속성을 제거한다.*/
+	clear: both;
+}
+</style>
+</head>
+<body>
+	<div id="divOne">
+		<h2>&lt;div&gt;</h2>
+	</div>
+	<div id="body">
+		<div class="divClass">class Div</div>
+		<div class="divClass">class Div</div>
+		<div class="divClass">class Div</div>
+		<div class="divClass">class Div</div>
+		<div class="divClass">class Div</div>
+		<div class="divClass">class Div</div>
+		<div class="divClass">class Div</div>
+		<div class="divClass">class Div</div>
+		<div class="divClass">class Div</div>
+		<div class="divClass">class Div</div>
+	</div>
+	<div id="footer" style ="color: blue">
+		<h2>&lt;마지막 div->footer&gt;</h2>
+	</div>
+</body>
+</html>

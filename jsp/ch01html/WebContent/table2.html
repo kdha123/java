@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>table</title>
+<style type="text/css">
+table {
+	width: 100%;
+	background: gray;
+}
+
+table, td {
+	border: 1px dotted #aaa;
+	background: #c2f0f0
+}
+
+#section {
+	width: 75%;
+	height: 100px;
+}
+
+#hot {
+	width: 15%;
+	height:100px
+}
+
+#header, #menu, #footer {
+	padding: 30px;
+}
+#headerTr{ height: 150px;}
+#menuTr{ height: 50px;}
+#bodyTr{ height: 400px;}
+#footerTr{ height: 150px;}
+</style>
+</head>
+<body>
+	<!-- 테이블 하나로 작성 -->
+	<table>
+		<tr>
+			<td colspan="2" id="header">header</td>
+		</tr>
+		<tr>
+			<td colspan="2" id="menu">menu</td>
+		</tr>
+		<tr>
+			<td id="section">body</td>
+			<td id="aside">hot</td>
+		</tr>
+		<tr>
+			<td colspan="2" id="footer">footer</td>
+		</tr>
+	</table>
+
+	<!-- 본문에 해당되는 칸을 다시 테이블로  작성 -->
+	<table>
+		<tr id="headerTr">
+			<td>header</td>
+		</tr>
+		<tr id="menuTr">
+			<td>menu</td>
+		</tr>
+		<tr>
+			<td>
+				<table>
+					<tr id="bodyTr">
+						<td id="section">body</td>
+						<td id="aside">hot</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr id ="footerTr">
+			<td>footer</td>
+		</tr>
+	</table>
+</body>
+</html>
