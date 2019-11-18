@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>span tag</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+.strong {
+	font-weight: bolder;
+}
+
+.redText {
+	color: red;
+}
+
+#teacher {
+	text-decoration: underline;
+}
+
+#teacher:hover {
+	cursor: pointer; /* 커서를 손가락 모양으로 */
+	color: blue;
+	text-decoration: overline;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	$("#teacher").click(function(){
+		alert("강사클릭");
+		location="#teacher"
+	});
+});
+</script>
+</head>
+<body>
+	<h2>span tag</h2>
+	여기는
+	<span class="strong">경영기술 개발원입니다.</span> 입니다. 강사
+	<span id="teacher">이영환 쌤</span>의 연락처
+	<span class="redText">010-6324-5873</span>
+</body>
+</html>

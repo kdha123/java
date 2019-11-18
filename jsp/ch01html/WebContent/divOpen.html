@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>공지를 위한 div</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+<style type="text/css">
+#noticeDiv{
+	width: 300px;
+	height: 420px;
+	background: orange;
+	position: absolute;
+	top: 200px;
+	left: 400px;
+	border: 2px solid #aaa;
+}
+</style>
+
+<script type="text/javascript">
+$(function(){
+	// 공지보이기 여부.
+	//이벤트 처리
+	// 공지보기 버튼 이벤트
+	$("#noticeViewBtn").click(function(){
+// 		alert("공지보기 버튼 클릭")
+		$("#noticeDiv").show();
+	});
+	// 공지닫기 버튼 이벤트
+	$("#closeDivBtn").click(function(){
+		$("#noticeDiv").hide();
+	});
+});
+</script>
+</head>
+<body>
+<button id="noticeViewBtn">공지보기</button>
+<p>스포츠조선 김진회 기자] 미국 메이저리그 샌디에이고 파드리스가 '코리안 몬스터' 류현진(32·LA 다저스)의 최종 행선지로 언급되고 있다.
+
+17일(한국시각) 미국 MLB.com은 주요 자유계약(FA) 선수들의 거취를 전망한 가운데 류현진이 샌디에이고에 적합한 선수라고 전 했다.
+
+MLB.com은 'A.J. 프렐러 샌디에이고 단장은 FA 시장에서 확실한 선발 자원을 선발할 것이다. 류현진은 적절한 타이밍에 FA 시장에 나왔다'고 했다.
+
+그러면서 MLB.com은 류현진의 샌디에이고행에 대한 구체적인 이유로 적극적 투자를 꼽았다. 샌디에이고는 2015년 프렐러 단장 부임 이후 스토브리그에서 색깔이 완전히 변했다. 지난해 2월에는 내야수 에릭 호스머와 8년간 1억4400만 달러에 FA 대형계약을 했다. 올해 2월에는 내야수 매니 마차도 영입에 10년간 3억 달러라는 천문학적인 돈을 투자했다.
+
+향후 5년 안으로 월드시리즈 우승 프로젝트를 가동한 셈. 그러나 올 시즌 성적은 기대 이하였다. 내셔널리그 서부지구에서 70승92패, 승률 0.432로 최하위에 머물렀다. 2006년부터 13년째 포스트시즌(PS) 진출에 실패했다.
+
+분석 결과 문제는 투수력이었다. 샌디에이고는 올 시즌 팀 평균자책점 4.60으로 내셔널리그 15개 구단 중 12위에 머물렀다. 특히 선발진에 계산이 서는 투수가 없었다. 이번 시즌 10승 이상을 기록한 투수는 좌완 조이 루체시(26)가 유일했다. 무엇보다 선발 자원 중 4점 미만의 평균자책점을 기록한 선수는 우완 크리스 페덱(23) 뿐이었다.
+
+샌디에이고는 전력보강을 위해 FA 투수 영입에 초점을 맞추고 있다. 그러나 과거처럼 '큰 손' 역할은 하지 못할 전망이다. 스티븐 스트라스버그(워싱턴 내셔널스)와 게릿 콜(휴스턴 애스트로스)을 영입할 만큼 예산이 풍족하지는 않다. 결국 적당한 금액의 투수를 영입해야 한다면 류현진과 잭 휠러(뉴욕 메츠)가 꼽힌다.
+
+류현진이 입국 당시 밝혔듯이 FA 계약기간을 3∼4년 정도로 희망하고 있다. 내셔널리그 사이영상 2위에 오른 류현진의 몸값은 연평균 2000만달러(약 233억원) 수준으로 평가된다. FA 총액 6000만~8000만달러, 1억달러 미만으로 설정하면 류현진을 잡을 수 있을 듯하다. 김진회기자 manu35@sportschosun.com
+
+</p>
+
+<!-- 공지 창 -->
+<div id="noticeDiv">
+<h2>&lt;공지&gt;</h2>
+<p>
+12월 25일은 공휴일이므로 수업이 없음.
+</p>
+<button id="closeDivBtn">닫기</button>
+</div>
+</body>
+</html>
