@@ -21,6 +21,11 @@ uri = 자원
 request, response로 파라메터를 가져와서 실행하는 servlet 
 doget(), dopost(), init(), service()
 
+servlet(url pattern => 실행클래스)
+
+사용자 url 요청 -> 데이터처리(JAVA) ->request.forward:(htmle->string + <% %>->javadata)-> 화면에 보이기(JSP)
+/board/list.do -> 게시판이라고 알아내는 controller를 짜고-> 게시판에 Controller를 짜고
+
 ** 페이지 이동 시키는 방법
 1. 브라우저의 주소란에 url을 입력한다.
 http://localhost:8080/test/board/list.jsp
