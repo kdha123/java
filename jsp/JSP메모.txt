@@ -14,6 +14,13 @@ setAttribute(k,y)
 getAttribute(k,y)
 - 모두 공통으로 씀
 
+**server ->url을 이용해서 서버 자원에 접근
+
+uri = 자원
+/board/list.jsp = list_jsp.class=> tomcat -> public class list_jsp{}
+request, response로 파라메터를 가져와서 실행하는 servlet 
+doget(), dopost(), init(), service()
+
 ** 페이지 이동 시키는 방법
 1. 브라우저의 주소란에 url을 입력한다.
 http://localhost:8080/test/board/list.jsp
