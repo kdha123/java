@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지, 오디오, 비디오</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ <style type="text/css">
+ /* margin : n1 n2 n3 n4; -> n1 : top, n2 : right, n3 : bottom, n4 : left*/
+ /* margin : n1 n2; -> n1 : top, n2 : right, n1 : bottom, n2 : left*/
+ /* margin : n1; -> n1 : top, n1 : right, n1 : bottom, n1 : left*/
+ img{width: 200px; 
+/* 	margin : 10px 20px 30px 40px; */
+/* 	margin : 10px 20px; */
+	margin : 10px;
+ 	}
+ </style>
+</head>
+<body>
+<!-- 지적재산권 문제가 될 수 있다. -->
+<!-- 서버에 파일을 다운받지 않고 원래의 서버 링크를 걸어서 작성해둔다. : 지적재산권 문제 해결 -->
+<img alt="귀여운 강아지" src="http://post.phinf.naver.net/MjAxNzEyMDhfNDIg/MDAxNTEyNzIxNDUyMzc4.Vo9sfxImkLvkGHRC9XdDL24GKu47He19K-2CN-tfpmcg.UB3tvdcrSGLB1FUP5Njgx724jG1G7l_Ph56xZBY52XIg.JPEG/IcFL8dbgYvPz4T_yqWEoDWEIdGUw.jpg" class="img-rounded">
+<img alt="귀여운 강아지" src="image/dog01.jpg" class="img-circle">
+<img alt="귀여운 강아지" src="image/dog01.jpg" class="img-thumbnail"><br/>
+
+ <div class="row">
+  <div class="col-md-4">
+    <div class="thumbnail">
+      <a href="/w3images/lights.jpg">
+        <img src="image/dog01.jpg" alt="Lights" style="width:100%">
+        <div class="caption">
+          <p>귀여운 강아지</p>
+          	김동현 - 2019/11/20
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+      <a href="/w3images/lights.jpg">
+        <img src="image/dog01.jpg" alt="Lights" style="width:100%">
+        <div class="caption">
+          <p>귀여운 강아지</p>
+          	김동현 - 2019/11/20
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+      <a href="/w3images/lights.jpg">
+        <img src="image/dog01.jpg" alt="Lights" style="width:100%">
+        <div class="caption">
+          <p>귀여운 강아지</p>
+          	김동현 - 2019/11/20
+        </div>
+      </a>
+    </div>
+  </div>
+  </div>
+  <!-- 오디오  -->
+<audio src="mid/audio.m4a" controls="controls"></audio>
+<audio controls="controls">
+	<source src="mid/audio.m4a">
+	<source src="mid/audio.m4a">
+</audio>
+
+<!-- 비디오  : autoplay: 자동 재생 - 크롬에서 X, 인터넷익스플로러에서는 O-->
+<video src="mid/movie.mp4" controls="controls" style="width:400px;" autoplay="autoplay">
+</video>
+<video controls="controls" style="width:400px;" autoplay="autoplay">
+<source src="mid/movie.mp4">
+<source src="mid/movie.mp4">
+</video>
+
+
+</body>
+</html>
