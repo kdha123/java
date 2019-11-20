@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+h1{
+	text-shadow: 3px 2px #444;
+}
+
+body {
+	background: #993300;
+	background-image: url("/ch02css/image/bg01.png");
+/* 	background-repeat:repeat-x; */
+	background-repeat:repeat-y;
+	color: white;
+}
+
+a{color:#99ffcc;
+	padding: 15px;
+	border: 2px dashed #66cc99;
+	background: purple;
+}
+
+a:hover{
+	color: white;
+}
+
+div{
+	clear: both;
+	margin: 30px 0;
+}
