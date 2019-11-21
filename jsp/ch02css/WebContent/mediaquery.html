@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>미디어 쿼리를 이용한 반응형 웹</title>
+<style type="text/css">
+body{
+	background: pink;
+}
+/* 모바일 기기에서는 배경색이 바뀐다. 모바일기기: 해상도의 너비가 480이다.*/
+/* screen : 화면으로 볼때만 적용,
+	max-width : 최대 너비가 480까지 허용(480이하)
+	min-width : 최소 너비가 480까지 허용(480이상)*/
+@media screen and (max-width : 480px){
+	body{
+		background: lightgreen;
+	}
+	#logImage{
+		display: none;
+	}
+}
+
+</style>
+</head>
+<body>
+<h1>미디어 쿼리</h1>
+<div id="logImage"><img alt="큰이미지" src="image/dog01.jpg" /></div>
+<p>
+미디어 쿼리는 보고 있는 모바일 기기에 따라서 다르게 처리할 수 있다.
+</p>
+</body>
+</html>

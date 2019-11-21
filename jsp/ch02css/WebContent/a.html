@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* a 태그 상황과 상관없이 모든 글자색을 hotpink로 바꾼다. */
+a{ 
+	color: hotpink;
+	text-decoration: none;
+}
+
+/* 상태에 따른 CSS적용 - 전체보다 우선한다. 지정한 순서에 맞게 적용이 된다.
+ link, visited -> hover -> active : 순서에 맞춰야 적당하게 동작을 한다. */
+/*미방문 링크 - 전체 보다 우선한다.*/
+a:link {
+	color: red;
+}
+/*방문한 링크*/
+a:visited {
+	color: aqua;
+}
+/* 링크를 마우스로 클릭을 하고 있는 상태*/
+a:active {
+	color: blue;
+}
+/* 마우스가 링크 위에 올라간 상태  */
+a:hover {
+	color: orange;
+}
+</style>
+</head>
+<body>
+<a href="exCss1.html">외부 Css 실습</a><br/>
+<a href="font.html">Font 실습</a><br/>
+<a href="bgimage.html">백그라운드 이미지 실습</a><br/>
+<a href="naver.com">네이버</a><br/>
+</body>
+</html>

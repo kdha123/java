@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+	border: 1px solid purple;
+	/*블록형식의 태그로 만들어준다. 한줄 전부 차지하게 된다.*/
+	display: block;
+	/*라인안에 블록형식의 태그로 만들어준다. 블록은 지정이되지만 줄 안에 포함되게 된다.*/
+/* 	display: inline-block; */
+	/* 라인 안의 형식 태그로 만들어준다. 줄안에 포함되게 한다.*/
+/* 	display: inline; */
+	}
+/* html5에서 생겨난 태그들이다. html4이하의 페이지에서는 해석이 안된다. ->블록태그로 지정*/	
+header, footer, section, article{
+	display: block;
+}
+#display{
+	/* 보이지 않게 자리를 차지하지 않는다. : jquery hide()에서 사용*/
+/* 	display: none; */
+	display: inherit;
+}
+#visibility{
+	/* 보이지 않게 자리를 차지한다. */
+/* 	visibility: hidden; */
+/* 데이터를 안보이게 - table tag에서는 형태는 유지 시키면서 데이터만 안보이게 한다. */
+/* 	visibility: collapse; */
+/*보이게 */
+	visibility: visible;
+}
+</style>
+</head>
+<body>
+<div id="display">display</div>
+<div id="visibility">visibility</div>
+</body>
+</html>
