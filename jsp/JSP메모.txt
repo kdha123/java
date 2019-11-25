@@ -52,18 +52,19 @@ url?key=value&key=value
 2. 라이브러리 등록 - jdbc8.jar, jstl-1.2.jar  /WEB-INF/lib 복사해서 붙여넣기
 3. com.webjjang.main.FrontController - servlet -> service() 작성
 4. web.xml에 servlet과 servlet-mapping 등록 : mainServlet
-5. interface 작성 - Controller, Service
+5. interface 작성 - Controller - String excute(request,uri), Service - Object service(Object[] objs)
 6. com.webjjang.board.dto.BoardDTO - no, title, content, writer, writeDate, hit
-7. com.webjjang.board.dao.BoardDAO.list() -List<BoardDTO>
+7. com.webjjang.board.dao.BoardDAO.list() -List<BoardDTO> list.add 까먹지말기
 8. com.webjjang.board.service.BoardListService.service()
 9. Beans.init() - Servlet을 이용한 서버실행할 때 객체생성(value = "/Beans",loadOnStartup = 1 )
-9-1. dao 생성, service 생성, controller생성
+9-1. dao 생성, service 생성, controller생성 
 10. com.webjjang.board.controller.BoardController.execute() - String이 리턴타입
 11. Execute.service(service, object...objs)
-12. com.webjjang.board.controller.BoardController.execute() 완성
+12. com.webjjang.board.controller.BoardController.execute() String jsp변수 생성후에 setAttribute메소드로 완성
 13. Beans.init()에서 BoardController를 생성한다. DI적용
 14. jsp 쪽으로 forward하기위해서 ViewResolver.forward()
-14-1. ViewResolver.getJSP(String jsp)=> PREFIX + jsp + SURFIX
-15. FrontController 완성
+14-1. ViewResolver에서 String getJSP(String jsp)=> PREFIX + jsp + SURFIX
+14-2. forward(request, response, jsp){if(jsp.indexOf("redirect:")==0 일 때)redirect:의 길이만큼 jsp를 잘라내고 sendRedirect!, getRequestDispatcher.forward
+15. FrontController controller를 Beans에서 받아오고 완성
 16. /WEB-INF/views/board/list.jsp 작성
 17. 서버 생성 및 
