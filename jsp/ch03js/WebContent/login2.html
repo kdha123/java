@@ -1,0 +1,76 @@
+<!-- js를 이용한 이벤트 달기 : 이벤트리슨너 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+<script type="text/javascript">
+function sendData(){
+// 	alert("데이터 전송 처리 전 데이터 확인");
+	
+	// name = loginForm 속성으로 지정된 객체 선택 : loginForm form tag 선택
+	loginForm = document.loginForm;
+// 	alert(loginForm);
+
+	// loginForm.id : form 안에 id라는 name을 가진 객체 선택
+	// .value : 사용자가 입력한 값이 들어 있는 속성
+	var id = loginForm.id.value;
+	var pw = loginForm.pw.value;
+// 	alert(id);
+	// 데이터 검사
+	// 필수 항목 검사
+	// id가 비어 있으면 안된다.
+// 	if(id.length == 0){
+	// 만약에 데이터가 비어 있으면 경고를 띄운다. 아이디 입력란에 커서를 위치시킨다. submit을 취소시킨다.
+	if(id == ""){
+		// 경고
+		alert("아이디는 반드시 입력하셔야 합니다.");
+		// 커서 위치
+		document.getElementById("id").focus();
+		// submit()을 취소
+		return false;
+	}
+	if(pw == ""){
+		// 경고
+		alert("비밀번호는 반드시 입력하셔야 합니다.");
+		// 커서 위치
+		document.getElementById("pw").focus();
+		// submit()을 취소
+		return false;
+	}
+	
+	// 길이 체크
+	if(!(id.length >= 4 && id.length <= 20)){
+		// 경고
+		alert("아이디는 4자이상 20자 이내로 입력하셔야 합니다.");
+		// 커서 위치
+		document.getElementById("id").focus();
+		// submit()을 취소
+		return false;
+	}
+	if(!(pw.length >= 4 && id.length <= 20)){
+		// 경고
+		alert("비밀번호는 4자이상 20자 이내로 입력하셔야 합니다.");
+		// type이  pw인 경우는 비밀번호가 틀리게 입력되어도 화면에 보이지 않으므로 입력한 데이터를 지원준다.
+		document.getElementById("pw").value = "";
+		// 커서 위치
+		document.getElementById("pw").focus();
+		// submit()을 취소
+		return false;
+	}
+	
+	return true;
+}
+
+</script>
+</head>
+<body>
+<h2>로그인</h2>
+<form action="#" id="loginForm" method="post"  onsubmit="return sendData();"
+ name="loginForm">
+	아이디:<input name="id" id="id"/><br/>
+	비밀번호:<input name="pw" id="pw" type="password" /><br/>
+	<button id="loginBtn">로그인</button>
+</form>
+</body>
+</html>

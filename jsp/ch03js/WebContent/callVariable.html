@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	// 함수를 func 변수에 저장 - 참조형 변수
+	func = function(){
+		alert("test");
+	}
+	// 함수 호출 - 변수 안에 있는 함수를 꺼내서 실행해라.
+	func();
+	
+	addfunc = function(a, b){
+		return a + b;
+	}
+	subfunc = function(a, b){
+		return a - b;
+	}
+	
+	function execute(func, a, b){
+// 		alert(func);
+		a = Number(a);
+		b = Number(b);
+		return func(a, b);
+// 		alert("func After");
+	}
+	
+	// 이벤트 처리
+	$("#addBtn").click(function(){
+// 		alert("addBtn click");
+		a = $("#a").val();
+		b = $("#b").val();
+		
+		alert(execute(addfunc, a, b));
+	});
+});
+</script>
+
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<input id="a">, <input id="b">
+</div>
+<button id="addBtn">add</button>
+<button id="subBtn">sub</button>
+</body>
+</html>
