@@ -50,7 +50,7 @@ url?key=value&key=value
 [퇴근미션 작업 순서]
 1. project 생성 - Dynamic Web project : project1120 - web.xml을 함께
 2. 라이브러리 등록 - jdbc8.jar, jstl-1.2.jar  /WEB-INF/lib 복사해서 붙여넣기
-3. com.webjjang.main.FrontController - servlet -> service() 작성
+3. com.webjjang.main.FrontController - servlet -> service(request,response) 작성
 4. web.xml에 servlet과 servlet-mapping 등록 : mainServlet
 5. interface 작성 - Controller - String excute(request,uri), Service - Object service(Object[] objs)
 6. com.webjjang.board.dto.BoardDTO - no, title, content, writer, writeDate, hit
