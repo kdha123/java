@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="sourceFile">c:\test\abc.de\text.txt</div>
+<div id="fileName"></div>
+<div id="extName"></div>
+<script type="text/javascript">
+// 원본파일명을 가져와서 확장명(txt)과 파일명(text)(확장명은 제외) 출력해보세요.
+var resourceName = document.getElementById("sourceFile").innerHTML;
+alert(resourceName);
+
+var filefullName = resourceName.substring(resourceName.lastIndexOf("\\")+1);
+alert(filefullName);
+
+var pos = filefullName.lastIndexOf(".");
+alert(pos);
+
+ var FileName = filefullName.substring(0,pos);
+ alert(FileName)
+ 
+ var extName = filefullName.substring(pos+1);
+ alert(extName)
+</script>
+
+</body>
+</html>

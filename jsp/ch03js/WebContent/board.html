@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/util.js"></script>
+</head>
+<body>
+<div id="ObjectOutput"></div>
+<script type="text/javascript">
+var board = { no: "10", title:"자바스크립트Object", content:"{}", writer:"홍길동", 
+		writeDate: new Date(), toString : function(){
+			obj = get("#ObjectOutput");
+			obj.innerHTML = "";
+			obj.innerHTML = "번호 :" + this.no+"<br/>";
+			obj.innerHTML += "제목 : " + this.title+"<br/>";
+			obj.innerHTML += "내용 : " + this.content+"<br/>";
+			obj.innerHTML += "작성자 : " + this.writer+"<br/>";
+			obj.innerHTML += "작성일 : " + dateToString(this.writeDate, "/");
+			
+		}}
+board.toString();
+</script>
+
+</body>
+</html>

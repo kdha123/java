@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js 파일을 이용한 객체 가져오기</title>
+<!-- jQuery 라이브러리등록 -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- 객체를 가져오는 프로그램 import -->
+<script type="text/javascript" src="./js/util.js">
+</script>
+</head>
+<body>
+<div id = "demo1">demo1</div>
+<div class = "demoClass">demoClass1</div>
+<div class = "demoClass">demoClass2</div>
+<div>normal div</div>
+
+<script type="text/javascript">
+	// 객체 선택 - 객체가 화면에 표시가 다된 상태에서만 선택이 가능하다. 그래서 아래 부분에 작성을 했다.
+	// 아이디 - getElementById("id name");
+	idObj = $("#demo1");
+	alert(idObj);
+	alert("id 안에 있는 글자:"+idObj.text());
+	// idObj안에 글자 변경
+// 	idObj.innerHTML = "demo test 1";
+	// idObj안에 글자 변경 - a tag 작성
+	idObj.html("<a href='http://naver.com'>네이버로 이동</a>");
+	
+	// 태그 - getElementsByTagName("id name");
+	tagObjs = get("div");
+	alert(tagObjs);
+	alert(tagObjs.length);
+	// tagObjs의 데이터 출력
+// 	for(idx in tagObjs)
+// 		alert(tagObjs[idx].innerHTML);
+	for(i=0; i< tagObjs.length; i++)
+		alert(tagObjs[i].innerHTML);
+	
+// 	클래스 - getElementsByClassName("class name");
+	classObjs = get(".demoClass");
+	alert(classObjs);
+	alert(classObjs.length);
+	// classObjs의 데이터 출력
+	for(i=0; i< classObjs.length; i++)
+		alert(classObjs[i].innerHTML);
+
+</script>
+</body>
+</html>

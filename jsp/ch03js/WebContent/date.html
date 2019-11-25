@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>날짜객체</title>
+</head>
+<body>
+<div id="demo"></div>
+<script type="text/javascript">
+// var d = new Date(); // 오늘 날짜 
+var d = new Date(); // 오늘 날짜
+alert(typeof(d));
+document.getElementById("demo").innerHTML = d;
+alert("년도(year) : " + d.getYear()); // 119 -> 1900 + 119 -> 2019
+alert("년도(fullyear) : " + d.getFullYear());
+alert("월(month) : " + d.getMonth()); // 월 : 0~11
+
+var chri = new Date("2019-12-25");
+alert(chri);
+</script>
+</body>
+</html>
