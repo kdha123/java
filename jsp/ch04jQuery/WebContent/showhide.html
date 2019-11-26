@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<!-- download 방식으로 라이브러리 등록 -->
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//이벤트 처리
+	var duration = 1000;
+	$("#hideBtn").click(function(){
+		$("h2, p").hide(duration,function(){alert("숨기기 완료");});
+	});
+	$("#showBtn").click(function(){
+		$("h2, p").show(duration);
+	});
+	$("#toggleBtn").click(function(){
+		$("h2, p").toggle(duration);
+	});
+});
+</script>
+<body>
+<h2>헤딩</h2>
+<p>문단1</p>
+<p>문단2</p>
+<button id="hideBtn">안보이게</button>
+<button id ="showBtn">보이게</button>
+<button id="toggleBtn">반대로</button>
+</body>
+</html>
