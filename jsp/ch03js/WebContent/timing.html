@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>일정시간만에 자동으로 실행이 되는 처리문</title>
+<script type="text/javascript" src="./js/util.js"></script>
+</head>
+<body>
+<!-- 아래버튼을 클릭하면 3초 후에 myFunction이 실행이되도록 처리 -->
+<button onclick="setTimeout(myFunction, 3000)">시도해라</button>
+<div id="demo"></div>
+<button onclick="clearInterval(myVar)">시간멈추기</button>
+<script type="text/javascript">
+//함수 선언 - 호출해서 실행하게 된다. 
+function myFunction(){
+	alert("안녕");
+}
+
+// 1초만에 실행이 되는 처리문 
+var myVar = setInterval(myTimer, 1000);
+function myTimer(){
+	var d = new Date();
+	get("#demo").innerHTML = d.toLocaleTimeString()
+};
+
+// var myVar = setInterval(function(){
+// 	var d = new Date();
+// 	document.getElementById("demo").innerHTML = d.toLocalTimeString();
+// })
+
+</script>
+</body>
+</html>

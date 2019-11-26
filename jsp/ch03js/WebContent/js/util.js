@@ -3,10 +3,8 @@
  */
 // =================== 객체선택(id, class, tag) =================//
 function get(objName){
-	alert("get() : " + objName);
 	//id에 대한 처리 - id앞에는 "#"을 붙여서 넣어준다. ex) #deleteBtn
 	if(objName.indexOf("#")==0){
-		alert("id 선택")
 		return document.getElementById(removeFirstChar(objName));
 		}
 	if(objName.indexOf(".")==0)
