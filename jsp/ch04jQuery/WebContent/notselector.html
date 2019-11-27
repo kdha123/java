@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>not selector</title>
+<script src="./js/jquery-3.4.1.min.js"></script>
+
+<style type="text/css">
+tabla {
+	width: 400px;
+}
+
+th, td {
+	border: 1px solid #aaa;
+	padding: 15px;
+}
+</style>
+
+<script type="text/javascript">
+	$(function() {
+		$("tr:not(:first, :last)").css({
+			"background" : "#ddd"
+		});
+	});
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>제목입니다.</th>
+		</tr>
+		<tr>
+			<td>데이터 입니다.</td>
+		</tr>
+		<tr>
+			<td>데이터 입니다.</td>
+		</tr>
+		<tr>
+			<td>버튼 부분입니다.</td>
+		</tr>
+	</table>
+
+</body>
+</html>
