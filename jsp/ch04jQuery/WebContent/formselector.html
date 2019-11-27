@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form Selector</title>
+<script src="./js/jquery-3.4.1.min.js"></script>
+<style type="text/css">
+div{
+	float: left;
+	width: 40px; 
+	height: 50px; 
+	border: 1px solid #888;
+	background: yellow;
+}
+div:hover{
+	background: orange;
+}
+#data{
+	clear: both;
+	display: block;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	$(":button").click(function(){
+// 		alert("버튼 클릭");
+		alert($(this).text());
+	});
+	
+	$("input[type='checkbox']").click(function(){
+		//체크박스 오른쪽의 항목 이름 전체를 원래상태로 되돌리고
+		$("input[type='checkbox']").next().css({"color":"black","font-weight":"normal"});
+// 		alert("체크박스 클릭");
+		// next() - input태그 다음 것
+		//체크되어진 박스 오른쪽의 항목 이름을 파란색, 두껍게 변경
+		$(":checked").next().css({"color":"blue","font-weight":"bolder"});
+	});
+	// div(선택)에 마우스를 올리면(이벤트) 
+	$("div").mouseover(function(){
+		$("div").css({"background":"yellow"});
+		// 선택한 객체(this)의 앞에 있는 모든(prevAll)div의 배경색
+		$(this).prevAll("div").add(this).css({"background":"orange"});
+		// 현재 위치의 숫자를 id가 data인 곳에 넣어준다.
+		$("#data").text($(this).text());
+	});
+	
+	// 입력란의 배경색을 밝은 회색 셋팅(이벤트x, 바로실행)
+	$("input[type='text']").css({"background":"#ccc"});
+	// 커서가 입력란에 위치하게 되면(focus()) 흰색으로 셋팅한다(css).
+	$("input[type='text']").focus(function(){
+		$("input[type='text']").css({"background":"#ccc"});
+		$(this).css({"background":"#fff"});
+	});
+});
+</script>
+</head>
+<body>
+<button>버튼입니다.</button>
+<button>삭제</button><br/>
+
+<input type="checkbox"> <span>오라클</span>
+<input type="checkbox"> <span>자바</span>
+<input type="checkbox"> <span>웹표준</span>
+<input type="checkbox"> <span>빅데이터</span> <br/>
+
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<div>6</div>
+<div>7</div>
+<div>8</div>
+<div>9</div>
+<div>10</div>
+<span id="data">0</span>
+<hr/>
+
+<input type="text"/>
+<input type="text"/>
+<input type="text"/>
+<input type="text"/>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="./js/jquery-3.4.1.min.js"></script>
+<style type="text/css">
+div{border: 1px solid #aaa;}
+</style>
+<script type="text/javascript">
+$(function(){
+	//순서대로 적용된다.
+	$("div:odd").css("background","blue");
+	$("div:even").css("background","skyblue");
+	$("div:first").css("background","black").css("color","white");
+	$("div:nth-child(3)").css("background","gray");
+});
+</script>
+</head>
+<body>
+<div>0</div>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<div>6</div>
+</body>
+</html>
