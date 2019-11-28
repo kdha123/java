@@ -97,7 +97,16 @@ n page : 시작줄 = 이전페이지의 갯수를 넘긴 다음번호
 n page : (n-1)*perPageNum + 1
 n page : 끝나는 줄 = 시작 줄 + 한페이지의 표시하는 갯수 - 1
 n page : startRow + perPageNum - 1
+---------------
+jsp에서 리스트 하단부분 페이지 클릭 부분 : 페이지네이션
+전체페이지
+전체데이터의 갯수 : DB
+select count(*) from board;
+-> BoardDAO.getTotalRow(){}
+-> 데이터를 넣는 코드 BoardListSerivce 작성
+-> 전체 데이터 갯수를 이용해서 전체 페이지를 구한다.
 
+(totalRow - 1)/ perPageNum + 1 -- 10이면 2가 되기때문에 -1을 해준다.
 
 
 
