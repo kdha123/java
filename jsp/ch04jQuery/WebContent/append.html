@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체안에 요소 추가하기: append</title>
+<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+</head>
+<script type="text/javascript">
+
+var movies = ["겨울왕국","블랙머니","신의한수"];
+// 영화를 선택할 수 있는 태그 작성해서 선택할 수 있도록 #movieList에 만든다. select - option:반복문
+
+// 선택자.append(): 선택한 것의 안에 맨 뒤로 추가하자.
+$(function(){
+	for(i=0; i< movies.length; i++){
+	 $("#movieList").append("<option>"+movies[i]+"</option>");
+// 	 $("#movieList").prepend("<option>"+movies[i]+"</option>");
+// 	 $("#movieList").empty("<option>"+movies[i]+"</option>");
+	}
+	
+		
+// 선택자.prepend(): 선택한 것의 안에 맨 앞으로 추가하자.
+// 선택자.empty(): 선택한 것의 안에 있는 모든 요소를 제거하자.
+});
+
+</script>
+<body>
+<h2>객체안에 요소 추가하기</h2>
+<select id="movieList">
+</select>
+</body>
+</html>

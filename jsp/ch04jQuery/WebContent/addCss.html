@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>tag에 클래스 조정하기</title>
+<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+<style type="text/css">
+.red{color: red;}
+.yellow{color: yellow;}
+.orange{color: orange;}
+.border{border: 1px solid #aaa;}
+</style>
+<script type="text/javascript">
+$(function(){
+	//버튼 이벤트 처리
+	$("#red").click(function(){
+		// 모든 클래스를 다 지운다.
+		$("#target").removeClass("red yellow orange")
+		$("#target").addClass("red");
+	});
+	$("#yellow").click(function(){
+		$("#target").removeClass("red yellow orange")
+		$("#target").addClass("yellow");
+	});
+	$("#orange").click(function(){
+		$("#target").removeClass("red yellow orange")
+		$("#target").addClass("orange");
+	});
+	// toggleClass를 이용한 테두리 있고 없고
+	$("#border").click(function(){
+		$("#target").toggleClass("border");
+	});
+	
+});
+</script>
+</head>
+<body>
+<h2></h2>
+<div id="target">abc가나다123</div>
+<button id="red">red</button>
+<button id="yellow">yellow</button>
+<button id="orange">orange</button>
+<button id="border">테두리</button>
+</body>
+</html>
