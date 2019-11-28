@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>영화 선택 페이지</title>
+<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+var cinemaList = ["구로역점","부천중동점"];
+var movies = [["겨울왕국","블랙머니","신의한수"],
+	["블랙머니","신의한수","감쪽같은그녀"]];
+
+$(function(){
+		for(i=0; i< cinemaList.length; i++)
+		 $("#cinema").append("<option>"+cinemaList[i]+"</option>");
+	
+		//cinema에 이벤트 처리 - change()
+		$("#cinema").change(function(){
+// 			alert("영화관 값이 바뀜");
+// 			alert($("#cinema").val());
+			$("#movie").empty();
+			cinema = $("#cinema").val();
+		if(cinema== "구로역점"){
+			for(i=0; i <= cinemaList.length; i++)
+			$("#movie").append("<option>"+movies[0][i]+"</option>");
+		}
+		else if(cinema == "부천중동점"){
+			for(i=0; i <= cinemaList.length; i++)
+			$("#movie").append("<option>"+movies[1][i]+"</option>");
+		}
+		});
+});
+</script>
+</head>
+<body>
+<select id="cinema"><option>영화관을 선택하세요.</option></select>
+<select id="movie"><option>영화를 선택하세요.</option></select>
+
+</body>
+</html>
