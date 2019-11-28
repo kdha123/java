@@ -68,3 +68,39 @@ url?key=value&key=value
 15. FrontController controller를 Beans에서 받아오고 uri에 getServletPath하고 완성
 16. /WEB-INF/views/board/list.jsp 작성
 17. 서버 생성 및 
+
+
+**페이징 처리하기
+1. 게시판 데이터 전부 - 정렬
+select no, title, writer, writeDate, hit from board order by no desc;
+2. 정렬된 데이터에 번호를 붙인다.
+select rownum rnum, no, title, writer, writeDate, hit
+from(
+    select no, title, writer, writeDate, hit from board order by no desc;
+)
+3. 번호를 붙인 데이터로 부터(from) 페이지에 맞는(조건:where) 갯수 데이터 가져오기(한페이지에 10 1페이지: 1~10)
+select *
+from(
+    select rownum rnum, no, title, writer, writeDate, hit
+from(
+    select no, title, writer, writeDate, hit from board order by no desc;
+))where rnum between 1 and 10;
+
+--------------
+perPageNum(페이지당 글의 개수) : 10
+
+1page : 1~10
+2page : 11~20
+3page : 21~30
+...
+n page : 시작줄 = 이전페이지의 갯수를 넘긴 다음번호
+n page : (n-1)*perPageNum + 1
+n page : 끝나는 줄 = 시작 줄 + 한페이지의 표시하는 갯수 - 1
+n page : startRow + perPageNum - 1
+
+
+
+
+
+
+
