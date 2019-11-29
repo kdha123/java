@@ -107,6 +107,15 @@ select count(*) from board;
 -> 전체 데이터 갯수를 이용해서 전체 페이지를 구한다.
 
 (totalRow - 1)/ perPageNum + 1 -- 10이면 2가 되기때문에 -1을 해준다.
+-----------------------
+pageGroup - perGroupPageNum : 페이지 그룹에 나타나는 페이지의 개수
+1 -> 1~10
+2 -> 1~10
+...
+10 -> 1~10
+11 -> 11~20
+
+page -> (page - 1) / perGroupPageNum * perGroupPageNum + 1
 
 
 
