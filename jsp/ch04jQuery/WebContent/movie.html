@@ -10,30 +10,42 @@ var movies = [["겨울왕국","블랙머니","신의한수"],
 	["블랙머니","신의한수","감쪽같은그녀"]];
 
 $(function(){
-		for(i=0; i< cinemaList.length; i++)
-		 $("#cinema").append("<option>"+cinemaList[i]+"</option>");
+	for(i = 0 ; i < cinemaList.length ; i++)
+		$("#cinema").append("<option>"+cinemaList[i]+"</option>");
 	
-		//cinema에 이벤트 처리 - change()
-		$("#cinema").change(function(){
-// 			alert("영화관 값이 바뀜");
-// 			alert($("#cinema").val());
-			$("#movie").empty();
-			cinema = $("#cinema").val();
-		if(cinema== "구로역점"){
-			for(i=0; i <= cinemaList.length; i++)
-			$("#movie").append("<option>"+movies[0][i]+"</option>");
+	// cinema에 이벤트 처리 - change()
+	$("#cinema").change(function(){
+// 		alert("영화관 값이 바뀜");
+		var cinema = $("#cinema").val();
+// 		alert($("#cinema").val());
+		
+		// 영화관 리스트에서 선택된 값이 몇번째 인지 알아내는 프로그램
+		var nth = -1;
+		for (i =0 ; i< cinemaList.length; i++){
+			if(cinema == cinemaList[i]){
+				nth = i;
+				break;
+			}
 		}
-		else if(cinema == "부천중동점"){
-			for(i=0; i <= cinemaList.length; i++)
-			$("#movie").append("<option>"+movies[1][i]+"</option>");
+		// 영화관의 값이 영화관 리스트의 몇번째(nth)에 있는 찾아낸 후 처리
+		var list = [];
+		// 영화관을 찾은 경우 인덱스번호에 맞는 영화배열 가져온다.
+		if(nth != -1)
+			list = movies[nth];
+// 		$("#movie").empty();
+// 		$("#movie").append("<option>영화를 선택하세요.</option>");
+		$("#movie").html("<option>영화를 선택하세요.</option>");
+		
+		for(i = 0; i < list.length ; i++){
+			$("#movie").append("<option>"+ list[i] +"</option>");
 		}
-		});
+	});
 });
 </script>
 </head>
 <body>
-<select id="cinema"><option>영화관을 선택하세요.</option></select>
-<select id="movie"><option>영화를 선택하세요.</option></select>
+	<select id="cinema"><option>영화관을 선택하세요.</option></select>
+	<select id="movie"><option>영화를 선택하세요.</option></select>
 
 </body>
 </html>
