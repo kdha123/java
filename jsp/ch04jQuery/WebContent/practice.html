@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판 글쓰기</title>
+<script type="text/javascript">
+function write() {
+document.getElementById("writeForm").addEventListener("submit",
+function(e) {
+
+writeForm = document.writeForm;
+
+var title = writeForm.title.value
+var content = writeForm.content.value
+var writer = writeForm.writer.value
+
+if (title == "") {
+//경고창을 생성한다.
+alert("제목은 반드시 입력해야합니다.")
+// 커서 위치 입력란으로
+document.getElementById("title").focus();
+//sumit을 취소한다.
+e.preventDefault();
+return false;
+}
+// 4자이상 100자이내에 포함되어야 하기 때문에 앞에 !를 붙여준다
+if (!(title.length >= 4 && title.length <= 100)) {
+alert("제목은 4자 이상 100자 이내로 입력해주세요. ")
+document.getElementById("title").focus();
+e.preventDefault();
+return false;
+}
+if (content == "") {
+alert("내용은 반드시 입력해야합니다.")
+document.getElementById("content").focus();
+e.preventDefault();
+return false;
+}
+if (!(content.length >= 5)) {
+alert("내용은 5자 이상 입력해주세요.")
+document.getElementById("content").focus();
+e.preventDefault();
+return false;
+}
+if (writer == "") {
+alert("작성자는 반드시 입력해야합니다.")
+document.getElementById("writer").focus();
+e.preventDefault();
+return false;
+}
+if (!(writer.length >= 2)) {
+alert("작성자는 2자 이상 입력해주세요.")
+document.getElementById("writer").focus();
+e.preventDefault();
+return false;
+}
+});
+}
+</script>
+</head>
+<body onload="write();">
+
+<h2>게시판 글쓰기</h2>
+<!-- 데이터가 넘거가면 #으로 바뀐다. -->
+<form action="#" id="writeForm" name="writeForm" method="post">
+제목:<input id="title" name="title" /><br /> 내용:<input id="content"
+name="content" /><br /> 작성자:<input id="writer" name="writer" /><br />
+<button id="submitBtn">게시판 글 쓰기</button>
+</form>
+
+</body>
+</html>
