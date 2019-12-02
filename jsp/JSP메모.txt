@@ -128,6 +128,8 @@ page -> (page - 1) / perGroupPageNum * perGroupPageNum + 1
 
 -Synchronous JavaScript and XML - 동기 통신 : 사용자의 요청에 따라 페이지 전환을 하는 통신 처리 브라우저의 URL이 바뀐다. -> 전체 화면의 내용이 바뀐다.
 
+-- jQuery Ajax 함수
+- load(url, [data, callback function(result, status, xhr){}])
 
 
 
