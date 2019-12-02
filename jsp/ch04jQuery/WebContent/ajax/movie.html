@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>영화리스트 선택</title>
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	// 영화 리스트 셋팅 - 데이터가 서버에 있다. movie.jsp
+	$("#movieList").load("movie.jsp");
+	//이벤트 처리 
+	// ajax로 선언해서 가져온 id에 대해서는 이벤트 처리가 되지 않는다. - 이벤트처리 후에 ajax로 인해 데이터가 추가되기 때문.
+// 	$("#movie").change(function(){
+// 		alert("영화리스트 선택");
+// 	});
+	//이벤트의 전달
+	$("#movieList").on("change", "#movie", function(){
+		alert("영화리스트 선택");
+	});
+// 	$("#selectTest").change(function(){
+// 		alert("리스트 테스트 선택")
+// 	});
+// 	$("#selectTest").on("change", function(){
+// 		alert("리스트 테스트 선택");
+// 	});
+	$("#selectTest").on({
+		"change": function(){
+		alert("리스트 테스트 선택")},
+		"mouseover":function(){
+			$(this).css({"color":"red"});
+		},
+		"mouseout":function(){
+			$(this).css({"color":"black"});
+		}
+	});
+});
+</script>
+</head>
+<body>
+<h2>영화 리스트 선택</h2>
+<div id="movieList"></div>
+<select id="selectTest">
+<option>선택1</option>
+<option>선택2</option>
+<option>선택3</option>
+<option>선택4</option>
+</select>
+</body>
+</html>

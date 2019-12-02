@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비동기 통신</title>
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#body").load("demo_test.txt");
+	
+	//이벤트 처리
+	$("#changeBtn").click(function(){
+		$("#body").load("change.txt");
+	});
+});
+</script>
+</head>
+<body>
+<h1>비동기 통신을 이용한 데이터 변경</h1>
+<p id="body">여기에 내용이 바뀝니다.
+</p>
+<button id="changeBtn">여기를 누르면 데이터가 변경됩니다.</button>
+</body>
+</html>
