@@ -130,6 +130,7 @@ page -> (page - 1) / perGroupPageNum * perGroupPageNum + 1
 
 -- jQuery Ajax 함수
 - load(url, [data, callback function(result, status, xhr){}])
+- get(url, function(data,status){})
 
 
 
