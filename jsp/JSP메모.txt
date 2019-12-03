@@ -117,6 +117,39 @@ pageGroup - perGroupPageNum : 페이지 그룹에 나타나는 페이지의 개�
 
 page -> (page - 1) / perGroupPageNum * perGroupPageNum + 1
 
+** 검색 처리하기
+
+1. 게시판 데이터 전부(데이터 전체(제목, 내용, 작성자)에서 검색) - 정렬
+select no, title, writer, writeDate, hit from board 
+where title like '%data%' or content like '%data%' or writer like '%data%' - 검색  sql문 
+order by no desc;
+
+select no, title, writer, writeDate, hit from board 
+where 1=2 
+--key => tcw : title, content, writer
+--key => tc : title, content
+--key => tw : title, writer
+if(key.indexOf("t")>=0)
+or title like '%word%' 
+if(key.indexOf("c")>=0)
+or content like '%word%'
+if(key.indexOf("w")>=0)
+or writer like '%word%' - 검색  sql문 
+order by no desc;
+
+
+2. 정렬된 데이터에 번호를 붙인다.
+select rownum rnum, no, title, writer, writeDate, hit
+from(
+    select no, title, writer, writeDate, hit from board order by no desc;
+)
+3. 번호를 붙인 데이터로 부터(from) 페이지에 맞는(조건:where) 갯수 데이터 가져오기(한페이지에 10 1페이지: 1~10)
+select *
+from(
+    select rownum rnum, no, title, writer, writeDate, hit
+from(
+    select no, title, writer, writeDate, hit from board order by no desc;
+))where rnum between 1 and 10;
 
 
 **AJAX(Asynchronous JavaScript and XML)- 비동기 통신
