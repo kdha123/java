@@ -1,0 +1,26 @@
+[
+{
+	"no":10,
+	"title":"java",
+	"content":"computer language",
+	"writer":"김동현",
+	"writeDate":"2019-12-03",
+	"hit": 1
+},
+{
+	"no":9,
+	"title":"oracle",
+	"content":"DBMS : 데이터베이스 관리시스템",
+	"writer":"김동현",
+	"writeDate":"2019-12-02",
+	"hit": 10
+},
+{
+	"no":8,
+	"title":"빅데이터",
+	"content":"많은 데이터 처리",
+	"writer":"김동현",
+	"writeDate":"2019-12-01",
+	"hit": 1
+}
+]

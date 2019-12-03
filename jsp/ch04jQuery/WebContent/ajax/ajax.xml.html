@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ajax를 함수를 이용한 xml 불러오기</title>
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+// 		alert("function()");
+		$.ajax({ // ajax의 표준함수({k:v, k:v, ...})
+			url : "rank.xml", //요청 url
+			dataType : "xml", // 받아 오는 데이터의 타입 지정 -xml/json/html/text
+			// 데이터 통신을 해서 정상적으로 끝나면 처리되는 콜백함수
+			// function(result) : result-> xml중에서 전체를 감싸고 있는 태그(Object)
+			success : function(result) {
+				alert(result);
+				// result 안에 rank 태그를 찾는다. - 3개 존재
+				if ($(result).find("rank").length > 0) { // 데이터가 있는 경우 처리
+					$(result).find("rank").each(function() { // rank 3개가 있으므로 3번 반복
+						var name = $(this).find("k").text(); // 검색어를 가져오기 - 김연아/이상화/모태범
+						var result = "<li>" + name + "</li>"; // 이름을 li 태그로 감싼다.
+						$("#wrap ol").append(result); // ol 태그에 추가.
+					});
+				}
+			},
+			// 오류가 있는 경우 처리되는 콜백함수
+			error : function(xhr, status, errorThrown) {
+				alert("error");
+// 				alert(xhr);
+// 				alert(status);
+// 				alert(errorThrown);
+			}
+		});
+	});
+</script>
+</head>
+
+<body>
+	<h2>인기검색어</h2>
+	<div id="wrap">
+		<ol></ol>
+	</div>
+</body>
+</html>

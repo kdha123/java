@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>tableJson</title>
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$.getJSON("boards.json", function(data) {
+			// 		alert(data);
+			var items = [];
+			$("#tr1").append(
+					"<th>no</th>" + "<th>title</th>" + "<th>writer</th>"
+							+ "<th>writeDate</th>" + "<th>hit</th>");
+			if (data.length > 0) {
+				$.each(data, function(key, val) {
+					// 			alert(val.no)
+					items.push("<tr>" + "<td>" + val.no + "</td>" +
+								"<td>"+ val.title + "</td>" +
+								"<td>" + val.writer	+ "</td>" +
+								"<td>" + val.writeDate + "</td>"+
+								"<td>" + val.hit + "</td>" + "</tr>")
+				});
+
+				$("<tbody/>", {
+					"id" : "tbody",
+					html : items.join("")
+				}).appendTo("table");
+			}
+		});
+	});
+</script>
+<style type="text/css">
+th, tr, td {
+	border: 1px solid red;
+}
+
+table {
+	border: 1px solid purple;
+}
+</style>
+</head>
+<body>
+	<h2>TableJSON</h2>
+	<table>
+		<tr id="tr1">
+		</tr>
+	</table>
+</body>
+</html>
