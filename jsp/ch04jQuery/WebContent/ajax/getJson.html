@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>getJson</title>
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//function안에 한개만 쓰면 나머지는 무시
+	//jQuery.getJSON(url, callback function(data, status, xhr){})
+	$.getJSON("board.json",function(data){ // Ajax 부분이고 밑에는 data를 어떻게 다뤄야할지에 대한 jQuery부분
+		alert(data);
+		alert(data.title);
+		var items = [];
+		// data의 각 항목별 처리 : data가 json형식이므로 항목을 k:v로 구성되어 있다.
+		// function()가 항목에 따른 반복문이 된다. data의 한개의 항목(k:v)을 가져다가 function의
+		// 파라메터로 전달. function(k,v)
+		$.each(data, function(key, val){
+			// 배열 안에 문자열을 만들고 만들어진 문자열을 집어 넣는다. push()
+			items.push("<li id='"+ key + "'>"+ val + "</li>");
+			
+		});
+		// 배열 출력
+		alert(items);
+		// 배열(li 태그가 있는)을 join해서 한개의 문자열로 만든다. 데이터들 사이의 구분자는 없는 것으로 한다. - html에 넣기 위해서
+		alert(items.join(""));
+		//jQuery(만들어질 태그, {태그의 구성})-> html element가 생성된다. 
+		// .appendTo("body") -> body element에 뒤에 추가 시킨다.
+		$("<ul/>", {
+			"class":"my-new-list",
+			html:items.join("")
+		}).appendTo("body");
+	});
+});
+</script>
+</head>
+<body>
+<h2>getJSON</h2>
+</body>
+</html>

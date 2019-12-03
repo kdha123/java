@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>get방식의 ajax</title>
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+// 	$ = jQuery
+	//serverData.jsp에서 글자들이 data라는 매개변수에 들어온다.
+	$.post("serverData.jsp",
+// 			{"no":10, "title":"ajax"}, //json Data 방식
+
+			"no=10&title=ajax", // query 방식(url?query)
+			function(data,status){
+				alert("Data:"+data + "\nStatus"+ status);
+	});
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>
