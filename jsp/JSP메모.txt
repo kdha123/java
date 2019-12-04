@@ -165,7 +165,5 @@ from(
 - load(url, [data, callback function(result, status, xhr){}])
 - get(url, function(data,status){})
 
-
-
-
+리스트 뷰 삭제, 글쓰기 화살표 캡쳐 올리기
 
