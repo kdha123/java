@@ -1,0 +1,32 @@
+
+
+
+JPadpro패치하는 방법
+
+patch.exe더클
+
+...버튼 클릭
+
+JPadPro.exe 선택 하면 된다
+
+start 클릭 
+success
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~`
+
+MySQL다운받기
+
+http://www.mysql.com/
+
+상단에서
+Developer Zone
+    Download
+
+MySQL4.0 .zip다운 받는다
+압축풀고
+bin\winmysql admin 실행
+id : 아무거나
+pwd : 아무거나
+
+클라이언트 실행
+MySQL-u  root ↙ 페스워드 없이 사용 ,나중에 주면 된다

@@ -1,0 +1,153 @@
+MySql 설치 하고
+
+MySql 사용 
+C:\MySQL5\bin>mysql -u root -p
+Enter password: 12345
+
+C:\MySQL55\bin>mysql -u -h localhoset root -p
+Enter password: 12345
+
+-u root  은 사용자(user)
+-p  : 암호
+-h : 호스트
+
+mysql> 쉘 상태 
+● DB 보기
+    show databases;
+
+● DB 생성 
+ create database mydb;
+ use mydb; ( mydb 사용 )
+
+● 관계형 테이블 사용 ( oracle, mysql, MSSQL )
+
+● 테이블 작성 형식 
+create table 테이블이름(
+   컬럼명 자료형(크기) 제약 사항 ,
+   컬럼명 자료형(크기),
+   컬럼명 자료형(크기)
+);
+● 자료형
+- varchar : 문자열
+- int : 정수
+- date : 날짜
+- datetime : 날짜 시간 
+- text : 65535 크기
+
+● 테이블 작성 실습
+create table test01(
+id varchar(20) not null primary key,
+pwd varchar(20) not null,	
+name varchar(20) not null
+);
+
+●show tables;// 테이블들 보기
+오라클 select * from tab;
+
+● 테이블 구조 보기
+desc test01;
+
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | varchar(20) | NO   | PRI | NULL    |       |
+| pwd   | varchar(20) | NO   |     | NULL    |       |
+| name  | varchar(20) | NO   |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+● insert , select , update , delete (CRUD=Create,Read,Update,Delete)
+
+● insert 형식
+insert into 테이블이름 ( 필드명,필드명..)  values('값','값',숫자);
+insert into 테이블이름  values('값','값',숫자); //모든 데이터값을 입력할때
+
+● insert  실습
+insert into test01 (id,pwd,name) values('kim','kim123','김태희');
+insert into test01 values('lee','lee123','이효리');
+insert into test01 values('i','i123','아이유');
+
+insert into test01 values('lee2','lee123','이상순'),('park', 'p123','김동현');
+
+
+● select 형식 
+select 필드명,필드명
+from 테이블명
+[where 조건]
+[order by 키필드 asc|desc]
+
+asc : 오름차순(순서대로)  
+        abcd---xyz  
+        가나다---타파하
+asc 는 생략할 수 있다 
+
+desc :  내림차순(역순)
+           zyx...dcba
+           하파타---다나가
+                        
+● select 실습
+select id,pwd,name 
+from test01;
+
+select *
+from test01;
+
+select id,name
+from test01;
+
+select *
+from test01
+where name='아이유';
+
+문)name 에 '이'가 포함된 자료만 검색 
+select *
+from  test01
+where name like '%이%';
+
+문) id를 오름차순으로 출력
+select *
+from test01
+order by id asc;
+
+문) id를 내림차순으로 출력
+select *
+from test01
+order by id desc;
+
+
+●update : 데이터 수정
+ 형식
+update 테이블이름 
+set 필드명='값',필드값='값',필드명=수식
+where 조건
+
+문) 아이디가 'kim'인 사람의 이름을 '김연아' 수정하시요
+update test01
+set name='김연아'
+where id='kim';
+
+select *
+from test01;
+
+●delete : 데이터 삭제 ( 행 삭제 )
+형식
+delete from 테이블명
+where 조건;
+
+문) 아이디 ( 'i2') 를 삭제 하시요 
+delete from test01
+where id='kim';
+
+select *
+from test01;
+
+
+
+
+
+
+  
+
+
+
+
+

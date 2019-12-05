@@ -1,0 +1,60 @@
+Mysql삭제
+
+1. 제어판 -- 관리도구 --- 서비스 --- Mysql 중지
+
+2.  Mysql 삭제
+mysql-5.5.37-winx64.msi 실행
+Next / Remove ( 다시 실행파일 실행하면 remove 나온다 )
+ 
+또는  제어판에서 프로그램 추가 삭제로 한다 
+
+3.  c:Mysql5   (탐색창 폴더 지운다)
+
+안되면
+4. C:\Documents and Settings\ All Users \ Application Data \ MySql  폴더 삭제
+안되면 
+4. 
+c:\>cd users/All users/
+C:\Users\All Users>start .
+All Users  가상 ProgramData 진짜 
+MySql 삭제 
+
+
+C:\Users\All Users>dir /A:h   (hidden 파일)
+4.  참고 .. 위에서 삭제 했음 
+C:\ProgramData\MySql 삭제
+Application Data 가상  ProgramData 진짜 
+
+끝~~~~~~~
+재부팅
+다시 설치
+==================================
+
+
+
+또는
+
+
+
+
+ 
+
+만약 안보이면 ... 탐색기 --도구 -- 폴더옵션 -- 보기 ---
+보호된 운영체제 파일 숨기기  ...해제
+숨김 파일 및 폴더 표시 ..... 해제 
+
+
+=====================
+폴더를 볼수 없을때
+=====================
+Mysql 삭제 
+
+검색창에서 
+
+고급 옵션
+시스템 폴더 검색
+숨김파일 및 폴더 검색  를 체크라고 
+
+Application Data 를 검색 하여 
+
+MySQL 폴더를 삭제 한다 
