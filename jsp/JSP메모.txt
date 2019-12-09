@@ -165,5 +165,24 @@ from(
 - load(url, [data, callback function(result, status, xhr){}])
 - get(url, function(data,status){})
 
+**파일 업로드(클라이언트 ->서버 : 파일 전송)
+<조건>
+post방식 데이터 전송 -> data에 파일을 포함시켜서 보낸다.
+enctype 속성을 지정 : enctype="multipart/form-data"
+input tag의 type 속성을 지정 : type="file"
+<라이브러리 등록>
+1.다운로드
+http://www.servlets.com/cos/
+내컴퓨터 - d:\workspace\web\html\WebContent\image\[dog01.png]
+서버올릴때 - 올린위치(realPath) + 파일명 - 올린 위치(웹서버의/ WebContent) 
+->업로드할 이미지 게시판의 웹에서의 위치(/upload/image/)
+---> 실제적으로 저장될 하드디스크의 위치: request.getServletContext().getRealPath("/upload/image/");
 
+DB에 저장할 정보 : 웹서버의 위치(/upload/image/) + 서버의 파일정보(multi.getFilesystemName("multiFile"))
+--> dto.fileName ="/upload/image/" + "dog01.png"
+==> 실제적으로 보여주는 페이지에서 보여주기
+<img src = "DB 데이터">
 
+이미지 게시판의 등록하기 만들기
+/image/writeForm.do-> forward/image/writeForm.jsp
+/image/write.do -> ImageDTO(ImageController) -> ImageWriteService-> ImageDAO
