@@ -1,0 +1,15 @@
+프로젝트 이름 02_jsp
+
+프로젝트이름
+	java Resources
+	src/ *.java
+
+	WebContent
+	 WEB-INF/lib
+		classes:서버에 올릴때
+		web.xml
+
+	 *.css
+	 *.js
+	 *.html
+	 *.jsp
