@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+<script type="text/javascript">
+function loginCheck(){
+	if(document.ff.id.value==""){
+		alert("아이디를 입력하시오");
+		document.ff.id.focus();
+		return false;
+	}
+	if(document.ff.pwd.value==""){
+		alert("암호를 입력하시오");
+		document.ff.pwd.focus();
+		return false;
+		
+	}
+	document.ff.submit();//서버로 전송
+}//loginCheck()
+
+</script>
+</head>
+<body>
+	<center>
+		<h2>로그인</h2>
+	</center>
+
+	<form method="post" action="/01_servlet/Login" name="ff">
+		<table border="1" width="400">
+
+			<tr>
+				<td>ID</td>
+				<td><input type="text" name="id" size="10"></td>
+			</tr>
+			<tr>
+				<td>암호</td>
+				<td><input type="password" name="pwd" size="8"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="로그인" onclick="loginCheck()">
+				<input type="reset" value="취소">
+				</td>
+			</tr>
+
+		</table>
+	</form>
+</body>
+</html>
