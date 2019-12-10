@@ -1,0 +1,31 @@
+04_application.txt
+
+application 내장객체는 서블릿 또는 어플리케이션 
+외부환경정보(context)를 나타내는 내부객체이다
+
+application 객체는 javax.servlet.ServletContext객체 타입으로 
+제공된다
+ServletContext application=new ServletContext(); 
+===========
+메서드들
+===========
+String  getServerInfo() : 서버정보를 구한다.
+        (웹 컨테이너 이름과 버전 리턴,JSP컨테이너에 대한 정보를 알 수 있다  )
+
+String getMimeType(fileName): 지정한 파일의 MIME 타입을 리턴한다
+         text/html
+예제:
+String contentType = application.getMimeType("aa.html");
+
+String getMajorVersion() : 
+서버가 지원하는 서블릿규약의 메이저 버전을 리턴한다.(정수부분)
+
+String getMinorVersion() : 
+서버가 지원하는 서블릿규약의 마이너 버전을 리턴한다.(소수부분)
+
+String getRealPath("/") : 지정된 url 실제 경로 알아내기
+
+void  log(message) : message 내용을 파일에 기록하기 
+( C:\Tomcat 8.0\logs 에 저장됨)
+
+

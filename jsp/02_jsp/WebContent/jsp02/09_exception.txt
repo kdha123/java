@@ -1,0 +1,16 @@
+09_exception.txt
+
+exception : 내장 객체  java.lang.Exception
+
+exeption 내부 객체는 프로그래머가 JSP페이지에서 발생한 예외를 처리하는 
+           페이지를 지정한 경우 에러 페이지에 전달되는 예외 객체이다.
+
+ 메서드들
+String getMessage() : 발생된 예외 메시지를 리턴한다
+String toString() : 발생된 예외 클래스명과 메세지 리턴
+String printStackTrace()   
+              발생된 예외를 역추척하기 위해 표준 예외 스트림을 출력한다
+              
+exception.getMessage();
+exception.toString();
+exception.printStackTrace();
