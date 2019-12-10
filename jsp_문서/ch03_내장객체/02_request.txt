@@ -1,0 +1,28 @@
+02_request.txt
+
+request.getParameter(name) : name에 해당하는 파라미터값 얻기 
+request.getParameterValues(name) 
+               : name에 해당하는 파라미터값들을 모두 얻기 
+               (checkbox,select) 선택한 값들만 
+               
+request.getParameterNames(): form에 있는 모든 파라미터이름을 얻어낸다
+
+request.getMethod()     : 요청 방식 알아 내기 
+request.getRequestURI() : 요청 URI알아내기(/컨텍스트이름/중간이름/aa.jsp)
+request.getRequestURL() : 요청 URL 알아내기 ( 전체주소 )
+                          (http://ip:port/컨텍스트이름/중간이름/aa.jsp)
+                          
+request.getRemoteHost() : 클라이언트 호스트이름 알아내기
+request.getRemoteAddr() : 클라이언트 ip주소 알아내기 
+request.getRemoteUser() : (인증을 이용한 경우) 이용자 ID알아내기 
+
+ftp://
+http://
+
+request.getProtocol()    : 사용중인 프로토콜 알아내기 (http/1.1)
+request.getServerName()  : 서버 도메인 이름 알아내기 
+request.getServerPort()  : 서버 포트 알아내기 ( 9000 )
+
+request.getHeader(name) : name에 해당하는 요청 헤더값을 알아내기 
+
+
