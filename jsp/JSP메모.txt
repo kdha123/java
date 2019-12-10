@@ -170,9 +170,12 @@ from(
 post방식 데이터 전송 -> data에 파일을 포함시켜서 보낸다.
 enctype 속성을 지정 : enctype="multipart/form-data"
 input tag의 type 속성을 지정 : type="file"
+
 <라이브러리 등록>
 1.다운로드
-http://www.servlets.com/cos/
+http://www.servlets.com/cos/ - MultipartRequest
+2.서버
+Server - request객체를 multipartRequest에 전달해서 사용
 내컴퓨터 - d:\workspace\web\html\WebContent\image\[dog01.png]
 서버올릴때 - 올린위치(realPath) + 파일명 - 올린 위치(웹서버의/ WebContent) 
 ->업로드할 이미지 게시판의 웹에서의 위치(/upload/image/)
