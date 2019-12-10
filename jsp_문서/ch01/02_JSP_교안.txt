@@ -1,0 +1,70 @@
+  <<서블릿>>
+
+자바을 이용안 서버쪽 스크립트로서 먼저 제안된 방법은 servlet 이다
+
+우리가 서핑 중에 /servlet/...이라는 주소를 보게 되는데
+
+이주소는 바로 서블릿프로그램을 호출하는 것입니다
+
+서블릿 프로그램은 일반적인 자바 프로그램에 HTML코드가 삽입된 형태이다
+
+"Hellow world"를 출력하는 서블릿 프로그램 코드로 수행 시키려면  먼저 컴파일을
+
+해서 HelloWorld.class 파일을 만들어야 한다
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class HelloWorld  extends HttpServlet
+{
+  public void service(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException
+	{
+		res.setContentType("text/html;charset=euc-kr");
+		PrintWriter out=res.getWriter();
+		
+		out.println("<html>");
+		out.println("<body>");
+		out.println("<h1>Hello world</h1>");
+		out.println("</body>");
+		out.println("</html>");
+		out.close();
+	}
+
+}
+
+컴파일 
+.class  를 서버에 올려서 실행한다 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+자바를 이용한 서버쪽 스크립트 중에서 JSP(Java Server Pages)는
+
+일반적인 HTML파일에 자바코드를  삽입한 형태로
+
+서블릿과는 완전히 다른 형태이다 
+
+"HelloWorld"를 출력하는 JSP프로그램 입니다
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<%@ page info="예제"%>
+<html>
+	<body>
+		HelloWorld
+	</body>
+</html>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+그렇지만 내부적으로 JSP파일은 서블릿으로 변환된 다음 , 변환된 서블릿이 수행되는 
+
+것이므로 JSP는 서블릿을 작성하는 또 다른 방법이라고 표현할 수 있습니다
+
+JSP는 서블릿와 달리 소스 파일만 작성해 놓으면 실행시 적절한 시점에서
+
+자동 컴파일 된다
+
+JSP가 수행되는 과정은 다음과 같다
+
+

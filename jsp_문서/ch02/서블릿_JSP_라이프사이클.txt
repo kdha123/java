@@ -1,0 +1,50 @@
+■서블릿 라이프 사이클(생명주기)
+서블릿 라이프 사이클
+=====================
+ ●Applet 생명 주기 
+                           run()
+      init() ---start() ---paint()---stop()---destroy()
+	
+
+ ●  서블릿 생명주기 
+     init()----service()-----destroy()
+                 doGet()
+                 doPost()
+
+1. init()는 서블릿이 메모리에 Load될때 호출된다
+            초기화 작업을 수행한다 
+
+2. service() 메서드는 클라이언트 요청이 있을때마다
+             스레드가 생성되어져서 병행적으로 
+             service()메서드가 수행된다
+
+
+  doGet(), doPost()메서드는 클라이언트 요청이 있을때마다 
+  service()메서드가 호출되고,
+  service() 메서드가 HTTP의 method 타입에 따라
+  get방식인 경우는 doGet()메서드를
+  post방식인 경우는 doPost()메서드를 호출 합니다
+
+3.destroy()메서드는 서블릿이 메모리에서 unload 되기 직전에
+  호출되어진다
+
+★ 그리고 init(), destroy()는 한번씩만 호출된다.
+   service() 메서드는 클라이언트 요청할때마다
+   병행적으로 수행된다
+
+
+
+
+
+■JSP 라이프 사이클 (생명주기)
+
+<%--
+1) JspPage 인터페이스 메서드 
+    _jspInit()    .......JSP페이지가 초기화 될때 한번 호출된다
+    _jspDestroy() ....JSP페이지가 메모리에서 제거 될때 호출 된다 
+    
+2) HttpJspPage 인터페이스 메서드
+    _jspService() ...클라이언트 요청을 처리하는 메서드로서, 
+                     JSP컨테이너에 의해서 자동으로 생성된다 
+
+
