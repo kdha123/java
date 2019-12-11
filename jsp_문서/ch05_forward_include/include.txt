@@ -1,0 +1,35 @@
+include.txt
+
+===================================
+include 디렉티브(지시자)와 Include 액션
+===================================
+
+Include 지시자(디렉티브)는
+* 외부 데이터를 jsp에 포함 시킵니다.(html,jsp,txt)
+* 단순히 소스만 포함 됩니다.
+  그래서 포함될 문서는 헤더부분을 넣지 말 것
+  헤더 부분이란:<html><body>
+
+  include 지시자 형식
+<%@ include file="파일이름"%>
+<%@ include file="aa.html"%>
+<%@ include file="aa.txt"%>
+<%@ include file="aa.jsp"%>
+
+==================================
+Include 액션은===참조 형식은 forward 액션과 같다
+ 
+include액션은 jsp파일의 처리 결과를 포함한다
+
+-------------------------
+형식1
+-------------------------
+<jsp:include page="aa.jsp"/>
+
+-------------------------
+형식2
+-------------------------
+<jsp:include page="aa.jsp">
+   <jsp:param name="" value=""/>
+</jsp:include>
+-------------------------
