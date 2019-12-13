@@ -1,0 +1,89 @@
+자바빈을 이용한  파일업로드, 메일보내기
+
+cos.jar 다운받기 
+ 
+http://www.servlets.com
+
+아래 오른쪽 
+Download the package 
+
+압축풀고
+cos-26Dec2008 를 c: 에복사
+
+C:\cos-26Dec2008\lib\cos.jar 를 
+
+jdk/jre/lib/ext/복사
+tomcat/lib/복사
+
+환경변수
+
+classpath=.;%JAVA_HOME%\lib\tools.jar;C:\cos-26Dec2008\lib\cos.jar
+
+※반드시 이클립스 재구동
+
+===============
+파일업로드 실습 
+===============
+1. MultipartRequest 클래스 사용
+
+
+2. 생성자 
+MultipartRequest(request,dir(savePath))  
+      ==>  request오브젝트와, 서버쪽에 저장될 디렉토리 
+            (C:\_java\aaupload\)
+    
+
+
+2. 생성자
+MultipartRequest(request , savePath, size, "utf-8",  
+new DefaultFileRenamePolicy())
+
+
+첫번째 인수 : request 요청 객체
+두번째 인수 : 저장(업로드)할 경로
+세번째 인수 : 업로드될 파일 크기 ( size 는 1024 * 1024 * 5  ==> 5MB )
+네번째 인수 : 인코딩 문자
+       
+다섯째 인수 :파일 중복처리 
+                 동일한 이름으로 파일이 업로드되면 자동으로 rename 해주는 기능
+
+
+
+3. MultipartRequest 클래스의 생성자가 업로드된 파일의 저장 작업까지 수행한다
+
+
+
+4. MultipartRequest 메서드
+
+1) String  getContentType(String name) => 전송된 파일의 contentType 내용 알아 보기 
+
+2) File getFile(String name) => input 항목이름에 해당하는 파일 정보를  File 형으로 리턴한다 
+
+
+3) String getFilesystemName(String name) : 업로드된 실제 파일 이름 알아내기 
+4) String getOriginalFileName(String name) : 업로드된 원래의 파일 이름을 리턴 
+
+
+5) Enumeration getFileNames() : 전송된 파일정보를 가져와 출력 합니다 
+6) Enumeration getParameterNames() : form 의 파라미터 목록을 모두 가져온다 
+7) String getParameter("name") => name 에 해당하는 값을 리턴
+
+----------------------------
+파일 업로드 실습2
+----------------------------
+src/upload.FileUploadBean.java
+
+WebContent/ch18_fileup
+fileupload.html
+fileupload.jsp
+
+실습2
+================================
+빈 사용하지 않은 파일 업로드
+일반데이터도 받는 예제  ★★★★★ 
+
+fileupload2.html
+fileupload2.jsp
+================================
+
+
