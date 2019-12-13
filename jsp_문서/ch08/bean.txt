@@ -1,0 +1,126 @@
+<Beans:빈즈>
+자바빈즈 : 클래스
+컴포넌트 : 자바빈즈,Button,Label,TextField
+
+자바 빈즈는 자바를 소프트웨어 컴포넌트(부품) 만들기 위한 기술이다.
+
+
+자바빈즈를 사용하는 이유 : 디자인 부분과 로직 부분을 분리하여 작업할 수 있다
+
+프로그램 작성의 효율성을 높이기 위해 소프트웨어 컴포넌트를
+만들어서 활용한다.
+
+장점은  -- 재활용 
+
+일반적으로 웹 사이트는 디자이너와 프로그래머가 협력하여 개발하게 된다
+그런데 프로그래머가 JSP  페이지의  이곳 저곳에 자바코드를 입력했을 때 
+디자이너는 이 페이지를 해석하기 어려워지게 되고 
+개발 효율 또한 매우 떨어지게 된다 
+
+그래서 등장하게 된 것이 자바빈이다.
+
+자바빈은 JSP 페이지의 디자인 부분과 로직부분을 나눔으로써 복잡한 코드를 줄이고,  프로그램의 효율을 높일 수 있다 
+
+
+<< 빈 작성 규칙 >>
+1. 멤버 변수는 private 으로 선언한다 
+
+  예시
+  private String id;  // 은폐필드
+  private String pwd;
+  private String name;
+
+
+2. 멤버 변수 값 설정은 메서드를 통해서 한다
+    getXxx(), setXxx() : getter,setter메서드 
+
+   예시
+   public void setId(String id){
+       this.id=id;
+   }
+   public String getId(){
+      return id;
+   }
+3. 메서드 접근 제한자는 public 으로 한다
+4. 메서드 이름( setXxx(), getXxx() )은 변수이름으로 만든다
+5. 멤벼변수가 boolean 형일 경우 getXxx() 대신 isXxx() 메서드를 만든다
+
+6. 기타 필요한 멤버변수 , 멤버 메서드를 사용할 수 도 있다.
+
+<< 빈 만들기 >>--------------------------
+package mypa;
+import ~
+import ~
+
+public class TestBean{
+  //전역변수=필드=property=프로퍼티
+  private Strign id;
+
+  public void setId(String id){
+     this.id=id;
+  }
+  public String getId(){
+    return id;
+  }
+}//class 
+//컴파일만 한다 
+
+JSP 에서 빈 사용하기 설명
+
+※ jsp액션 :<jsp:forward page="a.jsp"/>, <jsp:include page="a.jsp"/>
+
+<jsp:useBean> : 이 액션은 jsp페이지에서 빈을 초기화 하는데 사용
+                      디폴트생성자가 필요하다 
+                      객체생성 기능이다.
+<jsp:useBean id="" class="" scope=""/>
+
+id="빈이름"  => 객체이름
+class="패키지.클래스이름"
+scope="범위지정" (page, session , request ,application )
+page:디폴트
+request, session : 많이 사용 
+
+--------------------------------
+<jsp:useBean id="객체명" class="" scope="">
+
+   <%--빈에 값을 셋팅--%>
+   <jsp:setProperty name="id명" property="프로퍼티명" value="값"/>
+   <jsp:setProperty name="객체명" property="id" value="kim"/>
+
+    <%-- 빈으로부터 값을 얻어올때 --%>
+   <jsp:getProperty name="id명"  property="프로퍼티명"/>
+   <jsp:getProperty name="객체명" property="id"/>
+ </jsp:useBean>
+--------------------------------
+<jsp:setProperty>:이 액션은 빈의 변수(property=속성)에 값을 넣어줄때 사용한다
+<jsp:getProperty>:이 액션은 빈의 변수(property=속성)값을 가져올때 사용한다
+--------------------------------
+<jsp:setProperty> : setXxx()
+<jsp:getProperty> : getXxx()
+--------------------------------
+<%--빈에 값을 셋팅하는 방법 4 가지 --%>
+
+1. <jsp:setProperty name="id명" property="프로퍼티명" value="값"/>
+
+2. <jsp:setProperty name="id명" property="프로퍼티명"  param="파라미터명"/>
+                                             빈변수                     html의 파라미터명
+
+3. <jsp:setProperty name="id명" property="프로퍼티명"/>
+    생략은 프로퍼티명과 파라미터명이 같을때
+
+4. <jsp:setProperty name="id명" property="*"/>
+    모든 프로퍼티명과 파라미터명이 같을때 
+--------------------------------
+실습1
+src/mybean.TestBean.java
+WebContent/ch17_bean/TestBean.jsp
+
+실습2
+src/mybean.TestBean2.java
+WebContent/ch17_bean/TestBean2.html
+WebContent/ch17_bean/TestBean2.jsp
+
+실습2
+src/mybean.TestBeanColor3.java
+WebContent/ch17_bean/TestBeanColor3.html
+WebContent/ch17_bean/TestBeanColor3.jsp
