@@ -1,0 +1,41 @@
+synchronized 제한자와 wait(), notify(),notifyAll()
+이들 메서드 함께 사용하여,스레드 수행 순서를 조절한다 
+
+두 스레드가 동시에 수행 될수 없으며,
+반드시 첫번째 스레드가 먼저 수행되어 데이터 영역에 저장해야 한다
+또는 데이터 영역크기(Vector크기)를 제한하여 적절한 시기에
+두번째 스레드가 수행하게 한다 
+
+
+이 경우
+class MyThread{
+
+  //Vector에 넣는 작업 
+ synchronized void put(char c){
+   while("작업을 수행할 수 없는 동안 ){
+     try{
+     wait();//대기
+     }catch(Exception ex){}
+   }//while
+
+    //처리내용
+    notifyAll();//작업이 종료 되었음을 모두 에게 알려준다 
+ }//put
+
+  synchronized char get(){
+     while(작업을 할 수 없는 동안 ){
+      try{
+        wait();//대기
+      }catch(Exception ex){}
+     }//while
+     //처리내용
+     notifyAll();//작업이 종료 되었음를 모두에게 알린다
+  }//get
+}//class
+
+실습
+Test05_Thread.java
+
+
+
+

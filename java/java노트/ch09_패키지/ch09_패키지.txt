@@ -1,0 +1,40 @@
+패키지(package)
+- 패키지 : 폴더 
+- 패키지 : 기능이 유사한 class, interface 를 
+               모아 놓은 것을 말한다 
+
+ import java.awt.*;
+ import java.sql.Date;
+ import java.util.Date;
+
+- 패키지를 사용한 이유는 class 이름상의 충돌을 방지 시켜준다 
+
+패키지이름  : 소문자
+변수 : 첫글자 소문자, 이후에는 단어 위주로 첫글자 대문자 
+메소드 : 첫글자 소문자,    "
+클래스 : 첫글자 대문자 ,   " 
+
+●형식
+package 패키지이름;
+
+●예
+package hong;
+package hong.kil.dong;
+
+● 사용
+package aa;
+import java.awt.*;
+import java.awt.event.*;
+class 클래스이름{
+//변수
+//메서드
+}
+====================
+●  실습1
+c:\_aa 폴더 작석
+
+jpadpro 실행한다 
+====================
+
+
+

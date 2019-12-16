@@ -1,0 +1,37 @@
+----------------------------------
+8. Object 메서드들 
+----------------------------------
+자바에서는 기본 패키지 java.lang 이란 패키지를 제공해 주고 있다 
+java.lang 에 있는 모든 클래스의 수퍼클래스인 Object와 
+기본자료형 클래스인 래퍼클래스와 표준 입출력을 위한 System클래스등이 있다 
+
+java.lang.Object 클래스는 모든 자바 클래스의 최상위 클래스이다 
+자바의 모든 클래스들은 Object클래스로부터 상속받는다
+
+상속받지 않고 클래스를 설계 했더라도
+Object가 내부적으로 상속 받아 지는 것이다 
+
+------------------------------------
+Object 메서드들 
+
+protected Object clone() : 객체 복사 
+
+public boolean equals(Object ob) : 두 객체를 비교할때 사용(문자열 비교)
+public int hashCode() : 자바 객체를 식별하는 정수 값인 해쉬코드를 반환
+                        모든 객체는 해쉬코드로 관리한다
+Test A,B,C;
+
+public Class getClass() : 객체의 클래스이름을 Class형으로 반환한다
+public String toString() : 객체를 문자열로 반환
+
+참조 : Date, StringBuffer => toString()을 사용하여 문자열로 변환
+
+public void notify() ======> 현재 스레드가 일을 다 했다는 것을  알려준다 
+                             그러면 다음 대기 스레드가 수행된다 
+
+public void notifyAll()====> 현재 스레드가 일을 다 했다는것을 모두 에게 알려준다 
+                             다음 대기중인 스레드가 수행된다 
+
+public void wait() ========> 현재 스레드를 기다리게 한다 ( 대기 상태로 )
+
+웹프로그램 할때는 웹 서버 자체에서 스레드를 제공한다 

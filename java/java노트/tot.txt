@@ -1,0 +1,39 @@
+static 
+final
+abstract
+
+private 생략 protected public
+다형성 
+추상클래스
+인터페이스
+내부크래스
+
+제공한 객체사용
+awt---gui
+
+
+Exception
+IO--객체직렬화
+ 
+util-날짜,컬렉션,제너릭
+Thead
+
+Applet
+Swing
+
+NetWork
+DB(Mysql, Oracle),java DB연동 
+
+미니 프로젝트
+
+html / css / javaScript / jQeury 
+
+Servlet / JSP 
+
+프로젝트
+
+Spring 
+
+프로젝트
+
+

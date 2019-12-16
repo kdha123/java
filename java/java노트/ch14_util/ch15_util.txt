@@ -1,0 +1,111 @@
+java1.4(EJB 1.3) / java1.5(java5)
+
+java5 부터 추가된 유틸 
+
+----------------------------
+1. Generic ( 제너릭) 
+----------------------------
+Generic  기능은 Collection(Vector,List,Map) 같은 자료구조에 객체를 넣거나 꺼낼때 형변환을 잘못했을 때 ClassCastException 컴파일시 찾아내기 위한 기능 
+    
+제너릭 타입 <자료형>사이에 컴파일 당시 사용될 객체 자료형만 선언 해주면 
+객체를 저장할 때 선언된 제너릭 타입으로만 저장된다 
+
+Vector <String> vec=new Vector<String>();
+String str=(String)vec.get(i);
+Test04_Generic.java
+-------------------------------------------------
+API에서는 
+전달되는 객체가 현재 객체 내에서 하나의 자료형(Type)으로 쓰일때는<T>로
+전달되는 객체가 현재 객체내에서 하나의 요소(Element)로 자리잡을때는 <E> 로
+전달되는 객체가 현재 객체내에서 
+Key 값으로 사용될때는 <K>로 ,
+전달되는 객체가 현재 객체 내에서 
+Value 값으로 사용될때는 <V> 로 표현된다 
+-------------------------------------------------실습
+src/ch16_util
+Test01_Generic.java
+
+----------------------------
+2. Enhanced Loop ( 단축 for )
+ 
+Enhanced Loop(for문)은 Collection 이나 배열 같은
+군집 데이터를 처리할때 다용한다
+
+형식
+
+for(파라미터:변수명(콜렉션자료)){
+   처리
+}
+
+실습 : Test03_for.java
+
+----------------------------
+3. Autoboxing / Unboxing
+
+Autoboxing : 기본 자료형이 heap영역으로 저장
+Unboxing   : heap영역 자료가 stack에 저장
+
+Autoboxing 예
+int a=10;
+Integer A=a; // java1.5
+Integer A=new Integer(a);//java1.4
+
+Unboxing 예
+Integer B=new Interger(100);
+int a=B;
+
+실습 : Test04_auto_unboxing.java
+--------------------------------
+
+4. 향상된 입,출력 기능
+
+향상된 입력 기능 : java.util.Scanner
+향상된 출력 기능 : System.out.printf("%d %f %s\n",12,66.7,"kim");
+
+실습 : Test05_io.java
+---------------------------------
+5. Varages : 여러개의 인수를 처리할 때 유용한다
+
+실습 Test06_Varages.java
+---------------------------------
+6. 컬렉션 클래스와 제너릭
+
+Collection 자료들 
+Iterator, Set, HashSet, List ,ArrayList, Vector
+Map, HashMap, Hashtable
+배열
+
+※ Collection 주요 메서드들
+
+int size(): 요소 갯수 리턴
+boolean isEmpty() : 컬렉션이 비어 있는가?
+boolean add(Object ob) : 요소 추가 성공했을시 true 리턴
+boolean remove(Object ob):요소 삭제 , 성공하면 true 리턴
+boolean contains(Object ob) : 해당 객체가 컬렉션 클래스에 포함되어
+                              있으면 true 리턴
+Iterator iterator() : Iterator 객체를 리턴
+
+Set  <--- HashSet  : 중복 허용 않는다
+List <--- ArrayList : 중복허용 된다 
+
+실습 Test07_HashSet.java
+Test08_List.java
+Test09_Set_Lotto.java
+Test10_List.java
+Test11_List.java
+
+Test12_Vector.java
+Test13_Hashtable.java
+Test14_HashMap.java
+
+Test15_Dto.java
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+----------------------------------
+4. String , StringBuffer
+----------------------------------
+String , StringBuffer( 실행 속도가 빠르다 )
+
+StringBuffer : 동적문자열 처리 
+
+생성자 들
+StringBuffer( )  : 디폴트 생성자 
+StringBuffer(int size) : size를 기본크기로 지정 
+StringBuffer(String str) : str 초기문자열 지정
+
+
+메서드 들 
+----------------------------------
+StringBuffer append(boolean b) : 현재 문자열 끝에 b를 추가 
+StringBuffer append(char ch) : 현재문자열 끝에 ch를 추가 
+StringBuffer append(int i) : 현재 문자열 끝에 i 를 추가
+StringBuffer append(long l) : 현재문자열 끝에 l 를 추가 
+StringBuffer append(float f) :현재문자열 끝에 f 를 추가 
+StringBuffer append(double d) :현재문자열 끝에 d 를 추가 
+StringBuffer append(String str) :현재문자열 끝에 str문자열을 추가 
+StringBuffer append(Object obj) : 현재문자열 끝에 obj 를 추가 
+
+int capacity() : 현재 문자열의 버퍼크기를 반환 
+
+char charAt(int index) :  index 위치에 해당 문자 반환 
+int length( ) : 문자의 개수를 반환  참고:배열.length
+
+StringBuffer insert(int i ,boolean b) : i번 인덱스 앞에 b를 추가
+StringBuffer insert(int i, char ch); i번 인덱스 앞에 ch 를 추가
+StringBuffer insert(int i, int j) : i번 인덱스 앞에 j를 추가
+StringBuffer insert(int i, long l) :i번 인덱스 앞에 l 를 추가
+StringBuffer insert(int i, String str) :i번 인덱스 앞에 str 문자열을 추가
+StringBuffer insert(int i,Object obj) : i번 인덱스 앞에 obj를 추가
+
+ 
+StringBuffer reverse() : 문자열을 역순으로 변환해 준다 
+void setCharAt(int i, char ch) : i번째 문자를 ch로 바꾼다 
+void setLength(int len) : 버퍼크기를 len 크기로 재설정 

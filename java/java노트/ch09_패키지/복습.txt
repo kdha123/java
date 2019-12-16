@@ -1,0 +1,58 @@
+객체지향
+메서드
+전역변수
+지역변수
+
+생성자
+this
+super
+this()
+super()
+
+클래스
+String substring(int start)
+String substring(int start,int end)
+
+Integer.parseInt("123");//문자열을 숫자로
+""+123  => 숫자를 문자열로
+
+클래스 객체 배열
+Test a[]=new Test[4];//배열생성
+a[0]=new Test("aa",7,190);//객체생성
+a[1]=new Test();
+a[2]=new Test();
+a[3]=new Test();
+
+
+클 extends 클
+클 implements 인
+인 extends 인
+
+인터페이스 : 메서드 선언만 한다
+                   모든 메서드는 상속 받아서 오버라이딩 해야한다
+추상클래스는 : 내용있는 메서드와 추상메서드가 혼합 사용 경우 
+
+패키지 
+jar : 클래스 압축
+*.jar 파일은  JDK/jre/lib/ext/ 복사 
+
+
+awt : GUI 환경 프로그램 
+
+//창 종료 
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class Test extends Frame{
+  //변수
+  //생성자
+  //inner class
+  //메서드
+  //main
+}
+
+
+
+
+

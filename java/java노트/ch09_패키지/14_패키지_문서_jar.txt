@@ -1,0 +1,87 @@
+=======================================
+.jar  : java 파일을 압축
+=======================================
+
+실습 
+
+c:\aa\cc 만들고 
+cc 에 저장
+
+===========================================
+package hong.kil.dong;
+
+public class Calc01
+{
+	//생성자 
+	public Calc01(){}
+	
+	//메서드 
+	public void hap(int a, int b){
+		System.out.println("합:"+(a+b));
+	}//hap() end
+}//class
+//저장만
+===========================================
+package hong.kil.dong;
+
+public class Calc02
+{
+	//생성자
+	public Calc02(){}
+	
+	//메서드
+	public void cha(int a, int b){
+		System.out.println("차:"+(a-b));
+	}//cha() end
+}//class 
+//저장만 
+
+===========================================
+c:\aa\cc>javac -d . *.java  ( 컴파일 )
+
+
+c:\aa\cc>jar -cvf hong.jar hong
+=====================================
+
+c:\aa\cc 에 있는 hong.jar를
+
+jdk / jre/ lib / ext 에 복사 
+
+
+이클립스 재구동 
+
+이클립스에서 실습
+
+클래스이름 : Test03_package
+
+=======================================
+package ch12_package;
+import hong.kil.dong.*;
+
+public class Test03_package {
+	public static void main(String[] args) {
+		Calc01 A=new Calc01();
+		Calc02 B=new Calc02();
+		
+		A.hap(2,3);
+		B.cha(10,3);
+		
+	}//main
+}//class
+=============================================
+
+프로젝트에서==우클릭==property==
+Libraris 탭 선택하고
+오른쪽
+Add Extenal JARs 버튼 클릭
+
+c:\aa\cc\hong.jar
+
+Apply 적용
+OK
+
+===============================================
+
+왼쪽
+Java Builed path
+

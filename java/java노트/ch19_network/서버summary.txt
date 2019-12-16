@@ -1,0 +1,41 @@
+채팅프로그램
+서버
+Room.java
+Server.java
+
+클라이언트
+RoomClent.java
+MainClient.java
+
+서버 흐름 요약
+
+
+1. globavc : 입장하는 클라이언트 모두 넣는 vec 이다
+   roomvc : 방이름 넣는 vec 이다 
+   ta   :  정보 출력 하려고 
+   uservec : 같은방에 들어온 클라이언트들 넣을 vec이다 
+
+2. ServerSocket 생성
+    s=ss.accept();//클라이언트 접속을 받아서 ,소켓연결을 한다.
+
+3. Service 객체생성( 접속자=클라이언트 1 명당 )
+
+4. Room myroom=new Room();//대기실
+   myroom=new Room("방이름","방장",인원);//방에 들어 왔을때
+   in, out  객체를 사용하여 대화를 할 수 있다 
+
+5. 접속자들을 지금 들어온 클라이언트 에게 name,title 뿌려준다 
+6. 지금 들어온 클라이언트 에게 개설되어있는 (title,inwon) 뿌려준다
+7. 지금 들어온 클라이언트를 대기실에 넣는다 
+8. 접속한 모든 클라이언트에게 지금 들어온 클라이언트 알린다
+  Service 시작
+  방만들기
+  방들어가기
+  방에서 대화
+  방퇴장
+  대화명 변경
+  귓속말
+  종료
+
+
+

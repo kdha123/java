@@ -1,0 +1,104 @@
+예외 ( EXception )
+
+예외란? 프로그램이 실행되는 동안 예기치 않은 이상 상태( 예외 상황)
+            발생하는것을 말한다 
+
+에러란? 프로그램 언어의 문법적인 오류 
+
+예외는 프로그램이 실행되는 동안 문제가 발생했을때 대처할 수 있게
+       처리하는 것
+
+Exception이란
+사전에 프로그래머가 예상해서 처리(I/O,DB)할 수 있는 가벼운 에러로 
+예외 종류는 클래스 계층 구조로 되어 있다 
+
+계층구조
+
+Throwable
+     ↑
+Exception
+   ↑ CompileException
+         IOException
+         FileNotFoundException
+         ClassNotFoundException
+   ↑ RuntimeException
+          ArraryIndexOutOfBoundsException -배열 예외
+          NumberFormatException--숫자가 아닐떄 예외
+          ArithmeticException----연산 예외  0/2
+   
+
+※ catch 문은 하위 클래스를 위쪽으로
+상위 클래스를 아래쪽으로 기술해야 한다
+
+예외처리방법 2가지
+
+방법1>  직접처리 
+-----------------------------------------
+try{
+   처리문;
+   처리문;
+   처리문;
+}catch(예외종류1){
+    처리문; (출력)
+}catch(예외종류2){
+    처리문; (출력)
+}finally{
+   처리문;
+    con.close();
+}
+-----------------------------------------
+※ finally 절은 예외 발생과 상관없이 처리한다
+    심지어 앞에 return문이 있어도  finally 절은 처리한다
+    하지만 앞에 System.exit(0);있으면 처리하지 않는다
+
+
+방법2>  간접처리 
+-----------------------------------------
+리턴형 메서드() throws 예외종류{
+    처리문;
+    처리문;
+    처리문;
+}
+
+메서드 내용을 처리하던중
+예외가 발생하면 메서드를 호출했던 그곳으로 제어권을 넘긴다
+main() throws Exception : JVM으로 제어권을 넘긴다.
+
+
+-----------------------------------------
+
+src/ch13_exception
+           Test01_exception.java
+
+-----------------------------------------
+throw 와 throws
+throw는 예외 발생 시킨다 
+new Test(); // throw new Test();
+-----------------------------------------
+[ 설명 ]
+새로운 Exception를 정의하고 ,
+throw 문을 이용해서 새로 정의한 Exception을 발생시킬 때 사용한다
+
+
+
+--구조---------------------------------------------------
+
+class ExceptionTest
+{
+   void method() throws MyException
+     {
+       if(MyException발생 조건)
+        {
+           throw new MyException("메세지");//예외발생 
+         }//if
+      }//method end 
+ }//class end-----------------------------------
+
+class MyException extends Exception
+{
+    public MyException(String msg)//생성자 
+     {
+        super(msg);// 상위 클래스 생성자 호출 
+     }
+}
+----------------------------------------------------

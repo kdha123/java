@@ -1,0 +1,8 @@
+접근제한자
+private : 자신의 클래스 내에서만 접근 가능
+생략       : 같은 패키지 에서 접근 가능
+protected : 상속관계에서,수퍼클래스,파생클래스에서
+                   접근 가능
+public  : 어느 클래스에서나 접근 가능
+
+private < 생략 < protected < public 
