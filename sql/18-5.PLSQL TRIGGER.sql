@@ -41,6 +41,7 @@ create sequence board_rep_seq;
 
 select*from board;
 
+
 -- 리스트에서 나타난 글번호 2번 글의 댓글 달기
 insert into board_rep(rno, no, content,writer)
 values(board_rep_seq.nextval, 2,'오라클 좋아요~~','홍길동');
@@ -80,3 +81,13 @@ commit;
 select no, title, writer, writeDate, hit, rep_cnt
 from board
 order by no desc;
+
+create or replace TRIGGER board_rep_insert_tr
+
+AFTER INSERT ON board_rep
+for each row
+begin
+    update board set rep_cnt = rep_cnt +1
+    where no = :new.no;
+    END;
+/

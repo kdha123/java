@@ -5,6 +5,11 @@ commit;
 select q.no,q.title, q.id, m.name, q.writeDate, q.hit, q.levNo from qna q, member m
 where q.id = m.id order by q.refNo desc, q.ordNo asc ;
 
+----1-1 qna list
+select q.no,q.title, q.id, m.name, q.writeDate, q.hit, q.levNo, q.parentNO
+from qna q, member m
+where no = 21 and q.id = m.id; 
+
 --- 2. 질문하기 write
 insert into qna(no,title, content,id,refNo, ordNo, levNo) 
 values(qna_seq.nextval,'자바란?','궁금합니다.','test',qna_seq.nextval,1,0);

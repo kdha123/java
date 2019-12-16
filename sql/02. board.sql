@@ -1,5 +1,6 @@
 -- BOARD 테이블을 제거한다.(만약에 없으면 오류가 난다.)
 DROP TABLE board CASCADE CONSTRAINTS;
+drop sequence board_seq;
 -- 게시판 테이블 작성
 -- 게시판 테이블 생성
 -- 1. 게시판 생성 형식 작성
@@ -16,3 +17,4 @@ CREATE TABLE board(
   writeDate DATE DEFAULT SYSDATE,
   hit NUMBER DEFAULT 0
 );
+CREATE SEQUENCE board_seq;

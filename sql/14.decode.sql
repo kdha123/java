@@ -10,3 +10,11 @@ create table grade (
     grade number(2) primary key, 
     gradeName varchar2(15) not null
     );
+
+insert into grade values(1,'일반회원');
+insert into grade values(9,'관리자');
+commit;
+
+-- id, name, grade, gradeName - member,grade
+select id, name, member.grade, gradeName
+from member, grade where member.grade = grade.grade;

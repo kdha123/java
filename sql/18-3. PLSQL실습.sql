@@ -1,12 +1,12 @@
--- PL/SQL í™œìš©í•˜ì—¬ ë‹¤ìŒ ê¸°ëŠ¥ì„ êµ¬í˜„í•˜ì‹œì˜¤.
---1. ê³µì§€ì‚¬í•­ ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
---2. ê³µì§€ì‚¬í•­ ë³´ê¸° ì¶œë ¥(ë¦¬ìŠ¤íŠ¸ ì¶œë ¥ëœ ë‚´ìš© ì¤‘ í•˜ë‚˜)
---3. ê³µì§€ì‚¬í•­ ë“±ë¡
---4. ê³µì§€ì‚¬í•­ ì‚­ì œ(ë¦¬ìŠ¤íŠ¸ ì¶œë ¥ëœ ë‚´ìš© ì¤‘ í•˜ë‚˜)
--- DECLARE, BEGIN, END;/ í˜•ì‹ìœ¼ë¡œ ì²˜ë¦¬
--- íŠ¸ë¦¬ê±°, ì €ìž¥í”„ë¡œì‹œì €, ìŠ¤ì¼€ì¥´ëŸ¬ ê°œë…
+-- PL/SQL È°¿ëÇÏ¿© ´ÙÀ½ ±â´ÉÀ» ±¸ÇöÇÏ½Ã¿À.
+--1. °øÁö»çÇ× ¸®½ºÆ® Ãâ·Â
+--2. °øÁö»çÇ× º¸±â Ãâ·Â(¸®½ºÆ® Ãâ·ÂµÈ ³»¿ë Áß ÇÏ³ª)
+--3. °øÁö»çÇ× µî·Ï
+--4. °øÁö»çÇ× »èÁ¦(¸®½ºÆ® Ãâ·ÂµÈ ³»¿ë Áß ÇÏ³ª)
+-- DECLARE, BEGIN, END;/ Çü½ÄÀ¸·Î Ã³¸®
+-- Æ®¸®°Å, ÀúÀåÇÁ·Î½ÃÀú, ½ºÄÉÁì·¯ °³³ä
 
--- ë¦¬ìŠ¤íŠ¸ì¶œë ¥
+-- ¸®½ºÆ®Ãâ·Â
 DECLARE
  vno notice.no%TYPE;
  vtitle notice.title%TYPE;
@@ -24,7 +24,7 @@ close c1;
 END;
 /
 
--- ë³´ê¸°ì¶œë ¥
+-- º¸±âÃâ·Â
 DECLARE
  vno notice.no%TYPE;
  vtitle notice.title%TYPE;
@@ -36,7 +36,7 @@ DECLARE
  END;
  /
 
---ë“±ë¡ ì¶œë ¥
+--µî·Ï Ãâ·Â
 DECLARE
 vno notice.no%TYPE;
 vtitle notice.title%TYPE := '&title';
@@ -48,7 +48,7 @@ commit;
 END;
 /
 
---4. ê³µì§€ì‚¬í•­ ì‚­ì œ(ë¦¬ìŠ¤íŠ¸ ì¶œë ¥ëœ ë‚´ìš© ì¤‘ í•˜ë‚˜)
+--4. °øÁö»çÇ× »èÁ¦(¸®½ºÆ® Ãâ·ÂµÈ ³»¿ë Áß ÇÏ³ª)
 DECLARE
 vno notice.no%TYPE;
 vtitle notice.title%TYPE;
@@ -58,6 +58,6 @@ delete from notice where no = 61;
 DBMS_OUTPUT.PUT_LINE(vno||'-'||vtitle||'-'||vcontent);
 END;
 /
--- í”„ë¡œì‹œì €(PROCEDURE) : íŠ¹ì • ì²˜ë¦¬ë¥¼ ì‹¤í–‰í•˜ëŠ” ì„œë¸Œ í”„ë¡œê·¸ëž¨ì˜ í•œ ìœ í˜•ìœ¼ë¡œ ì €ìž¥ë˜ì–´ì„œ í˜¼ìž ì‹¤í–‰ë˜ê±°ë‚˜ ë‹¤ë¥¸ ê³³ì—ì„œ ì‹¤í–‰í•  ìˆ˜ ìžˆë‹¤.
--- íŠ¸ë¦¬ê±°(TRIGGER) : íŠ¹ì • ì‚¬ê±´ì´ ë°œìƒë  ë•Œë§ˆë‹¤ ë¬µì‹œì ìœ¼ë¡œ PL/SQLë¸”ë¡ì´ ì‹¤í–‰ëœë‹¤.
  
+-- ÇÁ·Î½ÃÀú(PROCEDURE) : Æ¯Á¤ Ã³¸®¸¦ ½ÇÇàÇÏ´Â ¼­ºê ÇÁ·Î±×·¥ÀÇ ÇÑ À¯ÇüÀ¸·Î ÀúÀåµÇ¾î¼­ È¥ÀÚ ½ÇÇàµÇ°Å³ª ´Ù¸¥ °÷¿¡¼­ ½ÇÇàÇÒ ¼ö ÀÖ´Ù.
+-- Æ®¸®°Å(TRIGGER) : Æ¯Á¤ »ç°ÇÀÌ ¹ß»ýµÉ ¶§¸¶´Ù ¹¬½ÃÀûÀ¸·Î PL/SQLºí·ÏÀÌ ½ÇÇàµÈ´Ù.
