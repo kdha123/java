@@ -25,7 +25,7 @@ public class EmailUpload {
 			String content = mrequest.getParameter("content");
 			
 			//host=smpt.name.com
-			MailMessage msg = new MailMessage("smpt.nate.com");
+			MailMessage msg = new MailMessage("smtp.nate.com");
 			msg.from(from);
 			msg.to(to);
 			msg.setSubject(subject);

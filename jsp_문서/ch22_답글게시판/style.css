@@ -1,0 +1,65 @@
+BODY {
+	FONT-SIZE: 11pt; 
+	COLOR: black; 
+	LINE-HEIGHT: 160%; 
+	FONT-FAMILY: ±¼¸²,verdana,tahoma;
+	BACKGROUND-COLOR:ivory;
+}
+TABLE{
+	border:1px;
+}
+TD {
+	FONT-SIZE: 11pt; 
+	COLOR: black; 
+	LINE-HEIGHT: 160%;
+	FONT-FAMILY: ±¼¸²,verdana,tahoma
+}
+TR{
+	LINE-HEIGHT: 39;
+}
+SELECT {
+	FONT-SIZE: 11pt; 
+	COLOR: black; 
+	LINE-HEIGHT: 160%;
+	FONT-FAMILY: ±¼¸²,verdana,tahoma
+}
+DIV {
+	FONT-SIZE: 11pt; COLOR: black; 
+	LINE-HEIGHT: 160%; FONT-FAMILY: ±¼¸²,verdana,tahoma
+}
+FORM {
+	FONT-SIZE: 11pt; COLOR: black; 
+	LINE-HEIGHT: 160%; FONT-FAMILY: ±¼¸²,verdana,tahoma
+}
+TEXTAREA {
+ /*BORDER-RIGHT: 1px solid #999999; 
+ BORDER-TOP: 1px solid #999999;
+ BORDER-BOTTOM: 1px solid #999999;
+ BORDER-LEFT: 1px solid #999999 ;
+ */
+ BORDER:1px solid #999999;/*right, top , left , bottom ¸ðµÎ ¼³Á¤ */
+ 
+ FONT-SIZE: 11pt;
+ COLOR: BLACK;
+ 
+ FONT-FAMILY: ±¼¸²,verdana; 
+ BACKGROUND-COLOR: ivory
+}
+INPUT {
+BORDER-RIGHT: 2px solid #999999;
+BORDER-TOP: 2px solid #999999;
+BORDER-LEFT: 2px solid #999999;
+BORDER-BOTTOM: 2px solid #999999; 
+
+FONT-SIZE: 11pt;
+COLOR: BLACK; 
+
+FONT-FAMILY: ±¼¸²,verdana; 
+HEIGHT: 25px; 
+BACKGROUND-COLOR: white
+}
+ 
+A:link {text-decoration:none;color:#696969}
+A:hover{text-decoration:yes;color:#66CCFF}
+A:visited {text-decoration:none;color:#330066}
+
