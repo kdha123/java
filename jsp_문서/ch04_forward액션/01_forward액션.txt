@@ -52,7 +52,7 @@ forward 액션 형식2
 </jsp:forward>
 ------------------------- 
 forward 액션 실습 
-01_forward 폴더 작성
+03_forward 폴더 작성
 
 forward1.jsp
 forward2.jsp
