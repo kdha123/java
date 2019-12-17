@@ -1,6 +1,7 @@
 package boardmysql;
 import java.sql.*;//Connection,PreparedSteatement,Statement, ResultSet
 import java.util.*;//Vector,List,ArrayList
+
 import javax.sql.*;//DataSource
 import javax.naming.*;//lookup
 
@@ -113,9 +114,81 @@ public class BoardDAO {
 	//-----------------------------------
 	// 글 갯수 
 	//-----------------------------------
-	
+	public int getArticleCount() throws Exception{
+		int x = 0;
+		try {
+			con = getCon();//커넥션 얻기
+			pstmt = con.prepareStatement(" select count(*) from board ");
+			rs = pstmt.executeQuery();//쿼리 실행
+			if(rs.next()){
+				x = rs.getInt(1);//글 개수
+			}//if
+			
+		} catch (Exception ex1) {
+			System.out.println("getArticleCount() 예외: "+ex1);
+		}finally{
+			try{
+				if(rs != null){rs.close();}
+				if(pstmt != null){pstmt.close();}
+				if(con != null){con.close();}
+			}catch(Exception ex2){}
+		}// finally end
+		return x;
+	}//getArticleCount() end
 	
 	//-----------------------------------
-	// 글 갯수 
+	// list
 	//-----------------------------------
+	public List<BoardDTO> getList(int start, int cnt) throws Exception{
+		List<BoardDTO> list = null;
+		try{
+			con = getCon();//커넥션 얻기
+			sql = " select * from board order by ref desc, re_step asc limit ?,? ";
+			// limit ?,? = ?부터 ?개수만큼
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, start-1);
+			pstmt.setInt(2, cnt);
+			rs = pstmt.executeQuery();//쿼리 실행
+			
+			if(rs.next()){//글이 있으면
+				list = new ArrayList<BoardDTO>();
+				do{
+					BoardDTO dto = new BoardDTO();
+					dto.setNum(rs.getInt("num"));
+					dto.setWriter(rs.getString("writer"));
+					dto.setEmail(rs.getString("email"));
+					dto.setSubject(rs.getString("subject"));
+					dto.setPasswd(rs.getString("passwd"));
+					
+//					dto.setReg_date(rs.getDate("reg_date"));
+					dto.setReg_date(rs.getTimestamp("reg_date"));//연월일 시분초
+					 System.out.println("날짜"+rs.getDate("reg_date"));
+					 System.out.println("날짜"+rs.getString("reg_date"));
+					 System.out.println("날짜"+rs.getTimestamp("reg_date"));
+					
+					 dto.setReadcount(rs.getInt("readcount"));//조회수
+					 dto.setRef(rs.getInt("ref"));
+					 dto.setRe_step(rs.getInt("re_step"));
+					 dto.setRe_level(rs.getInt("re_level"));
+					 
+					 dto.setContent(rs.getString("content"));
+					 dto.setIp(rs.getString("ip"));
+					 list.add(dto); // dto를 list에 넣기
+					 
+				}while(rs.next());
+			}
+			
+			
+		}catch(Exception ex1){
+			System.out.println("getList() 예외 : "+ ex1);
+		}finally{
+			try{
+				if(rs != null){rs.close();}
+				if(pstmt != null){pstmt.close();}
+				if(con != null){con.close();}
+			}catch(Exception ex2){}
+		}// finally end
+		
+		return list;
+	}
 }///class end
