@@ -191,4 +191,140 @@ public class BoardDAO {
 		
 		return list;
 	}
+//------------
+// 글 내용 보기
+//-----------
+	public BoardDTO getArticle(int num) throws Exception{
+		BoardDTO dto=null;
+		try{
+			con=getCon();//커넥션 얻기 
+		
+			//조횟수 증가 
+			sql="update board set readcount=readcount+1 where num=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();//쿼리 실행 
+			
+			//글내용 보기 
+			pstmt=con.prepareStatement("select * from board where num=?");
+			pstmt.setInt(1, num);
+			rs=pstmt.executeQuery();//쿼리 실행 
+			
+			if(rs.next()){
+				dto=new BoardDTO();//객체생성
+				
+				dto.setNum(rs.getInt("num"));
+				dto.setWriter(rs.getString("writer"));
+				dto.setEmail(rs.getString("email"));
+				
+				dto.setSubject(rs.getString("subject"));
+				dto.setPasswd(rs.getString("passwd"));
+				dto.setReg_date(rs.getTimestamp("reg_date"));
+				dto.setReadcount(rs.getInt("readcount"));
+				
+				dto.setRef(rs.getInt("ref"));
+				dto.setRe_step(rs.getInt("re_step"));
+				dto.setRe_level(rs.getInt("re_level"));
+				
+				dto.setContent(rs.getString("content"));
+				dto.setIp(rs.getString("ip"));
+			}//if
+			
+		}catch(Exception ex1){
+			System.out.println("getArticle() 예외 :"+ex1);
+		}finally{
+			try{
+				if(rs != null){rs.close();}
+				if(pstmt != null){pstmt.close();}
+				if(con != null){con.close();}
+			}catch(Exception ex2){}
+		}//finally
+		
+		return dto;
+	}//getArticle() end
+	//-------------------------------
+	// 글 수정 폼(updateForm) 으로 보내주는 작업
+	//-------------------------------
+	public BoardDTO updateGetArticle(int num) throws Exception{
+		BoardDTO dto = null;
+		try{
+			con=getCon();//커넥션 얻기
+			pstmt= con.prepareStatement("select * from board where num=?");
+			pstmt.setInt(1, num);
+			rs=pstmt.executeQuery();
+			while(rs.next()){
+				dto = new BoardDTO();//객체 생성
+				
+				dto.setNum(rs.getInt("num"));
+				dto.setWriter(rs.getString("writer"));
+				dto.setEmail(rs.getString("email"));
+				
+				dto.setSubject(rs.getString("subject"));
+				dto.setPasswd(rs.getString("passwd"));
+				dto.setReg_date(rs.getTimestamp("reg_date"));
+				dto.setReadcount(rs.getInt("readcount"));
+				
+				dto.setRef(rs.getInt("ref"));
+				dto.setRe_step(rs.getInt("re_step"));
+				dto.setRe_level(rs.getInt("re_level"));
+				
+				dto.setContent(rs.getString("content"));
+				dto.setIp(rs.getString("ip"));
+				
+			}//while end
+		}catch(Exception ex1){
+			System.out.println("updateGetArticle() 예외 : "+ex1);
+		}finally{
+			try {
+				if(rs != null){rs.close();}
+				if(pstmt != null){pstmt.close();}
+				if(con != null){con.close();}
+			} catch (Exception ex2) {}
+		}//finally
+		return dto;
+	}//updateGetArticle()
+	//-------------------------
+	// DB 글 수정하기
+	//-------------------------
+	public int updateArticle(BoardDTO dto) throws Exception{
+		String dbPasswd="";//변수
+		int x = -100;
+		
+		try {
+			con=getCon();//커넥션 얻기
+			pstmt= con.prepareStatement("select passwd from board where num=?");
+			pstmt.setInt(1, dto.getNum());
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()){
+				dbPasswd = rs.getString("passwd");
+				if(dbPasswd.equals(dto.getPasswd())){//암호가 일치하면 글수정
+					sql="update board set writer=?, email=?, subject=?,"
+							+ "content=? where num=?";
+					pstmt=con.prepareStatement(sql);
+					pstmt.setString(1, dto.getWriter());
+					pstmt.setString(2, dto.getEmail());
+					pstmt.setString(3,dto.getSubject());
+					
+					pstmt.setString(4,dto.getContent());
+					pstmt.setInt(5, dto.getNum());
+					
+					pstmt.executeUpdate();
+					x=1;
+				}else{//암호가 틀릴때
+					x = 0;
+				}//else end
+			}//if
+		} catch (Exception ex1) {
+			System.out.println("updateArticle() 예외 : "+ex1);
+		}finally{
+			try {
+				if(rs != null){rs.close();}
+				if(pstmt != null){pstmt.close();}
+				if(con != null){con.close();}
+			} catch (Exception ex2) {}
+		}//finally
+		
+		return x;
+	}//updateArticle() end
 }///class end

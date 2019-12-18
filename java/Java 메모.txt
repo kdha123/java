@@ -243,3 +243,6 @@ v(view) : JSP - 디자이너
 Controller :Servlet -> 서버쪽 자바 프로그램 - 개발자
 MVC model 2
 
+404 - Not Found
+500 - 서버의 실행오류 -> Exception
+405 - method mismatch
