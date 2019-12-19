@@ -93,7 +93,10 @@ number=count-(currentPage-1)*pageSize;//보여줄 글번호
 				src="../imags/re.gif"> <%
 		}else{//원글이면
 		%>
-		 <img src="../imags/level.gif" width="<%=wid%>" height="16"> 
+		 <img src="../imags/level.gif" width="<%=wid%>" height="16">
+		 <%
+		}// else end--
+		 %> 
 		 <%--글제목 출력 --%>
 			<a href="content.jsp?num=<%=dto.getNum()%>&pageNum=<%=currentPage%>">
 					<%=dto.getSubject() %>
@@ -118,7 +121,6 @@ number=count-(currentPage-1)*pageSize;//보여줄 글번호
 			<td align=center><%=dto.getIp() %></td>
 		</tr>
 		<%
-		}// else end--
 		%>
 		<%
 	}//for end

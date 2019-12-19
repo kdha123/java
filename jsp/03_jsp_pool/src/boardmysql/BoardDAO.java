@@ -327,4 +327,40 @@ public class BoardDAO {
 		
 		return x;
 	}//updateArticle() end
+	//--------------------
+	//글 삭제
+	//--------------------
+	public int deleteArticle(int num, String passwd) throws Exception{
+		int x = -100;
+		String dbPasswd="";
+		try {
+			con=getCon();//커넥션 얻기
+			pstmt= con.prepareStatement("select passwd from board where num=?");
+			pstmt.setInt(1, num);
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()){
+				dbPasswd=rs.getString("passwd");
+				if(passwd.equals(dbPasswd)){//암호가 일치하면 삭제 작업
+					pstmt= con.prepareStatement("delete from board where num=?");
+					pstmt.setInt(1, num);
+					pstmt.executeUpdate();//쿼리 실행
+					x=1;
+				}else{//암호가 틀리면 
+					x=0;
+				}//else end
+			}//if end
+			
+		} catch (Exception ex1) {
+			System.out.println("deleteArticle() 예외 : "+ ex1);
+		}finally{
+			try {
+				if(rs != null){rs.close();}
+				if(pstmt != null){pstmt.close();}
+				if(con != null){con.close();}
+			} catch (Exception ex2) {}
+		}//finally end
+		
+		return x;
+	}//deleteArticle() end
 }///class end
