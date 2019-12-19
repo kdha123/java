@@ -1,0 +1,129 @@
+새프로젝트
+11_EL 
+web.xml
+
+============================
+ EL,JSTL  : 지금부터 스프링까지 
+============================
+
+지시자=디렉티브
+<%@ page%>
+<%@ include%>
+<%@ taglib %>---JSTL
+============================
+
+EL이란  -- ${}
+  - 표현언어(Expression Language)
+  - EL은 JSP2.0(Web2.0)부터 새롭게 추가된 기능이다 
+  - 새로운 스크립트 언어로써 JSP의 기본 문법을 보완하는 역할을 한다
+
+
+cf)  표현식     <%=%>
+      표현언어   ${}
+
+
+※ EL에서 제공하는 기능
+
+cf)  JSP의 4가지 내장객체:
+page, request,session, application
+
+1. EL은  
+pageScope, requestScope, sessionScope, applicationScope
+
+
+2. EL은 집합( Collection ) 객체에 대한 접근 방법제공한다
+ Vector
+ List<--ArrayList
+ Map<--HashMap
+${}
+3. EL은 수치연산, 관계연산,논리연산 제공 합니다 
+
+4. EL은 자바클래스의 메서드 호출하는 기능을 제공 합니다 
+${객체.메서드()}
+
+5. EL은 표현 언어만의 내장 객체 (기본객체)를 제공 합니다
+
+pageScope
+requestScope
+sessionScope
+applicationScope
+
+param  => request.getParameter() 와 같은 기능 
+paramValues => request.getParameterVales() 와 같은 기능 
+
+initParam : web.xml 에서 지정한 초기 파라미터 값을 얻을때 사용 
+cookie    : 쿠키
+pageContext : 현재 페이지의 pageContext 객체
+
+======================================
+예시
+
+표현식  <%= request.getMethod()%>
+표현언어  ${pageContext.request.method}
+
+
+표현식  <%= request.getHeader("host")%>
+표현언어 ${header.host}
+       ${header["host"]}
+
+표현언어 ${headerValues.host[]} 
+
+★★★ session
+표현식  <%=session.getAttribute("mem_id")%>
+표현언어 ${sessionScope.mem_id}
+
+★★★ request
+표현식  <%=request.getAttribute("mem_id")%>
+표현언어 ${requestScope.mem_id}
+
+=================================
+1. EL 연산자 
+=================================
+● 산술연산자
++
+-
+*
+/ 또는 div  --- 나누기 ( 몫은아니다)
+
+● 관계연산자 
+==   또는  eq
+!=   또는 ne
+<    또는 lt
+>    또는 gt
+<=  또는 le
+>=  또는 ge
+
+● 논리연산자 
+&&   또는 and
+||   또는 or
+!    또는 not
+
+
+● EL 연산자 
+.   ===== 빈의 프로퍼티나 Map요소 접근
+              ${map.name}
+              ${dto.name}
+
+[]  === 배열, List, Map 요소 접근 map.name / map['name']
+()  === 연산시 우선 순위로 연산 하려고 사용
+
+조건?A:B  === 조건 연산자 
+${조건?A:B}
+
+● true / false  부울린 문자 
+
+null   널 문자 ( 공백 아니다)
+empty ==> 값이 없는 경우
+  (null , 빈 문자열, 값이 없는 배열 , 
+   Map, Collection 이 비어있는 경우 )
+
+
+모델빈=dto ==>  변수=값
+Map(key,value)
+
+함수호출  : 함수이름(인수값)
+
+실습
+WebContent
+   el 
+   01_test.jsp
