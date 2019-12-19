@@ -189,3 +189,5 @@ DB에 저장할 정보 : 웹서버의 위치(/upload/image/) + 서버의 파일�
 이미지 게시판의 등록하기 만들기
 /image/writeForm.do-> forward/image/writeForm.jsp
 /image/write.do -> ImageDTO(ImageController) -> ImageWriteService-> ImageDAO
+
+
