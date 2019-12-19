@@ -34,7 +34,7 @@ pageScope, requestScope, sessionScope, applicationScope
 2. EL은 집합( Collection ) 객체에 대한 접근 방법제공한다
  Vector
  List<--ArrayList
- Map<--HashMap
+ Map<--HashMap (dto 대신 사용)
 ${}
 3. EL은 수치연산, 관계연산,논리연산 제공 합니다 
 
