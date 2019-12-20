@@ -1,0 +1,39 @@
+==========================
+메시지 플러그인 설치
+==========================
+
+http://propedit.sourceforge.jp/
+
+URL 부분 복사
+
+
+URL ： http://propedit.sourceforge.jp/eclipse/updates/
+
+
+help 메뉴  /Install New Software 
+
+Add 
+
+새창
+name => Proedit
+Location => http://propedit.sourceforge.jp/eclipse/updates/
+
+Ok
+잠시 기다린다 
+Pending이 끝나면
+PropertiesEditor 를 모두 선택하고
+Next버튼
+
+상세 명세가 나오면 다시 Next를 클릭하고
+
+ Install Details창이 나온다
+Next
+I Accept 선택
+finish
+
+기다린다
+이클립스 재구동 된다 
+
+
+
+ 

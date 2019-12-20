@@ -1,0 +1,265 @@
+{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\froman\fprq2\fcharset129 \'b9\'d9\'c5\'c1;}{\f1\froman\fprq2\fcharset0 Times New Roman;}{\f2\fmodern\fprq2\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}{\f3\fmodern\fprq1\fcharset0 Consolas;}{\f4\fmodern\fprq2\fcharset129 \'b1\'bc\'b8\'b2;}{\f5\fnil\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}}
+{\colortbl ;\red0\green0\blue128;\red0\green0\blue255;\red128\green0\blue128;\red255\green255\blue0;\red63\green95\blue191;\red191\green95\blue63;\red63\green127\blue127;\red127\green0\blue127;\red0\green0\blue0;\red42\green0\blue255;\red0\green128\blue128;\red255\green0\blue0;\red0\green255\blue255;\red204\green255\blue255;\red224\green224\blue224;\red217\green217\blue217;}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\nowidctlpar\qj\lang1042\kerning2\b\f0\fs40\'b1\'b9\'c1\'a6\'c8\'ad \'c5\'c2\'b1\'d7\b0    \par
+\fs24 JSTL fmt\'b4\'c2 \b JSTL\'b1\'b9\'c1\'a6\'c8\'ad\b0  , \b\'c1\'f6\'bf\'aa\'c8\'ad \'c5\'c2\'b1\'d7\b0\'b7\'ce \b\'b4\'d9\'b1\'b9\'be\'ee \'b9\'ae\'bc\'ad\b0\'b8\'a6 \'c3\'b3\'b8\'ae \'c7\'d2\'b0\'e6\'bf\'ec \'c0\'af\'bf\'eb\'c7\'cf\'b8\'e7, \b\'b3\'af\'c2\'a5 \'bc\'fd\'c0\'da\'c7\'fc\'bd\'c4\b0\'c0\'bb \'b4\'d9\'b7\'ea \'b6\'a7 \'bb\'e7\'bf\'eb\'b5\'c8\'b4\'d9\lang1033\f1 .\par
+\par
+\lang1042\f0 fmt \'c5\'c2\'b1\'d7 \'b6\'f3\'c0\'cc\'ba\'ea\'b7\'af\'b8\'ae\'b8\'a6 \'bb\'e7\'bf\'eb\'c7\'cf\'b7\'c1\'b8\'e9 JSP \'c6\'e4\'c0\'cc\'c1\'f6\'bf\'a1 \'b4\'d9\'c0\'bd\'b0\'fa \'b0\'b0\'c0\'cc <%@ taglib > \'b5\'f0\'b7\'ba\'c6\'bc\'ba\'ea\'b8\'a6 \'c0\'db\'bc\'ba\'c7\'d8\'be\'df \'c7\'d1\'b4\'d9 \par
+<%@ taglib prefix=\lang1046\f1\rdblquote\lang1042\b\f0 fmt\lang1046\b0\f1\rdblquote\lang1042\f0  uri=\lang1046\f1\rdblquote\cf1\lang1042\f0 http://java.sun.com/jsp/jstl/\b fmt\cf0\lang1046\b0\f1\ldblquote\lang1042\f0 %>\par
+\lang1046\f1\par
+\lang1042\b\f0 prefix \'bc\'d3\'bc\'ba\b0\'c0\'ba uri \'bc\'d3\'bc\'ba\'bf\'a1 \'b8\'ed\'bd\'c3\'b5\'c8 \'b0\'aa\'b4\'eb\'bd\'c5 \'bb\'e7\'bf\'eb\'c7\'cf\'b0\'da\'b4\'d9\'b4\'c2 \'b0\'cd\'c0\'bb \'c0\'c7\'b9\'cc\'c7\'d1\'b4\'d9\lang1046\f1\par
+\par
+\lang1042\f0\'b1\'b9\'c1\'a6\'c8\'ad\'c5\'c2\'b1\'d7\'b4\'c2 \b\'c6\'af\'c1\'a4\'c1\'f6\'bf\'aa\b0 (\'c7\'d1\'b1\'b9\lang1033\f1 ,\lang1042\f0\'c0\'cf\'ba\'bb\lang1033\f1 ,\lang1042\f0\'b9\'cc\'b1\'b9..)\'bf\'a1 \'be\'cb\'b8\'c2\'c0\'ba \b\'b8\'de\'bd\'c3\'c1\'f6\'b8\'a6 \'c3\'e2\'b7\'c2\b0\'c7\'d8 \'c1\'d6\'b0\'ed \'bd\'cd\'c0\'ba \'b0\'e6\'bf\'ec\'bf\'a1 \'bb\'e7\'bf\'eb\lang1033\f1\par
+\lang1042\f0\'bf\'b9\'b8\'a6 \'b5\'e9\'be\'ee \'c7\'d1\'b1\'db \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'bf\'a1\'bc\'ad \'b7\'ce\'b1\'d7\'c0\'ce\'c7\'d1\'b0\'e6\'bf\'ec \'c7\'d1\'b1\'db\'b8\'de\'bc\'bc\'c1\'f6\'b8\'a6 \'c3\'e2\'b7\'c2\'c7\'d8 \'c1\'d6\'b0\'ed\lang1033\f1\par
+\lang1042\f0\'bf\'b5\'b9\'ae  \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'bf\'a1\'bc\'ad\'b4\'c2 \'b7\'ce\'b1\'d7\'c0\'ce\'c7\'d1\'b0\'e6  \'bf\'b5\'b9\'ae\'b8\'de\'bc\'bc\'c1\'f6\'b8\'a6  \'c3\'e2\'b7\'c2\'c7\'d8\'c1\'d6\'b0\'ed \'bd\'cd\'c0\'bb \'b6\'a7\lang1033\f1\par
+\par
+\lang1042\f0 JSTL\'c0\'ba \'c7\'cf\'b3\'aa\'c0\'c7 JSP\'c6\'e4\'c0\'cc\'c1\'f6\'bf\'a1\'bc\'ad \'b4\'d9\'be\'e7\'c7\'d1 \'be\'f0\'be\'ee\'b8\'a6 \'c1\'f6\'bf\'f8\'c7\'d2 \'bc\'f6 \'c0\'d6\'b5\'b5\'b7\'cf \'c1\'f6\'bf\'f8\'c7\'d8\'c1\'d6\'b0\'ed \'c0\'d6\'b4\'d9\lang1033\f1\par
+\par
+\lang1042\f0\'c5\'c2\'b1\'d7\'bf\'e4\'be\'e0    \par
+\trowd\trgaph99\trleft-180\trrh360\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl99\trpaddr99\trpaddfl3\trpaddfr3
+\clcbpat14\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx1998\clcbpat14\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx4338\clcbpat14\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx9903\pard\intbl\nowidctlpar\li180\qj\'b1\'e2\'b4\'c9\'ba\'d0\'b7\'f9\lang1033\f1\cell\pard\intbl\nowidctlpar\li486\qj\lang1042\f0\'c5\'c2\'b1\'d7\lang1033\f1\cell\pard\intbl\nowidctlpar\li1101\qj\lang1042\f0\'bc\'b3\'b8\'ed\lang1033\f1\cell\row\trowd\trgaph99\trleft-180\trrh345\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl99\trpaddr99\trpaddfl3\trpaddfr3
+\clvmgf\clcbpat15\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx1998\clcbpat15\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx4338\clcbpat15\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx9903\pard\intbl\nowidctlpar\li180\qj\lang1042\f0\'b7\'ce\'c4\'c9\'c0\'cf \'c1\'f6\'c1\'a4\lang1033\f1\par
+\pard\intbl\nowidctlpar\qj\cell\cf2\lang1042\f0 setLocale\cell\pard\intbl\nowidctlpar\cf0\fs20 Locale\'b8\'a6 \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9\lang1033\f1\par
+\lang1042\f0\'b4\'d9\'b1\'b9\'be\'ee\'b8\'a6 \'c1\'f6\'bf\'f8\'c7\'cf\'b4\'c2 page\'b8\'a6 \'b8\'b8\'b5\'e9\'b1\'e2 \'c0\'a7\'c7\'d8 \'bb\'e7\'bf\'eb\'c7\'d2 \'b0\'e6\'bf\'ec ResourceBundle\'b7\'ce \'ba\'d2\'b7\'af\'bf\'c0\'b4\'c2 *.properties \'c6\'c4\'c0\'cf\'b0\'fa \'bf\'ac\'b0\'e8\'b5\'c7\'be\'ee\'bc\'ad \'bb\'e7\'bf\'eb\'c7\'d1\'b4\'d9 \cell\row\trowd\trgaph99\trleft-180\trrh360\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl99\trpaddr99\trpaddfl3\trpaddfr3
+\clvmrg\clcbpat15\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx1998\clcbpat15\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx4338\clcbpat15\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx9903\pard\intbl\nowidctlpar\li180\qj\lang1033\f1\fs24\cell\pard\intbl\nowidctlpar\qj\cf2\lang1042\f0 requestEncoding\cell\cf0\fs20 request.setCharacterEncoding() \'b0\'fa \'b0\'b0\'b4\'d9\lang1033\f1\par
+\lang1042\f0\'bf\'e4\'c3\'bb\'c6\'c4\'b6\'f3\'b9\'cc\'c5\'cd\'c0\'c7 \'c4\'b3\'b8\'af\'c5\'cd \'c0\'ce\'c4\'da\'b5\'f9\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9 \cell\row\trowd\trgaph99\trleft-180\trrh330\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl99\trpaddr99\trpaddfl3\trpaddfr3
+\clvmgf\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx1998\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx4338\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx9903\pard\intbl\nowidctlpar\li180\qj\fs24\'b8\'de\'bd\'c3\'c1\'f6\'c3\'b3\'b8\'ae\lang1033\f1\par
+\par
+\pard\intbl\nowidctlpar\qj\cell\lang1042\f0 bundle\cell\pard\intbl\nowidctlpar\fs20\'bb\'e7\'bf\'eb\'c7\'d2 \'b9\'f8\'b5\'e9\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9\lang1033\f1\par
+.\lang1042\f0 propeties \'c8\'ae\'c0\'e5\'c0\'da\'c0\'ce \b\'c6\'c4\'c0\'cf\'c0\'bb \'c0\'d0\'be\'ee\'bf\'c0\'b4\'c2 \'bf\'aa\'c7\'d2\b0\'c0\'bb \'c7\'d1\'b4\'d9\lang1033\f1\cell\row\trowd\trgaph99\trleft-180\trrh315\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl99\trpaddr99\trpaddfl3\trpaddfr3
+\clvmrg\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx1998\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx4338\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx9903\pard\intbl\nowidctlpar\li180\qj\fs24\cell\pard\intbl\nowidctlpar\qj\lang1042\f0 message\cell\pard\intbl\nowidctlpar\fs20\'c1\'f6\'bf\'aa\'bf\'a1\'bc\'ad \'bb\'e7\'bf\'eb\'c7\'d2 \b\'b8\'de\'bd\'c3\'c1\'f6\'b8\'a6 \'c3\'e2\'b7\'c2\b0\'c7\'d1\'b4\'d9\lang1033\f1\par
+\lang1042\f0\'b9\'f8\'b5\'e9\'c5\'c2\'b1\'d7\'bf\'a1\'bc\'ad \'c1\'a4\'c7\'d1 \'b0\'aa\'b5\'e9\'c0\'bb \'b0\'a1\'c1\'ae\'bf\'c2\'b4\'d9\lang1033\f1\cell\row\trowd\trgaph99\trleft-180\trrh480\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl99\trpaddr99\trpaddfl3\trpaddfr3
+\clvmrg\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx1998\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx4338\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx9903\pard\intbl\nowidctlpar\li180\qj\fs24\cell\pard\intbl\nowidctlpar\qj\lang1042\f0 param\lang1033\f1\cell\lang1042\f0\fs20 <fmt:message> \'c5\'c2\'b1\'d7\'c0\'c7 \b\'bc\'ad\'ba\'ea \'c5\'c2\'b1\'d7\b0\'c0\'cc\'b4\'d9\lang1033\f1\par
+\lang1042\f0 <fmt:message>\'bf\'a1\'bc\'ad \'bc\'b3\'c1\'a4\'c7\'cf\'c1\'f6 \'be\'ca\'c0\'ba \'b0\'aa\'c0\'bb \'c3\'a4\'bf\'f6\'c1\'d8\'b4\'d9\lang1033\f1\cell\row\trowd\trgaph99\trleft-180\trrh225\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl99\trpaddr99\trpaddfl3\trpaddfr3
+\clvmrg\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx1998\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx4338\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx9903\pard\intbl\nowidctlpar\li180\qj\fs24\cell\pard\intbl\nowidctlpar\qj\lang1042\f0 setBundle\cell\b\fs20\'b8\'ae\'bc\'d2\'bd\'ba \'b9\'f8\'b5\'e9(.properties \'c6\'c4\'c0\'cf)\'c0\'bb \lang1033\f1\par
+\lang1042\f0\'c0\'d0\'be\'ee\b0\'bf\'cd \b\'c6\'af\'c1\'a4\'ba\'af\'bc\'f6\b0\'bf\'a1 \b\'c0\'fa\'c0\'e5\b0\'c7\'d1\'b4\'d9\lang1033\f1\par
+\lang1042\f0 Page \'c0\'fc\'c3\'bc\'bf\'a1\'bc\'ad \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d6\'b4\'c2 \'b9\'f8\'b5\'e9\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'cf\'b4\'c2\'b5\'a5 \'bb\'e7\'bf\'eb\lang1033\f1\cell\row\trowd\trgaph99\trleft-180\trrh300\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl99\trpaddr99\trpaddfl3\trpaddfr3
+\clvmgf\clcbpat16\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx1998\clcbpat16\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx4338\clcbpat16\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx9903\pard\intbl\nowidctlpar\li180\qj\lang1042\f0\fs24\'bc\'fd\'c0\'da \'b9\'d7 \'b3\'af\'c2\'a5\lang1033\f1\par
+\pard\intbl\nowidctlpar\fi1800\li180\qj\par
+\pard\intbl\nowidctlpar\li180\qj\lang1042\f0\'c7\'fc\'bd\'c4\lang1033\f1\par
+\cell\pard\intbl\nowidctlpar\qj\lang1042\f0 formatNumber\cell\pard\intbl\nowidctlpar\fs20\'bc\'fd\'c0\'da \'c7\'fc\'bd\'c4\'c0\'bb \'c7\'a5\'c7\'f6\'c7\'d2 \'b6\'a7 \'bb\'e7\'bf\'eb\'b5\'c8\'b4\'d9 \lang1033\f1\cell\row\trowd\trgaph99\trleft-180\trrh285\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl99\trpaddr99\trpaddfl3\trpaddfr3
+\clvmrg\clcbpat16\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx1998\clcbpat16\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx4338\clcbpat16\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx9903\pard\intbl\nowidctlpar\li180\qj\fs24\cell\pard\intbl\nowidctlpar\qj\lang1042\f0 formatDate\cell\pard\intbl\nowidctlpar\fs20\'b3\'af\'c2\'a5 \'c7\'fc\'bd\'c4\'c0\'bb \'c7\'a5\'c7\'f6\'c7\'d2 \'b6\'a7 \'bb\'e7\'bf\'eb\'b5\'c8\'b4\'d9\lang1033\f1\cell\row\trowd\trgaph99\trleft-180\trrh465\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl99\trpaddr99\trpaddfl3\trpaddfr3
+\clvmrg\clcbpat16\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx1998\clcbpat16\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx4338\clcbpat16\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx9903\pard\intbl\nowidctlpar\li180\qj\fs24\cell\pard\intbl\nowidctlpar\qj\lang1042\f0 parseDate\cell\fs20\'b9\'ae\'c0\'da\'bf\'ad\'c0\'bb \'b3\'af\'c2\'a5\'b7\'ce \'ba\'af\'c8\'af \lang1033\f1\cell\row\trowd\trgaph99\trleft-180\trrh270\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl99\trpaddr99\trpaddfl3\trpaddfr3
+\clvmrg\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx1998\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx4338\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx9903\pard\intbl\nowidctlpar\li180\qj\fs24\cell\pard\intbl\nowidctlpar\qj\lang1042\f0 parseNumber\cell\pard\intbl\nowidctlpar\fs20\'b9\'ae\'c0\'da\'bf\'ad\'c0\'bb \'bc\'fd\'c0\'da\'b7\'ce \'ba\'af\'c8\'af\lang1033\f1\cell\row\trowd\trgaph99\trleft-180\trrh330\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl99\trpaddr99\trpaddfl3\trpaddfr3
+\clvmrg\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx1998\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx4338\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx9903\pard\intbl\nowidctlpar\li180\qj\fs24\cell\pard\intbl\nowidctlpar\qj\lang1042\f0 setTimeZone\cell\fs20\'c6\'af\'c1\'a4 Scope\'c0\'c7 \'c5\'b8\'c0\'d3 \'c1\'b8\'c0\'bb \'bc\'b3\'c1\'a4\lang1033\f1\cell\row\trowd\trgaph99\trleft-180\trrh375\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl99\trpaddr99\trpaddfl3\trpaddfr3
+\clvmrg\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx1998\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx4338\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx9903\pard\intbl\nowidctlpar\li180\qj\fs24\cell\pard\intbl\nowidctlpar\qj\lang1042\f0 timeZone\cell\fs20\'bd\'c3\'b0\'a3\'b4\'eb\'b8\'a6 \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9\lang1033\f1\par
+\lang1042\f0 (\'c5\'b8\'c0\'d3 \'c1\'b8\'c0\'bb \'c0\'fb\'bf\'eb\'c7\'d2 \'b6\'a7 \'bb\'e7\'bf\'eb)\lang1033\f1\cell\row\pard\nowidctlpar\lang1042\b\f0\fs30 1.  <fmt:setLocale>\'c5\'c2\'b1\'d7\lang1033\f1\par
+\lang1042\b0\f0\fs24\'b1\'b9\'c1\'a6\'c8\'ad \'c5\'c2\'b1\'d7\'b5\'e9\'c0\'cc \'bb\'e7\'bf\'eb\'c7\'d2 \'b7\'ce\'c4\'c9\'c0\'cf\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9 \par
+\par
+\b\'b7\'ce\'c4\'c9\'c0\'cf \'c1\'f6\'c1\'a4 \'c5\'c2\'b1\'d7\'b4\'c2 2\b0\'b0\'a1\'c1\'f6\'b0\'a1 \'c0\'d6\'b4\'d9\lang1033\f1\par
+\cf3\lang1042\b\f0 setLocale\cf0\b0   : \'b1\'b9\'c1\'a6\'c8\'ad \'c5\'c2\'b1\'d7\'b5\'e9\'c0\'cc \'bb\'e7\'bf\'eb\'c7\'d2 \'b7\'ce\'c4\'c9\'c0\'cf\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9 \par
+\cf3\b requestEncoding\cf0\b0  : \'bf\'e4\'c3\'bb \'c6\'c4\'b6\'f3\'b9\'cc\'c5\'cd\'c0\'c7 \'c4\'b3\'b8\'af\'c5\'cd \'c0\'ce\'c4\'da\'b5\'f9\'c0\'bb \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9\lang1033\f1\par
+\par
+\lang1042\b\f0\'b7\'ce\'c4\'c9\'c0\'cf \'c1\'f6\'c1\'a4 \'bf\'b9\'b0\'d4\lang1033\f1\par
+\b0\par
+\trowd\trgaph99\trleft-108\trrh2318\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl99\trpaddr99\trpaddfl3\trpaddfr3
+\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx7380\pard\intbl\nowidctlpar\lang1042\b\f2\fs22\'bf\'b5\'b9\'ae\f0  \f2\'b7\'ce\'c4\'c9\'c0\'cf\f0  \f2\'c1\'f6\'c1\'a4\lang1033\f1\par
+\lang1042\f0 <fmt:setLocale value=\lang1033\f1\rdblquote\lang1042\f0 en\lang1033\f1\rdblquote\lang1042\f0 />\par
+\par
+\f2\'c7\'d1\'b1\'db\'b7\'ce\'c4\'c9\'c0\'cf\f0  \f2\'c1\'f6\'c1\'a4\f0  \par
+<fmt:setLocale value=\lang1033\f1\rdblquote\lang1042\f0 ko\lang1033\f1\rdblquote\lang1042\f0 />\par
+<fmt:setLocale value=\lang1033\f1\rdblquote\lang1042\f0 ko\lang1033\f1\rdblquote\lang1042\f0  scope=\lang1033\f1\rdblquote\lang1042\f0 request\lang1033\f1\rdblquote\lang1042\f0 />\par
+\lang1033\b0\f1\fs24\cell\row\pard\nowidctlpar\par
+\lang1042\b\f0 value \'bc\'d3\'bc\'ba : \'b7\'ce\'c4\'c9\'c0\'cf \'b0\'aa\'c0\'cc \'b5\'e9\'be\'ee\'b0\'a3\'b4\'d9 ( \'bf\'b9\'b8\'a6 \'b5\'e9\'be\'ee \'c7\'d1\'b1\'db\'c0\'ce \'b0\'e6\'bf\'ec : value=\lang1033\f1\rdblquote\highlight4\lang1042\f0 ko_kr\highlight0\lang1033\f1\rdblquote\lang1042\f0  ) \par
+\pard\nowidctlpar\fi480\b0  \par
+\pard\nowidctlpar\fi707\lang1033\b\f1\ldblquote\lang1042\f0 ko\lang1033\f1\rdblquote\lang1042\f0  \'be\'f0\'be\'ee \'c4\'da\'b5\'e5\lang1033\f1\par
+\ldblquote\lang1042\f0 kr\lang1033\f1\rdblquote\lang1042\f0  \'c0\'ba \'b1\'b9\'b0\'a1\b0  \'c4\'da\'b5\'e5 \'c0\'cc\'b4\'d9 \par
+\pard\nowidctlpar\b scope \'bc\'d3\'bc\'ba : \'c1\'f6\'c1\'a4\'c7\'d1 \'b7\'ce\'c4\'c9\'c0\'cf\'c0\'cc \'bf\'b5\'c7\'e2\'c0\'bb \'b9\'cc\'c4\'a1\'b4\'c2 \'b9\'fc\'c0\'a7\'b8\'a6 \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9 ( \'b5\'f0\'c6\'fa\'c6\'ae : page)\par
+       page | request | session | application\b0  \par
+\par
+* setLocale \'c5\'c2\'b1\'d7\'b4\'c2 \'b0\'c5\'c0\'c7 \'bb\'e7\'bf\'eb\'c7\'cf\'c1\'f6 \'be\'ca\'b4\'c2\'b4\'d9 \par
+value \'bc\'d3\'bc\'ba\'bf\'a1 \'b5\'e9\'be\'ee\'b0\'a1\'b4\'c2 locale \'b0\'aa\'c0\'ba \'be\'f0\'be\'ee\'c4\'da\'b5\'e5\'bf\'cd \'b1\'b9\'b0\'a1\'c4\'da\'b5\'e5\'b7\'ce \'c0\'cc\'b7\'e7\'be\'ee\'c1\'f8\'b4\'d9\lang1033\f1\par
+\lang1042\f0\'bb\'fd\'b7\'ab\'c7\'d2 \'b0\'e6\'bf\'ec \'c5\'e8\'c4\'b9\'bc\'ad\'b9\'f6\'c0\'c7 \'b1\'e2\'ba\'bb\'b0\'aa\'c0\'b8\'b7\'ce \'bc\'b3\'c1\'a4\'b5\'c8\'b4\'d9 \par
+\pard\nowidctlpar\sl-240\slmult0\lang1033\f1\par
+\kerning0\f3\fs22 ===================================\par
+\cf5 <%-- fmt_locale_11.jsp --%>\cf0\par
+===================================\par
+\kerning2\f1\fs24\par
+\cf6\kerning0\f3\fs22 <%@\cf0  \cf7 page\cf0  \cf8 contentType\cf9 =\cf10\i "text/html;charset=euc-kr"\cf6\i0 %>\cf0\par
+\cf6 <%@\cf0  \cf7 taglib\cf0  \cf8 prefix\cf9 =\cf10\i "fmt"\cf0\i0  \cf8 uri\cf9 =\cf10\i "http://java.sun.com/jsp/jstl/fmt"\cf6\i0 %>\cf0\par
+\par
+\cf11 <\cf7 pre\cf11 >\cf9  \cf0\par
+\cf9 default locale : 1. \cf6 <%=\cf9  response.getLocale() \cf6 %>\cf9  \cf0\par
+\par
+\cf9 set locale : ko \cf11 <\cf7 fmt:setLocale\cf0  \cf8 value\cf9 =\cf10\i "ko"\cf0\i0  \cf11 />\cf9  \cf0\par
+\cf9 now: 2. \cf6 <%=\cf9  response.getLocale() \cf6 %>\cf9  \cf0\par
+\par
+\cf9 set locale : ja \cf11 <\cf7 fmt:setLocale\cf0  \cf8 value\cf9 =\cf10\i "ja"\cf0\i0  \cf11 />\cf0\par
+\cf9 now: 3. \cf6 <%=\cf9  response.getLocale() \cf6 %>\cf0\par
+\par
+\cf9 set locale : en \cf11 <\cf7 fmt:setLocale\cf0  \cf8 value\cf9 =\cf10\i "en"\cf0\i0  \cf11 />\cf9  \cf0\par
+\cf9 now: 4. \cf6 <%=\cf9  response.getLocale() \cf6 %>\cf9  \cf0\par
+\cf11 </\cf7 pre\cf11 >\cf0\par
+\pard\nowidctlpar\lang1042\kerning2\f0\fs24 ===========================================\par
+\b\fs30 2. <fmt:requestEncoding>\b0\fs24  \'c5\'c2\'b1\'d7\'b4\'c2 \'bf\'e4\'c3\'bb\'c6\'c4\'b6\'f3\'b9\'cc\'c5\'cd\'c0\'c7 \'c4\'b3\'b8\'af\'c5\'cd \'c0\'ce\'c4\'da\'b5\'f9\'c0\'bb  \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9 668\par
+request.setCharacterEncoding() \'bf\'cd \'b0\'b0\'c0\'ba \'bf\'aa\'c7\'d2\'c0\'bb \'c7\'d1\'b4\'d9\lang1033\f1\par
+\par
+\trowd\trgaph99\trrh360\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl99\trpaddr99\trpaddfl3\trpaddfr3
+\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx5040\pard\intbl\nowidctlpar\lang1042\f0 <\cf2 fmt:requestEncoding value=\lang1033\f1\rdblquote\lang1042\f0 euc-kr\lang1033\f1\rdblquote\cf0\lang1042\f0 />\cell\row\pard\nowidctlpar\lang1033\f1\line\lang1042\f0\'c0\'a7\'c0\'c7 \'c4\'da\'b5\'e5\'b4\'c2 \'b4\'d9\'c0\'bd\'c0\'c7 \'c4\'da\'b5\'e5\'bf\'cd \'b5\'bf\'c0\'cf\'c7\'cf\'b4\'d9\lang1033\f1\par
+\trowd\trgaph99\trrh1074\trbrdrl\brdrs\brdrw10 \trbrdrt\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trpaddl99\trpaddr99\trpaddfl3\trpaddfr3
+\clbrdrl\brdrw10\brdrs\clbrdrt\brdrw10\brdrs\clbrdrr\brdrw10\brdrs\clbrdrb\brdrw10\brdrs \cellx5940\pard\intbl\nowidctlpar\li180\lang1042\f0 <%\par
+request.setCharacterEncodidng(\lang1033\f1\ldblquote\lang1042\f0 euc-kr\lang1033\f1\rdblquote\lang1042\f0 );\par
+%>\cell\row\pard\nowidctlpar\lang1033\f1\par
+\lang1042\f0\'bd\'c7\'bd\'c0\lang1033\f1\par
+\lang1042\f0 ===========================================\par
+\cf5\lang1033\kerning0\f3\fs22 <%-- fmt_encoding_12.\ul jsp\ulnone  --%>\cf0\par
+\lang1042\kerning2\f0\fs24 ===========================================\par
+\cf6\lang1033\kerning0\f3\fs22\par
+<%@\cf0  \cf7 page\cf0  \cf8 contentType\cf9 =\cf10\i "text/html;charset=euc-kr"\cf6\i0 %>\cf0\par
+\cf6 <%@\cf0  \cf7 taglib\cf0  \cf8 prefix\cf9 =\cf10\i "c"\cf0\i0  \cf8 uri\cf9 =\cf10\i "http://java.sun.com/jsp/jstl/core"\cf0\i0  \cf6 %>\cf0\par
+\cf6 <%@\cf0  \cf7 taglib\cf0  \cf8 prefix\cf9 =\cf10\i "fmt"\cf0\i0  \cf8 uri\cf9 =\cf10\i "http://java.sun.com/jsp/jstl/fmt"\cf6\i0 %>\cf0\par
+\par
+\cf11 <\cf7 fmt:requestEncoding\cf0  \cf8 value\cf9 =\cf10\i "euc-kr"\cf11\i0 />\cf0\par
+\par
+\cf11 <\cf7 html\cf11 >\cf0\par
+\cf9\tab\cf11 <\cf7 head\cf11 ><\cf7 title\cf11 >\cf9 requestEncoding\cf11 </\cf7 title\cf11 ></\cf7 head\cf11 >\cf0\par
+\cf9\tab\cf11 <\cf7 body\cf11 >\cf0\par
+\cf9\tab\tab\lang1042\f0\'c6\'c4\'b6\'f3\'b9\'cc\'c5\'cd\lang1033\f3  :\cf11 <\cf7 c:out\cf0  \cf8 value\cf9 =\cf10\i "\cf9\i0 $\{param.id\}\cf10\i "\cf11\i0 />\cf0\par
+\cf9\tab\tab\cf11 <\cf7 form\cf0  \cf8 method\cf9 =\cf10\i "post"\cf0\i0  \cf8 action\cf9 =\cf10\i "fmt_encoding_12.jsp"\cf11\i0 >\cf0\par
+\cf9\tab\tab\tab\cf11 <\cf7 input\cf0  \cf8 type\cf9 =\cf10\i "text"\cf0\i0  \cf8 name\cf9 =\cf10\i "id"\cf11\i0 >\cf0\par
+\cf9\tab\tab\tab\cf11 <\cf7 input\cf0  \cf8 type\cf9 =\cf10\i "submit"\cf0\i0  \cf8 value\cf9 =\cf10\i "\lang1042\f0\'c8\'ae\'c0\'ce\lang1033\f3 "\cf11\i0 >\cf0\par
+\cf9\tab\tab\cf11 </\cf7 form\cf11 >\cf0\par
+\cf9\tab\cf11 </\cf7 body\cf11 >\cf0\par
+\cf11 </\cf7 html\cf11 >\cf0\par
+\lang1042\kerning2\f0\fs24 ===========================================\par
+\b\fs50\'b8\'de\'bd\'c3\'c1\'f6 \'c3\'b3\'b8\'ae \'c5\'c2\'b1\'d7 \par
+\lang1033\b0\f1\fs24\par
+\lang1042\b\f0\'b8\'de\'bd\'c3\'c1\'f6 \'c3\'b3\'b8\'ae \'c5\'c2\'b1\'d7\b0\'bf\'a1 \'b4\'eb\'c7\'d8\'bc\'ad \'bb\'ec\'c6\'ec\'ba\'b8\'b1\'e2\'c0\'fc\'bf\'a1 \par
+\'b8\'d5\'c0\'fa \'b8\'de\'bd\'c3\'c1\'f6 \'c5\'c2\'b1\'d7\'bf\'a1 \'bb\'e7\'bf\'eb\'c7\'d2 \'b8\'ae\'bc\'d2\'b1\'d7 \'b9\'f8\'b5\'e9 \'c6\'c4\'c0\'cf\'c0\'bb \'c0\'db\'bc\'ba\'c7\'d8  \'b5\'d6\'be\'df \'c7\'d1\'b4\'d9\lang1033\f1\par
+\par
+\lang1042\b\f0\fs30\'bd\'c7\'bd\'c0 : \'bf\'b9\'c1\'a6\'b7\'ce \'bb\'e7\'bf\'eb\'c7\'d2 \'b8\'ae\'bc\'d2\'bd\'ba \'b9\'f8\'b5\'e9 \'c0\'db\'bc\'ba \par
+\lang1033\b0\f1\fs24\par
+\lang1042\f0 Classes(src)\lang1044\f1\\\lang1042\f0 resource \lang1044\f1\\\cf2\lang1042\f0 testBundle.properties\cf0\lang1044\f1\par
+\lang1042\f0 Classes(src)\lang1044\f1\\\lang1042\f0 resource \lang1044\f1\\\cf2\lang1042\f0 testBundle_ko.properties.src\lang1044\f1\par
+\cf0\lang1042\f0 Classes(src)\lang1033\f1\\\lang1042\f0 resource \lang1033\f1\\\lang1042\f0 testBundle_ko.properties.\lang1033\f1\par
+\pard\nowidctlpar\sl-240\slmult0\cf2\lang1042\b\f0 jstlEx7.jsp\cf0\b0\fs20   673\par
+\lang1033\f1\par
+\pard\nowidctlpar\lang1042\b\f0\fs30  \lang1044\b0\f1\fs24\par
+\lang1042\f0 classes\\resource \lang1044\f1\\\cf2\lang1042\f0 testBundle.properties\cf0\lang1044\f1\par
+\lang1042\f0\fs20 name=hong-gil-dong\par
+MSG=JSTL is fun\lang1044\f1\par
+\fs24\par
+\lang1042\f0 classes\\resource \lang1044\f1\\\cf2\lang1042\f0 testBundle_ko.properties.src : \cf12 dos\'c3\'a2\'bf\'a1\'bc\'ad convert\'c7\'cf\'b7\'c1\'b0\'ed\cf2\lang1044\f1\par
+\cf0\lang1042\f0 classes\\resource \lang1044\f1\\\cf2\lang1042\f0 testBundle_ko.properties \lang1044\f1\par
+\par
+\cf0\lang1042\f0\fs20 name=\'c8\'ab\'b1\'e6\'b5\'bf\lang1033\f1\par
+\lang1042\f0 MSG=JSTL \'c0\'e7\'b9\'cc\'c0\'d6\'b4\'d9\lang1033\f1\par
+\fs24\par
+\lang1042\f0 jdk / bin /native2ascii.exe  \'b0\'a1 \'c0\'d6\'b4\'d9 \par
+bin>native2ascii \cf2 testBundle_ko.properties.src\cf0   \cf2 testBundle_ko.properties\cf0\lang1033\f1\par
+\par
+\lang1042\f0 classes\\resource \lang1033\f1\\\lang1042\f0 testBundle_ko.properties.\lang1033\f1\par
+\lang1042\f0\fs20 name=\\ud64d\\uae38\\ub3d9\par
+MSG=JSTL \\uc7ac\\ubbf8\\uc788\\ub2e4\lang1033\f1\par
+\pard\nowidctlpar\sl-240\slmult0\fs24\par
+\fs20\par
+\pard\nowidctlpar\lang1042\b\f0\fs24 jstlEx7.jsp\b0   <fmt:bundle>\'b0\'fa <fmt:message> \'bf\'b9\'c1\'a6\lang1044\f1\par
+\lang1042\f0\fs20 <%@ page contentType = "text/html; charset=euc-kr" %>\par
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>\par
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>\par
+\par
+<%-- <fmt:setLocale value="en" /> --%>\par
+\par
+\cf1 <fmt:\cf3\b bundle\cf1\b0  \b basename="resource.\cf12 testBundle\cf1 "\b0 >\par
+\cf0 <html>\par
+\lang1046\f1\tab\lang1042\f0 <head><title>JSTL fmt \'bf\'b9\'c1\'a6 bundle message</title></head>\par
+\lang1046\f1\tab\lang1042\f0 <body>\par
+\tab\tab <fmt:\cf3\b message\cf0\b0  \b key="name"\b0 />\par
+\tab\tab <p>\par
+\lang1033\f1\tab\tab\lang1042\f0 <fmt:\cf3\b message\cf0\b0  \b key="MSG"\b0  var="\b msg\b0 "/>\par
+\pard\nowidctlpar\qj <fmt:\cf3\b message\cf0\b0  \b key="MSG"/>\lang1033\b0\f1\par
+\pard\nowidctlpar\tab\tab\lang1042\f0 <c:out value="$\{\b msg\lang1033\b0\f1\}\lang1042\f0 "/>\par
+\tab </body>\par
+</html>\par
+</fmt:\cf3\b bundle\cf0\b0 >\lang1033\f1\par
+\par
+\par
+\pard\nowidctlpar\sl-240\slmult0\cf2\lang1042\f0{\field{\*\fldinst{HYPERLINK "http://localhost:9000/chap15/jstlEx7.jsp"}}{\fldrslt{\ul\cf2 http://localhost:9000/chap15/jstlEx7.jsp}}}\lang1033\f1\fs20\par
+\cf0\par
+\pard\sl-240\slmult0\lang1042\kerning0\f4\'c8\'ab\'b1\'e6\'b5\'bf \par
+\pard\nowidctlpar\sl-240\slmult0 JSTL \'c0\'e7\'b9\'cc\'c0\'d6\'b4\'d9\lang1033\f1\par
+\par
+\pard\nowidctlpar\par
+\par
+\lang1042\kerning2\b\f0\fs50\'b8\'de\'bd\'c3\'c1\'f6 \'c3\'b3\'b8\'ae \'c5\'c2\'b1\'d7 \par
+\lang1033\b0\f1\fs24\par
+\lang1042\b\f0\'b8\'d5\'c0\'fa \'bf\'b5\'b9\'ae\b0  \'b8\'de\'bd\'c3\'c1\'f6 \par
+\pard\nowidctlpar\fi196\b\fs20  classes == resource == \cf2 message.properties\par
+\pard\nowidctlpar\cf0\lang1033\b0\f1\fs24\par
+\lang1042\f0\fs20 TITLE = MadVirus's Learning JSP 2.0\par
+GREETING = HI! I'm BK\par
+VISITOR = Your ID is \{0\}.\lang1033\f1\par
+\fs24\par
+\lang1042\f0\'c7\'d1\'b1\'db \'b8\'de\'bd\'c3\'c1\'f6\'b8\'a6 \'ba\'b8\'bf\'a9\'c1\'d9 \'b8\'ae\'bc\'d2\'bd\'ba \'b9\'f8\'b5\'e9 \par
+\pard\nowidctlpar\fi196\b\fs20 classes == resource == \cf2 message_ko.properties.src\cf0\lang1033\f1\par
+\pard\nowidctlpar\b0\fs24\par
+\lang1042\f0\fs20 TITLE = \'c8\'ab\'b1\'e6\'b5\'bf\'c0\'c7  JSP 2.0 \'b9\'e8\'bf\'ec\'b1\'e2\lang1033\f1\par
+\lang1042\f0 GREETING = \'be\'c8\'b3\'e7\'c7\'cf\'bc\'bc\'bf\'e4. \'c8\'ab\'b1\'e6\'b5\'bf\'c0\'d4\'b4\'cf\'b4\'d9\lang1033\f1 .\par
+\lang1042\f0 VISITOR = \'b4\'e7\'bd\'c5\'c0\'c7 \'be\'c6\'c0\'cc\'b5\'f0\'b4\'c2 \{0\}\'c0\'d4\'b4\'cf\'b4\'d9\lang1033\f1 .\par
+\fs24\par
+\lang1042\f0\'c7\'d1\'b1\'db\'c0\'bb \'c1\'f7\'c1\'a2 \'be\'b5\'bc\'f6 \'be\'f8\'c0\'b8\'b9\'c7\'b7\'ce \par
+jdk == bin == native2ascii.exe \'b7\'ce \'b0\'a2 \'c4\'da\'b5\'e5\'b8\'a6 \'c0\'af\'b4\'cf\'c4\'da\'b5\'e5 \'bc\'fd\'c0\'da\'b7\'ce \'ba\'af\'c8\'af\'c7\'d8\'be\'df \'c7\'d1\'b4\'d9 \par
+\par
+\b\fs20 c:\\ .. \\.. \\ classes \\ resource \\> native2ascii  \cf12 message_ko.properties.src\cf0  \cf2 message_ko.properties\cf0   \'bf\'a3\'c5\'cd\b0  ( \'ba\'af\'c8\'af \'c7\'d1\'b4\'d9 )\par
+\cf2\fs24 message_ko.properties\cf0  ( \'ba\'af\'c8\'af\'b5\'c8 \'b3\'bb\'bf\'eb\'c0\'ba \'b4\'d9\'c0\'bd\'b0\'fa \'b0\'b0\'b4\'d9  )\par
+\lang1033\f1\par
+\lang1042\f0\fs20 TITLE = \\ud64d\\uae38\\ub3d9\\uc758  JSP 2.0 \\ubc30\\uc6b0\\uae30\par
+GREETING = \\uc548\\ub155\\ud558\\uc138\\uc694. \lang1046\f1\\\lang1042\f0 ud64d\\uae38\\ub3d9\\uc785\\ub2c8\\ub2e4.\par
+VISITOR = \\ub2f9\\uc2e0\\uc758 \\uc544\\uc774\\ub514\\ub294 \{0\}\\uc785\\ub2c8\\ub2e4.\lang1046\f1\par
+\fs24\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\lang1042\f0 chap15/ WEB-INF/ classes / resource / message.properties \'b0\'fa message_ko.properties\par
+                 / lib \par
+                 / web,xml\par
+\b chap15/ useMessage.jsp ( bundle, message \'bf\'b9\'c1\'a6 )\lang1033\f1\par
+\lang1042\b0\f0\fs20 <%@ page contentType = "text/html; charset=euc-kr" %>\par
+\b <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>\par
+\b0 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>\par
+<%-- --%>\par
+\cf2\b <fmt:\cf3 bundle\cf2  basename="resource.message">\par
+\cf3 <fmt:message key="TITLE" var="title"/>\par
+TITLE\cf0\b0  = \'c8\'ab\'b1\'e6\'b5\'bf\'c0\'c7  JSP 2.0 \'b9\'e8\'bf\'ec\'b1\'e2\lang1033\f1\par
+\cf3\lang1042\b\f0 GREETING\cf0\b0  = \'be\'c8\'b3\'e7\'c7\'cf\'bc\'bc\'bf\'e4. \'c8\'ab\'b1\'e6\'b5\'bf\'c0\'d4\'b4\'cf\'b4\'d9\lang1033\f1 .\par
+\cf3\lang1042\b\f0 VISITOR\cf0\b0  = \'b4\'e7\'bd\'c5\'c0\'c7 \'be\'c6\'c0\'cc\'b5\'f0\'b4\'c2 \cf3\lang1033\b\f1\{0\}\cf0\lang1042\b0\f0\'c0\'d4\'b4\'cf\'b4\'d9\lang1033\f1 .\par
+\pard\nowidctlpar\qj\par
+\pard\nowidctlpar\lang1042\f0 <html>\par
+<head><title\b >$\{title\}</\b0 title></head>\par
+<body>\par
+\lang1033\f1\par
+\lang1042\f0 <br>\par
+<c:if test="$\{! empty param.id\}">\par
+\cf3\b <fmt:message key="VISITOR">\par
+    <fmt:param value="$\{param.id\}" />\par
+</fmt:message>\cf0\lang1033\b0\f1\par
+\lang1042\f0 </c:if>\par
+\par
+</body>\par
+</html>\cf3\lang1033\f1\par
+\cf2\lang1042\b\f0 </fmt:\cf3 bundle\cf2 >\lang1033\f1\par
+\cf0\b0\fs24\par
+\par
+\cf2\lang1042\f0{\field{\*\fldinst{HYPERLINK "http://localhost:9000/chap15/useMessage.jsp"}}{\fldrslt{\ul\cf2 http://localhost:9000/chap15/useMessage.jsp}}}\lang1033\f1\fs24\par
+\cf0\lang1042\f0\fs20\'be\'c8\'b3\'e7\'c7\'cf\'bc\'bc\'bf\'e4. \'c8\'ab\'b1\'e6\'b5\'bf\'c0\'d4\'b4\'cf\'b4\'d9\lang1033\f1 .\par
+\par
+\cf2\lang1042\f0\fs24{\field{\*\fldinst{HYPERLINK "http://localhost:9000/chap15/useMessage.jsp?id=hong"}}{\fldrslt{\ul\cf2 http://localhost:9000/chap15/useMessage.jsp?\b id=hong}}}\lang1033\b0\f1\fs24\par
+\cf0\lang1042\f0\fs20\'be\'c8\'b3\'e7\'c7\'cf\'bc\'bc\'bf\'e4. \'c8\'ab\'b1\'e6\'b5\'bf\'c0\'d4\'b4\'cf\'b4\'d9. \line\'b4\'e7\'bd\'c5\'c0\'c7 \'be\'c6\'c0\'cc\'b5\'f0\'b4\'c2 hong\'c0\'d4\'b4\'cf\'b4\'d9\lang1033\f1 .\fs24\par
+\cf2\b\fs28\par
+\highlight4\lang1042\f0\fs44 End ========\highlight0\lang1033\f1\par
+\pard\fs28  \cf0\lang1042\b0\f0\fs24\par
+\par
+\par
+\pard\sl240\slmult1\lang18\kerning0\f5\fs20\par
+}
+ 
