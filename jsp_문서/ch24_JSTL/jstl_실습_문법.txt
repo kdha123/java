@@ -1,0 +1,174 @@
+JSTL
+변수선언 형식 
+
+<c:set var="변수이름" value="정수,실수,문자열" scope=""/>
+<c:set var="변수이름" scope=""/>....scope는 필수 
+
+
+
+if 태그 형식
+========================================
+<c:if test="${조건}">
+
+</c:if>
+========================================
+03_iftag.jsp
+
+choose 태그 : java의 switch~case 문과 유사
+
+choose 태그 형식
+<c:choose>
+ <c:when test="${조건}">
+   내용
+ </c:when>
+
+ <c:when test="${조건}">
+   내용
+ </c:when>
+
+ <c:when test="${조건}">
+   내용
+ </c:when>
+
+ <c:otherwise>
+   내용
+ </c:otherwise>
+
+</c:choose>
+
+조건이 true이면
+when 태그 바디 부분을 처리
+모든 조건이 false이면  <c:otherwise> 태그가 실행
+====================================================
+04_choose.jsp
+====================================================
+
+forEach 태그
+
+forEach 태그는 배열이나, Collection, Map에 저장된 값들을 순차적으로 처리할 때 사용
+
+자바의 for문이나 while, do~while 등을 대신해서 사용할 수 있다
+
+forEach 형식
+====================================================
+<c:forEach var="변수" items="아이템">
+ 처리내용
+</c:forEach>
+
+====================================================
+<c:forEach var="변수" items="아이템">
+   <tr>
+	<td align="center" bgcolor="cyan">
+	  ${변수}
+	</td>
+   </tr>
+</c:forEach>
+======================================================
+
+items 속성에 올 수 있는 것들 : Map,배열,Collection이 있다
+
+배열일 경우 기본 데이터는 랩퍼클래스(Integer, Double)를
+사용하여 처리하게 됩니다
+======================================================
+05_forEach.jsp
+======================================================
+
+
+●forTokens 태그
+
+forTokens 태그는 java.util.StringTokenizer 클래스와 같은 기능을 제공한다 
+
+======================================================
+
+forTokens 태그 형식
+<c:forTokens var="token" items="문자열" delims="구분기호">
+   ${token}
+</c:forTokens>
+======================================================
+08_tokens.jsp
+======================================================
+● include 액션 문제점 
+
+    같은 프로젝트 내에서만 include 액션을 쓸 수 있다 ( 로컬url만 가능)
+
+    다른 프로젝트나 외부 사이트는 사용할 수 없다 
+
+● JSTL의 import 기능은 
+    같은 프로젝트내에서는 물론이고,
+    다른 프로젝트나 외부 사이트도 import 할수 있다 
+    다음,네이버
+
+======================================================
+● URL  처리태그
+
+   1. redirect 태그...response.sendRedirect("url")와 같은 기능
+   2. url 태그.........URL을 생성해서 변수에 저장할때 사용
+   3. import 태그 ....<jsp:include>태그와 비슷한 기능을 제공 
+
+======================================================
+
+1. redirect 태그 형식
+
+<c:redirect url="">
+    <c:param name="id" value="park"/>
+</c:redirect>
+
+실습
+WebContent
+    
+    url 폴더 
+
+    redirect.jsp
+    url.jsp
+    header.jsp
+    footer.jsp
+    import.jsp
+  
+======================================================
+ 2. url 태그.........URL을 생성해서 변수에 저장할때 사용
+
+url 태그 형식
+
+<c:url var="a1" value="aa.jsp" scope="session">
+   <c:param name="id"  value="kim"/>
+</c:url>
+
+url태그 속성 
+
+var ------> 생성된 URL이 저장될 변수명
+value-----> 생성될 URL
+scope---->  변수에 저장될 범위 지정
+                 ( page(aa.jsp), request ,session,application(프로젝트이름) )
+                 request ,session
+
+
+# value속성에 올수 있는 값 ( 3 가지 )
+ 완전 URL ------------------------>http://ip:port/컨텍스트이름/중간이름/a.jsp
+ 웹 어플리케이션 내에서 절대 경로 ---> /bb.jsp ( 자신을 기준으로 한다 )
+ 현재 경로에대한 상대 경로 ---------->../member/aa.jsp
+
+    WebContent
+            member/aa.jsp
+            board/여기서 실행 할때
+
+# 실습 
+
+url.jsp
+
+======================================================
+3. import 태그 ....<jsp:include>태그와 비슷한 기능을 제공 
+
+import 태그 형식
+<c:import url="http://www.daum.net" --->읽어올 url
+             charEncoding="euc-kr"-------->읽어올 데이터 캐릭터 셋
+             var="daum" ----------------->변수이름
+             scope="session" ------------>적용범위
+   <c:param name="" value=""/>  ------>파라미터 값
+</c:import>
+
+#실습
+header.jsp
+footer.jsp
+앞에서 만든 ...>url.jsp 함께 활용합니다 
+import.jsp
+======================================================
