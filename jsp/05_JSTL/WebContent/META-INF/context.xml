@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context docBase="03_jsp_pool" path="/03_jsp_pool" reloadable="true">
+<Resource  
+name="jdbc/mysql"
+auth="Container"
+type="javax.sql.DataSource"
+driverClassName="com.mysql.jdbc.Driver"
+url="jdbc:mysql://localhost:3306/ch20?autoReconnect=true"
+username="root"
+password="12345"
+maxWait="5000"
+maxActive="20"
+testOnBorrow="true"
+factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+closeMethod="close"/>
+
+<Resource 
+name="jdbc/oracle"  
+auth="Container" 
+type="javax.sql.DataSource"  
+driverClassName="oracle.jdbc.driver.OracleDriver" 
+url="jdbc:oracle:thin:@402-oracle:1521:ORCL"   
+username="c##java04" 
+password="java04" 
+maxWait="5000" 
+maxActive="20" 
+testOnBorrow="true"
+factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+closeMethod="close"/>
+
+</Context>

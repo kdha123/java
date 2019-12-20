@@ -19,4 +19,27 @@ items 속성에 올 수 있는 것들 : Map, 배열, Collection 등등 이 있�
 배열일 경우 기본 데이터는 wrapper클래스(Integer,Double,...)를 사용하여 처리하게 됩니다.
 
  --%>
+ 
+ <%--실습1 --%>
+ <h3>1~10까지  출력</h3>
+ <c:forEach var="i" begin="1" end="10" step="1">
+ ${i }&nbsp;
+ </c:forEach>
     
+ <%--실습2 --%>
+ <h3>1~10까지 짝수만  출력</h3>
+ <c:forEach var="i" begin="2" end="10" step="2">
+ ${i }&nbsp;
+ </c:forEach>
+ 
+ <%--실습3 --%>
+ <h3>1~10까지 합  출력</h3>
+ <c:set var="sum" value="0"/>
+ <c:forEach var="i" begin="2" end="10" step="2">
+ 	<c:set var="sum" value="${sum+i }"/>
+ </c:forEach>
+ <br>
+ 1~10까지 합 : ${sum }
+ 
+ 
+ 
