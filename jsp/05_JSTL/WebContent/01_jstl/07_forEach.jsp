@@ -8,15 +8,14 @@
 <%--07_forEach.jsp --%>
 <%
 BoardDAO dao = BoardDAO.getDAO();
-// BoardDTO dto = new BoardDTO();
 %>
 <%
-// List<BoardDTO> list=dao.getList(1,10);
-// request.setAttribute("list", dao.getList(1, 10));
+List<BoardDTO> list=dao.getList(1,10);
+request.setAttribute("list", dao.getList(1, 10));
 %>
-<c:set var="list" value="<%=dao.getList(1,10) %>"/>
+<c:set var="list2" value="<%=list %>"/>
 
-<c:forEach var="dto" items="${list }">
+<c:forEach var="dto" items="${list2 }">
 ${dto.writer }&nbsp;&nbsp;
 ${dto.subject }&nbsp;&nbsp;
 ${dto.content }<br>
