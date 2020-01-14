@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>webjjangcom_servlet_ver3</display-name>
+  <!-- 웹기본문서 : 위치만 지정을 하면 아래 자원이름을 자동으로 찾는다. -->
+  <welcome-file-list>
+    <welcome-file>main.do</welcome-file>
+  </welcome-file-list>
+  
+  <!-- ## 서블릿 셋팅  ## -->
+<servlet>
+<servlet-name>mainServlet</servlet-name>
+<servlet-class>
+com.webjjang.main.FrontController
+</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>mainServlet</servlet-name>
+<url-pattern>*.do</url-pattern>
+</servlet-mapping>  
+
+  <!-- ### 필터 셋팅 ### -->
+  
+  <!-- 한글 필터: 클래스 안에 어노테이션을 이용해서 적용시켰다. -->
+  <filter>
+	   <filter-name>encoding</filter-name>
+	   <filter-class>
+	   com.webjjang.util.filter.EncodingFilter
+	   </filter-class>
+	</filter>
+	<filter-mapping>
+	   <filter-name>encoding</filter-name>
+	   <url-pattern>/*</url-pattern>
+	</filter-mapping>
+   
+  
+  <!-- 레이아웃 필터 : sitemesh -->
+  <filter>
+   <filter-name>sitemesh</filter-name>
+   <filter-class>
+   com.opensymphony.sitemesh.webapp.SiteMeshFilter
+   </filter-class>
+</filter>
+<filter-mapping>
+   <filter-name>sitemesh</filter-name>
+   <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+<!-- 오류체리 -->
+<!-- 없는 URL 요청 처리 -->
+<error-page>
+<error-code>404</error-code>
+<location>/WEB-INF/views/error/error404.jsp</location>
+</error-page>
+
+<!--  Exception:서버의 처리중 오류 -->
+<error-page>
+	<exception-type>java.lang.Exception</exception-type>
+	<location>/WEB-INF/views/error/errorException.jsp</location>
+</error-page>
+
+</web-app>

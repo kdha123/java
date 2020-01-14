@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE XML>
+<!-- 작성자 : 이영환 -->
+<!-- 작성일 : 2018-11-14 -->
+<!-- 꾸미기(레이아웃)에 대한 선언 -->
+<decorators defaultdir="/WEB-INF/views/decorator">
+	<!-- hello에 대한 요청이 들어오면 적용시키는 레이아웃 선언 -->
+	<decorator name="main" page="default_decorator.jsp">
+		<!-- url 패턴 중에서 적용이 안되는(패턴의 충돌) 패턴이 있으면 *를 제거하고 적용하세요. -->
+<!-- 	<pattern>/</pattern> -->
+		<pattern>/main.do</pattern>
+		<pattern>/main/*</pattern>
+		<pattern>/notice/*</pattern>
+		<pattern>/board/*</pattern>
+		<pattern>/member/*</pattern>
+		<pattern>/qna/*</pattern>
+		<pattern>/image/*</pattern>
+	</decorator>
+	
+	<!-- 관리자의 대한 요청 레이아웃 선언 -->
+<!-- 	<decorator name="admin" page="admin_decorator.jsp"> -->
+<!-- 		<pattern>/admin/*</pattern> -->
+<!-- 	</decorator> -->
+
+	<!-- 데코레이션에서 제외되는 요청을 선언 -->
+
+</decorators>
