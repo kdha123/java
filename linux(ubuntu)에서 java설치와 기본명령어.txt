@@ -1,0 +1,71 @@
+login
+id : ubuntu , pw : ubuntu
+
+root(관리자) 권한 얻기 -> 관리자 셸로 들어가기
+sudo -s
+~$ --> 일반사용자 프롬프트
+~# --> 관리자 프롬프트
+~:사용자의 홈디렉토리
+
+* 현재 위치 알아내기
+pwd
+
+* 설치할수 있는 커널(설치프로그램) 목록 업데이트
+apt-get update
+
+* java 8 -> openjdk-8-jdk : language
+apt-get install openjdk-8-jdk
+* nano -> 문서 편집기
+apt-get install nano
+
+* 디렉토리 관련 명령
+- 디렉토리 이동 cd : change directory
+cd / -> 최상위 위치로 이동
+ls -> 현재 위치에 있는 내용을 확인
+ls -al
+cd /usr/lib/jvm/java-8-openjdk-amd64/bin
+
+. - 현재 위치
+.. - 상위 위치
+cd ..
+
+* JAVA 환경변수 설정
+nano ~/.profile
+------------- 추가 내용
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export CLASSPATH=$JAVA_HOME/lib/*:.
+export PATH=$PATH:$JAVA_HOME/bin
+---- 저장 : Ctrl + o -> 저장파일명지정 : Enter,
+---- 빠져나오기 : Ctrl + x
+
+--> 로그인 할때 적용된다. : 로그아웃 후 로그인 또는 source사용
+. source ~/.profile
+
+path 확인 : echo $PATH
+
+* 환경변수 확인
+echo 환경변수명
+echo $PATH
+echo $JAVA_HOME
+
+* text파일의 내용을 화면에 출력
+cat PrintName.java
+
+* 디렉토리 내용 확인 -> 모니터
+ls -al
+
+* 디렉토리 내용 확인 후 확인한 내용을 텍스트 파일로 저장
+* 파일이 존재하면 덮어쓰기를 한다.
+ls -al > list.txt
+* 파일이 존재하면 뒤에 추가한다.
+ls -al >> list.txt
+
+* 화면 내용 지우기
+clear
+
+* 디렉토리 관련 명령
+- cd : change directory
+ 예) cd .. , cd /usr, cd test
+- mkdir : make directory
+ 예) mkdir test, mkdir ~/test, mkdir /test
+
