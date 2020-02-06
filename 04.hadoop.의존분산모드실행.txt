@@ -1,0 +1,41 @@
+== 새로 설치
+1. 돌고 있는 데몬 중지
+- jps : 데몬 확인
+- stop-all.sh : 실행중인 모든 데몬 중지
+2. 설치되어 있는 폴더 지운다.
+rm -r 폴더 - temp, hadoop-1.2.1, .ssh
+~$ rm -r temp
+~$ rm -r hadoop-1.2.1
+~$ rm -r .ssh
+3. java 설치 확인
+echo $JAVA_HOME
+4. 다운받은 하둡 파일 압출 풀기
+tar xvfz hadoop-1.2.1.tar.gz
+5. 하둡 설정 보기
+cat .profile
+
+6. SSH 설치와 설정
+1) SSH 설치 - 관리자
+sudo apt-get install openssh-server
+sudo apt-get install openssh-client
+2) 키 저장 폴더 생성
+mkdir .ssh
+3) 키 생성
+ssh-keygen -t rsa
+4) 키 확인
+ls .ssh
+4) ssh를 이용한 인증 파일에 키를 추가(>>)
+~/.ssh$ cat id_rsa.pub >> authorized_keys
+-- 추가 확인
+cat authorized_keys
+
+7. 하둡 실행 설정 - 새로 하신다.
+1) 하둡실행 시 자바 필요 -> 설정
+nano hadoop-1.2.1/conf/hadoop-env.sh
+: export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+2) mapred-site.xml -> pdf 파일 참조
+3) hdfs-site.xml -> pdf 파일 참조
+4) core-site.xml -> pdf 파일 참조
+
+8. namenode 포맷
+hadoop namenode -format

@@ -1,0 +1,19 @@
+nano $HADOOP_HOME/conf/hadoop-env.sh
+
+export HAVA_HOME=/usr/lib/jvm-8-openjdk-amd64
+
+<ssh> 설정
+1. 운영 폴더 만들기
+mkdir ~/.ssh
+2. 키 생성
+ssh-keygen -t rsa
+
+<hadoop 데몬(서비스) 설정>
+- property 설정
+1. mapred-site.xml
+2. hdfs-site.xml
+3. core-site.xml
+4. namenode 포맷 -> 동작 준비
+
+<hadoop 데몬 실행>
+start-all.sh
